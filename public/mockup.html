@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McCoy Landscape Group — Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700;900&family=Raleway:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #244030;
+    --primary-deep: #172a1f;
+    --accent: #91b67a;
+    --accent-mid: #729b58;
+    --text: #1a1b1f;
+    --text-muted: #5d6c7b;
+    --bg: #ffffff;
+    --bg-soft: #fafafa;
+    --bg-warm: #f5f1e8;
+    --bg-dark: #0f1411;
+    --border: #e4ebf3;
+    --shadow-card: 0 4px 6px -1px rgba(26,27,31,0.08), 0 2px 4px -2px rgba(26,27,31,0.06);
+    --shadow-card-hover: 0 20px 25px -5px rgba(26,27,31,0.12), 0 8px 10px -6px rgba(26,27,31,0.08);
+    --shadow-floating: 0 24px 48px -12px rgba(15,20,17,0.25);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Raleway', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Titillium Web', system-ui, sans-serif; letter-spacing: -0.01em; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; }
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 80px; }
+  @media (max-width: 900px) { .container { padding: 0 24px; } }
+  .eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-mid);
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .eyebrow.on-dark { color: var(--accent); }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--primary); color: white;
+    padding: 14px 28px; border-radius: 9999px;
+    font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover { background: var(--primary-deep); transform: translateY(-2px); box-shadow: var(--shadow-card-hover); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 2px solid white; color: white;
+    padding: 12px 26px; border-radius: 9999px;
+    font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover { background: white; color: var(--primary); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 2px solid var(--primary); color: var(--primary);
+    padding: 12px 26px; border-radius: 9999px;
+    font-weight: 600; font-size: 15px;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover { background: var(--primary); color: white; }
+
+  /* =========== NAV =========== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  }
+  .nav.scrolled {
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+    padding: 14px 0; box-shadow: var(--shadow-floating);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { height: 52px; display: block; }
+  .nav-logo img { height: 100%; width: auto; }
+  .nav-logo .dark { display: none; }
+  .nav.scrolled .nav-logo .white { display: none; }
+  .nav.scrolled .nav-logo .dark { display: block; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: white; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav.scrolled .nav-links a { color: var(--text); }
+  .nav-links a:hover { color: var(--accent); }
+  .nav.scrolled .nav-links a:hover { color: var(--accent-mid); }
+  .nav-cta { display: flex; align-items: center; gap: 16px; }
+  .nav-phone {
+    display: flex; align-items: center; gap: 8px;
+    color: white; font-size: 15px; font-weight: 600;
+    transition: color 0.2s;
+  }
+  .nav.scrolled .nav-phone { color: var(--primary); }
+  .nav-phone:hover { color: var(--accent); }
+
+  /* =========== HERO =========== */
+  .hero {
+    position: relative; min-height: 92vh; padding: 180px 0 240px;
+    color: white; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(92deg, rgba(15,20,17,0.82) 15%, rgba(15,20,17,0.45) 60%, transparent), url('/images/09-showcase-signature-build.jpg');
+    background-size: cover; background-position: center;
+    z-index: 0;
+  }
+  .hero-topo {
+    position: absolute; top: 80px; right: -40px; width: 400px; height: 400px;
+    opacity: 0.08; z-index: 1; pointer-events: none;
+  }
+  .hero-topo img { filter: invert(1); width: 100%; }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  .hero h1 {
+    font-size: clamp(40px, 5.5vw, 68px); line-height: 1.08;
+    font-weight: 900; margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  }
+  .hero h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+  .hero-sub {
+    font-size: 19px; line-height: 1.6; margin-bottom: 14px;
+    max-width: 580px; color: rgba(255,255,255,0.95);
+  }
+  .hero-sub strong { color: white; font-weight: 700; }
+  .hero-micro {
+    font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.75);
+    margin-bottom: 32px; max-width: 520px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Hero Form Card — overlaps hero bottom */
+  .hero-form {
+    position: relative; margin: -180px auto 0; max-width: 860px;
+    background: white; border-radius: 24px;
+    padding: 40px 48px;
+    box-shadow: var(--shadow-floating);
+    z-index: 3;
+  }
+  .hero-form-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .hero-form h3 { font-size: 26px; color: var(--primary); font-weight: 700; }
+  .hero-form .trust-pill {
+    font-size: 12px; background: var(--bg-warm); color: var(--primary);
+    padding: 8px 14px; border-radius: 9999px; font-weight: 600;
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .form-grid.wide { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 700px) { .form-grid, .form-grid.wide { grid-template-columns: 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .field input, .field select {
+    padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px;
+    font-size: 15px; font-family: inherit; color: var(--text); background: white;
+    transition: border-color 0.2s;
+  }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--accent-mid); }
+  .form-submit-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+  .form-microcopy { font-size: 13px; color: var(--text-muted); max-width: 420px; }
+
+  /* =========== TRUST STRIP =========== */
+  .trust-strip {
+    background: var(--bg-warm); padding: 80px 0;
+    position: relative;
+  }
+  .trust-strip .container { position: relative; z-index: 1; }
+  .trust-head { text-align: center; margin-bottom: 40px; }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+  }
+  @media (max-width: 900px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
+  .trust-item {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 12px;
+  }
+  .trust-icon {
+    width: 48px; height: 48px; border-radius: 9999px;
+    background: rgba(145,182,122,0.2);
+    color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .trust-item p { font-size: 15px; font-weight: 500; line-height: 1.45; }
+
+  /* =========== ABOUT / POSITIONING =========== */
+  .about {
+    padding: 120px 0; background: var(--bg); position: relative;
+  }
+  .about-topo {
+    position: absolute; top: 40px; left: -80px; width: 320px;
+    opacity: 0.06; pointer-events: none;
+  }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  @media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .about h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary); margin-bottom: 24px;
+  }
+  .about h2 em { font-style: italic; font-weight: 300; }
+  .about p { font-size: 17px; line-height: 1.7; color: var(--text); margin-bottom: 16px; }
+  .about p strong { color: var(--primary); font-weight: 700; }
+  .about-bullets { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .about-bullets li {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 15px; color: var(--text);
+  }
+  .about-bullets li::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent-mid); margin-top: 9px; flex-shrink: 0;
+  }
+  .about-image {
+    position: relative; border-radius: 24px; overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow-card-hover);
+  }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; }
+  .about-signature {
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
+    background: rgba(255,255,255,0.95); padding: 20px 24px; border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+  .about-signature .name { font-family: 'Caveat'; font-weight: 600; font-size: 28px; color: var(--primary); line-height: 1.1; }
+  .about-signature .role { font-size: 13px; color: var(--text-muted); margin-top: 2px; font-weight: 500; }
+
+  /* =========== SIGNATURE SPOTLIGHT =========== */
+  .spotlight {
+    position: relative; color: white; padding: 140px 0; overflow: hidden;
+  }
+  .spotlight-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(15,20,17,0.85) 30%, rgba(36,64,48,0.55)), url('/images/01-hero-outdoor-living-golden-hour.jpg');
+    background-size: cover; background-position: center;
+    z-index: 0;
+  }
+  .spotlight-inner { position: relative; z-index: 1; max-width: 780px; }
+  .spotlight h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; margin-bottom: 20px;
+  }
+  .spotlight p { font-size: 17px; line-height: 1.7; margin-bottom: 32px; color: rgba(255,255,255,0.9); }
+  .spotlight-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+  @media (max-width: 700px) { .spotlight-features { grid-template-columns: 1fr; } }
+  .spotlight-features li {
+    list-style: none; display: flex; gap: 12px; font-size: 15px;
+    padding: 16px 18px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+  }
+  .spotlight-features li::before {
+    content: "→"; color: var(--accent); font-weight: 700; flex-shrink: 0;
+  }
+  .spotlight-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--accent); font-weight: 600; font-size: 15px;
+    border-bottom: 1.5px solid var(--accent); padding-bottom: 4px;
+  }
+
+  /* =========== SERVICES GRID =========== */
+  .services { padding: 120px 0; background: var(--bg-soft); position: relative; }
+  .services-head { text-align: center; margin-bottom: 56px; }
+  .services h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary); margin-bottom: 16px;
+  }
+  .services-intro { font-size: 17px; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+  .services-intro strong { color: var(--primary); font-weight: 600; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: white; border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+    border-top: 3px solid transparent;
+  }
+  .service-card:hover {
+    transform: translateY(-6px); box-shadow: var(--shadow-card-hover);
+    border-top-color: var(--accent);
+  }
+  .service-card-img { aspect-ratio: 4/3; overflow: hidden; }
+  .service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .service-card:hover .service-card-img img { transform: scale(1.05); }
+  .service-card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+  .service-card h3 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+  .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; flex: 1; }
+  .service-card p strong { color: var(--text); font-weight: 600; }
+  .service-card-link {
+    margin-top: 16px; color: var(--accent-mid); font-weight: 600; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .service-card:hover .service-card-link { color: var(--primary); }
+
+  /* =========== SERVICE AREAS =========== */
+  .areas {
+    padding: 120px 0; background: var(--primary); color: white;
+    position: relative; overflow: hidden;
+  }
+  .areas-topo {
+    position: absolute; bottom: -120px; right: -60px; width: 520px;
+    opacity: 0.1; pointer-events: none;
+  }
+  .areas-topo img { filter: invert(1); width: 100%; }
+  .areas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
+  @media (max-width: 900px) { .areas-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .areas h2 {
+    font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15;
+    font-weight: 900; margin-bottom: 20px;
+  }
+  .areas p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+  .areas-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .areas-list li {
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    transition: all 0.3s ease;
+  }
+  .areas-list li:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); transform: translateX(4px); }
+  .areas-list .city { font-weight: 700; font-size: 17px; }
+  .areas-list .city-sub { color: rgba(255,255,255,0.65); font-size: 13px; margin-top: 2px; }
+  .areas-list .arrow { color: var(--accent); font-size: 18px; }
+
+  /* =========== PORTFOLIO STRIP =========== */
+  .portfolio { padding: 120px 0; background: var(--bg); }
+  .portfolio-head { text-align: center; margin-bottom: 40px; }
+  .portfolio h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary); margin-bottom: 14px;
+  }
+  .portfolio-intro { font-size: 17px; color: var(--text-muted); margin-bottom: 24px; }
+  .portfolio-filters {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .filter-pill {
+    padding: 10px 20px; border-radius: 9999px;
+    border: 1.5px solid var(--border);
+    background: white; color: var(--text);
+    font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-pill.active, .filter-pill:hover {
+    background: var(--primary); color: white; border-color: var(--primary);
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 16px;
+  }
+  @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+  .portfolio-tile { border-radius: 16px; overflow: hidden; position: relative; cursor: pointer; }
+  .portfolio-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .portfolio-tile:hover img { transform: scale(1.06); }
+  .portfolio-tile .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15,20,17,0.85), transparent 50%);
+    display: flex; align-items: flex-end; padding: 20px;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .portfolio-tile:hover .overlay { opacity: 1; }
+  .portfolio-tile .overlay-text { color: white; font-size: 14px; font-weight: 600; }
+  .portfolio-tile.tall { grid-row: span 2; }
+  .portfolio-tile.wide { grid-column: span 2; }
+
+  /* =========== REVIEWS =========== */
+  .reviews { padding: 120px 0; background: var(--bg-warm); }
+  .reviews-head { text-align: center; margin-bottom: 48px; }
+  .reviews h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary); margin-bottom: 14px;
+  }
+  .reviews-intro { font-size: 17px; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+  .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .review-grid { grid-template-columns: 1fr; } }
+  .review-card {
+    background: white; padding: 32px; border-radius: 20px;
+    box-shadow: var(--shadow-card);
+  }
+  .review-stars { color: #f5a623; font-size: 18px; margin-bottom: 12px; letter-spacing: 2px; }
+  .review-card p { font-size: 15px; line-height: 1.6; margin-bottom: 16px; color: var(--text); }
+  .review-attribution { display: flex; align-items: center; gap: 10px; }
+  .review-name { font-weight: 600; font-size: 14px; }
+  .review-date { font-size: 12px; color: var(--text-muted); }
+  .reviews-footer { text-align: center; margin-top: 40px; font-size: 13px; color: var(--text-muted); }
+
+  /* =========== PROCESS =========== */
+  .process { padding: 120px 0; background: var(--bg); position: relative; }
+  .process-head { text-align: center; margin-bottom: 56px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .process h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary); margin-bottom: 14px;
+  }
+  .process-intro { font-size: 17px; color: var(--text-muted); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+    position: relative;
+  }
+  @media (max-width: 1100px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .process-steps { grid-template-columns: 1fr; } }
+  .process-step {
+    background: white; padding: 28px 24px; border-radius: 20px;
+    border: 1.5px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .process-step:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-card); }
+  .step-number {
+    font-family: 'Titillium Web'; font-weight: 900; font-size: 40px;
+    color: var(--accent); line-height: 1; margin-bottom: 14px;
+    opacity: 0.85;
+  }
+  .process-step h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 8px; line-height: 1.3; }
+  .process-step p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .process-note {
+    margin-top: 40px; text-align: center; font-size: 14px;
+    color: var(--text-muted); font-style: italic;
+  }
+
+  /* =========== FAQ =========== */
+  .faq { padding: 120px 0; background: var(--bg-soft); }
+  .faq-head { text-align: center; margin-bottom: 56px; }
+  .faq h2 {
+    font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15;
+    font-weight: 900; color: var(--primary);
+  }
+  .faq-list { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .faq-item {
+    background: white; padding: 28px 32px; border-radius: 16px;
+    border-left: 3px solid var(--accent);
+  }
+  .faq-item h3 {
+    font-size: 18px; font-weight: 700; color: var(--primary);
+    margin-bottom: 12px; line-height: 1.4;
+  }
+  .faq-item p { font-size: 15px; color: var(--text); line-height: 1.65; }
+
+  /* =========== FINAL CTA =========== */
+  .final-cta {
+    position: relative; padding: 140px 0 100px; color: white; overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(rgba(15,20,17,0.75), rgba(15,20,17,0.8)), url('/images/15-cta-dusk-invitation.jpg');
+    background-size: cover; background-position: center;
+    z-index: 0;
+  }
+  .final-cta-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; text-align: center; }
+  .final-cta h2 {
+    font-size: clamp(36px, 4.2vw, 56px); line-height: 1.1;
+    font-weight: 900; margin-bottom: 18px;
+  }
+  .final-cta-sub { font-size: 18px; margin-bottom: 32px; color: rgba(255,255,255,0.9); line-height: 1.6; }
+  .final-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .final-cta-form {
+    background: white; color: var(--text); border-radius: 24px;
+    padding: 36px 40px; text-align: left;
+    box-shadow: var(--shadow-floating);
+  }
+
+  /* =========== FOOTER =========== */
+  footer { background: var(--bg-dark); color: rgba(255,255,255,0.75); padding: 64px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  .footer-col h4 {
+    font-family: 'Raleway'; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--accent); font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-about { max-width: 320px; }
+  .footer-logo { height: 44px; margin-bottom: 18px; }
+  .footer-about p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    flex-wrap: wrap; gap: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- =========== NAV =========== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="/brand/logo-white.png" alt="McCoy Landscape Group" class="white">
+      <img src="/brand/logo-dark.svg" alt="McCoy Landscape Group" class="dark">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+14169859771" class="nav-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (416) 985-9771
+      </a>
+      <a href="#contact" class="btn-primary">Book Free Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- =========== HERO =========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-topo"><img src="/brand/shape_02.svg" alt=""></div>
+  <div class="container hero-content">
+    <span class="eyebrow on-dark">HARDSCAPE DESIGN-BUILD · HALTON</span>
+    <h1>Premium Hardscapes <em>built to last</em><br>Across Oakville &amp; Burlington</h1>
+    <p class="hero-sub">Hardscape design-build serving Oakville, Burlington, Mississauga, and Milton. Call <strong>(416) 985-9771</strong> for a free on-site consultation — every hardscape install backed by our 3-year warranty and customer satisfaction guarantee.</p>
+    <p class="hero-micro">Proper base, proper drainage, done right the first time — patios and driveways built for Ontario winters.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Book Free Consultation →</a>
+      <a href="tel:+14169859771" class="btn-secondary">Call (416) 985-9771</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== HERO FORM CARD (OVERLAPS HERO) =========== -->
+<div class="container">
+  <div class="hero-form">
+    <div class="hero-form-head">
+      <h3>Start Your Outdoor Project</h3>
+      <span class="trust-pill">✓ Free on-site consultation</span>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+      <div class="field"><label>Phone</label><input type="tel" placeholder="(416) 000-0000"></div>
+      <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+    </div>
+    <div class="form-grid">
+      <div class="field"><label>City / Area</label>
+        <select><option>Oakville</option><option>Burlington</option><option>Mississauga</option><option>Milton</option><option>Waterdown</option><option>Flamborough</option><option>Other</option></select>
+      </div>
+      <div class="field"><label>Service Interest</label>
+        <select><option>Paver Patio / Walkway</option><option>Paver Driveway</option><option>Retaining Wall</option><option>Outdoor Living / Pergola / Fire Pit</option><option>Landscape Lighting</option><option>Full Yard</option><option>Other</option></select>
+      </div>
+      <div class="field"><label>Budget</label>
+        <select><option>Under $30K</option><option>$30K+</option><option>Not sure — need guidance</option></select>
+      </div>
+    </div>
+    <div class="form-submit-row">
+      <p class="form-microcopy">We reply within 24–48 hours. Every hardscape project backed by our 3-year warranty.</p>
+      <button class="btn-primary">Send Project Details</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========== TRUST STRIP =========== -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-head">
+      <span class="eyebrow">WHY HALTON HOMEOWNERS CHOOSE US</span>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <p>25+ years of Halton hardscape craftsmanship</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <p>Owner-operated — on every major project</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <p>3-year warranty on all hardscape installs</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <p>Customer satisfaction guarantee on every build</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <p>Techo-Bloc, Unilock &amp; Permacon premium materials</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <p>Built for Ontario freeze–thaw and drainage</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <p>200+ projects · 250+ properties served</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p>Halton lake-area specialists since 2001</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== ABOUT =========== -->
+<section class="about" id="about">
+  <div class="about-topo"><img src="/brand/shape_04.svg" alt=""></div>
+  <div class="container about-inner">
+    <div>
+      <span class="eyebrow">ABOUT MCCOY LANDSCAPE GROUP</span>
+      <h2>Halton's Design-Build Hardscape Team,<br><em>Owned by the Crew Who Built It</em></h2>
+      <p>McCoy Landscape Group is Halton's owner-operated <strong>hardscape contractor</strong> homeowners have been calling for 25 years — now owned by Alex Medeiros and Pieter, the two long-time crew members who bought the company in 2024 and run every major build themselves. Same standards. Same hands. New energy.</p>
+      <p>We're a design-build team — we plan, engineer, and install complete hardscape and outdoor living projects across Oakville, Burlington, Mississauga, and Milton. One crew walks your property with you, designs the scope, builds it, and hands it off. No subcontracting. No surprises.</p>
+      <ul class="about-bullets">
+        <li>200+ hardscape projects delivered across Halton since 2001</li>
+        <li>250+ properties serviced — some with 15+ year relationships</li>
+        <li>Design-build: one team from first walkthrough to final wash-down</li>
+        <li>Techo-Bloc, Unilock and Permacon — premium material options</li>
+        <li>3-year hardscape warranty backs every install we build</li>
+      </ul>
+    </div>
+    <div class="about-image">
+      <img src="/images/14-about-crew-wide.jpg" alt="McCoy Landscape Group crew on a Halton hardscape build">
+      <div class="about-signature">
+        <div class="name">Alex &amp; Pieter</div>
+        <div class="role">Owner-Operators, McCoy Landscape Group</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SIGNATURE SPOTLIGHT =========== -->
+<section class="spotlight">
+  <div class="spotlight-bg"></div>
+  <div class="container">
+    <div class="spotlight-inner">
+      <span class="eyebrow on-dark">SIGNATURE PROJECTS</span>
+      <h2>Complete Outdoor Living Spaces<br>Across the Halton Lake Area</h2>
+      <p>McCoy's highest-investment work is full <strong style="color:var(--accent)">outdoor living</strong> builds — paver patios, outdoor kitchens, fire features, retaining and seating walls, integrated lighting, and drainage, all designed and built as one scope instead of bolted together over three summers.</p>
+      <ul class="spotlight-features">
+        <li>Custom paver patios and walkways — built for daily use and entertaining</li>
+        <li>Retaining and seating walls — engineered for grade, drainage, and durability</li>
+        <li>Fire pits, pergolas and outdoor kitchens — rooms without walls</li>
+        <li>Integrated low-voltage lighting, planting and finishing details</li>
+      </ul>
+      <a href="#portfolio" class="spotlight-link">See our outdoor living portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICES GRID =========== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <span class="eyebrow">WHAT WE BUILD</span>
+      <h2>Hardscape, Outdoor Living &amp; Finishing Services</h2>
+      <p class="services-intro">Full-service <strong>hardscape design build</strong> Oakville homeowners trust — from paver patios and driveways to pergolas, walls, and integrated lighting.</p>
+    </div>
+    <div class="services-grid">
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/03-card-paver-patios.jpg" alt="Paver patio close-up"></div>
+        <div class="service-card-body">
+          <h3>Paver Patios &amp; Walkways</h3>
+          <p>Custom <strong>paver patio</strong> Oakville and walkway installations built to last decades.</p>
+          <span class="service-card-link">Explore Paver Patios →</span>
+        </div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/02-paver-driveway-front-entrance-oakville.jpg" alt="Paver driveway"></div>
+        <div class="service-card-body">
+          <h3>Paver Driveways</h3>
+          <p>Engineered-base <strong>driveway paver installation</strong> Oakville homeowners rely on.</p>
+          <span class="service-card-link">Explore Paver Driveways →</span>
+        </div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/04-card-retaining-walls.jpg" alt="Retaining wall"></div>
+        <div class="service-card-body">
+          <h3>Retaining Walls</h3>
+          <p>The <strong>retaining wall contractor</strong> Burlington grade changes and drainage demand.</p>
+          <span class="service-card-link">Explore Retaining Walls →</span>
+        </div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/05-card-outdoor-living.jpg" alt="Outdoor living with fire feature"></div>
+        <div class="service-card-body">
+          <h3>Outdoor Living Spaces</h3>
+          <p>Pergolas, fire pits, outdoor kitchens and seating walls — built as one scope.</p>
+          <span class="service-card-link">Explore Outdoor Living →</span>
+        </div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/06-card-landscape-lighting.jpg" alt="Landscape lighting at dusk"></div>
+        <div class="service-card-body">
+          <h3>Landscape Lighting</h3>
+          <p>Low-voltage <strong>landscape lighting</strong> Oakville — designed with the build, not added after.</p>
+          <span class="service-card-link">Explore Landscape Lighting →</span>
+        </div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-card-img"><img src="/images/13-process-handoff.jpg" alt="Completed hardscape build"></div>
+        <div class="service-card-body">
+          <h3>All Services Hub</h3>
+          <p>See our full hardscape and outdoor living service line.</p>
+          <span class="service-card-link">See All Services →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICE AREAS =========== -->
+<section class="areas" id="areas">
+  <div class="areas-topo"><img src="/brand/shape_05.svg" alt=""></div>
+  <div class="container areas-inner">
+    <div>
+      <span class="eyebrow on-dark">SERVING</span>
+      <h2>Halton's Hardscape Specialists —<br>Built for the Lake Area</h2>
+      <p>McCoy's base is in Halton, and we work where lot sizes, drainage conditions, and freeze–thaw cycles demand real craftsmanship — Oakville, Burlington, Mississauga, and Milton. Our heaviest concentration sits close to Lake Ontario, where properties ask the most of a hardscape build.</p>
+      <p>Our lake-area focus covers South Oakville, Burlington, and south Mississauga — roughly within 15 kilometres of the lakeshore. Larger properties, more complex drainage, and the kind of projects that are built once and stay level for decades.</p>
+    </div>
+    <ul class="areas-list">
+      <li>
+        <div><div class="city">Oakville →</div><div class="city-sub">South Oakville lake-area focus</div></div>
+        <span class="arrow">→</span>
+      </li>
+      <li>
+        <div><div class="city">Burlington →</div><div class="city-sub">Aldershot · Roseland · Shoreacres</div></div>
+        <span class="arrow">→</span>
+      </li>
+      <li>
+        <div><div class="city">Mississauga →</div><div class="city-sub">Clarkson · Lorne Park · Port Credit</div></div>
+        <span class="arrow">→</span>
+      </li>
+      <li>
+        <div><div class="city">Milton →</div><div class="city-sub">Subdivisions + escarpment-edge lots</div></div>
+        <span class="arrow">→</span>
+      </li>
+      <li>
+        <div><div class="city">Waterdown &amp; Flamborough →</div><div class="city-sub">Plus surrounding Halton suburbs</div></div>
+        <span class="arrow">→</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========== PORTFOLIO =========== -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head">
+      <span class="eyebrow">RECENT WORK</span>
+      <h2>See What We've Built Across Halton</h2>
+      <p class="portfolio-intro">Real paver patios, driveways, walls, and outdoor living projects across Oakville, Burlington, Mississauga, and Milton.</p>
+      <div class="portfolio-filters">
+        <button class="filter-pill active">All</button>
+        <button class="filter-pill">Paver Patios &amp; Walkways</button>
+        <button class="filter-pill">Paver Driveways &amp; Front Entrances</button>
+        <button class="filter-pill">Retaining Walls &amp; Terracing</button>
+        <button class="filter-pill">Outdoor Living Spaces</button>
+        <button class="filter-pill">Landscape Lighting Night Views</button>
+      </div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-tile tall"><img src="/images/09-showcase-signature-build.jpg" alt=""><div class="overlay"><div class="overlay-text">Full Outdoor Living Build · Oakville</div></div></div>
+      <div class="portfolio-tile"><img src="/images/01-hero-outdoor-living-golden-hour.jpg" alt=""><div class="overlay"><div class="overlay-text">Paver Patio + Pergola · Oakville</div></div></div>
+      <div class="portfolio-tile"><img src="/images/07-showcase-retaining-hillside.jpg" alt=""><div class="overlay"><div class="overlay-text">Terraced Retaining Wall · Burlington</div></div></div>
+      <div class="portfolio-tile wide"><img src="/images/08-showcase-lighting-dramatic.jpg" alt=""><div class="overlay"><div class="overlay-text">Landscape Lighting at Dusk · Oakville</div></div></div>
+      <div class="portfolio-tile"><img src="/images/02-paver-driveway-front-entrance-oakville.jpg" alt=""><div class="overlay"><div class="overlay-text">Paver Driveway · Oakville</div></div></div>
+      <div class="portfolio-tile"><img src="/images/15-cta-dusk-invitation.jpg" alt=""><div class="overlay"><div class="overlay-text">Fire Feature at Blue Hour · Oakville</div></div></div>
+      <div class="portfolio-tile"><img src="/images/13-process-handoff.jpg" alt=""><div class="overlay"><div class="overlay-text">Final Handoff · Oakville</div></div></div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#" class="btn-outline">View Full Gallery →</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== REVIEWS =========== -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <span class="eyebrow">WHAT HOMEOWNERS SAY</span>
+      <h2>Real Homeowners, Real Hardscape Projects</h2>
+      <p class="reviews-intro">Craftsmanship, clean job sites, on-time delivery — what Halton homeowners keep telling us matters most.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Alex and his team transformed our backyard in Oakville. The patio and fire feature came out exactly as designed, and they kept the job site spotless every single day. Would recommend to any neighbour."</p>
+        <div class="review-attribution">
+          <div><div class="review-name">Sarah M.</div><div class="review-date">Oakville · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"We had multiple quotes for a retaining wall and new driveway. McCoy's was the most detailed — they explained base prep, drainage, everything. Two years in and it looks like the day it was installed."</p>
+        <div class="review-attribution">
+          <div><div class="review-name">David K.</div><div class="review-date">Burlington · Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Pieter ran our build personally. Fifteen years we've been calling McCoy for different projects. Quality never changes. That's why we keep coming back."</p>
+        <div class="review-attribution">
+          <div><div class="review-name">Margaret L.</div><div class="review-date">Mississauga · Google Review</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="#" class="btn-outline">Read More Reviews →</a>
+    </div>
+    <p class="reviews-footer">via Google Business Profile</p>
+  </div>
+</section>
+
+<!-- =========== PROCESS =========== -->
+<section class="process">
+  <div class="container">
+    <div class="process-head">
+      <span class="eyebrow">HOW WE WORK</span>
+      <h2>Our Design-Build Process, Step by Step</h2>
+      <p class="process-intro">Simple. Guided. Same team from the first phone call through the final walk-through. No subcontracting, no handoffs, no mystery.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-number">01</div><h3>Initial Call or Form</h3><p>Share your project goals, timeline, and budget.</p></div>
+      <div class="process-step"><div class="step-number">02</div><h3>On-Site Consultation</h3><p>We walk the property, measure, and assess drainage and access.</p></div>
+      <div class="process-step"><div class="step-number">03</div><h3>Design &amp; Estimate</h3><p>Transparent scope, materials, and investment — all in writing.</p></div>
+      <div class="process-step"><div class="step-number">04</div><h3>Build &amp; Daily Cleanup</h3><p>Owner-led crew, clear communication, respectful job site every day.</p></div>
+      <div class="process-step"><div class="step-number">05</div><h3>Walkthrough &amp; Warranty</h3><p>Confirm details, hand off care tips, activate 3-year warranty.</p></div>
+    </div>
+    <p class="process-note">Larger hardscape projects book 6–12 weeks ahead in peak season — reach out early to lock in your slot.</p>
+  </div>
+</section>
+
+<!-- =========== FAQ =========== -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-head">
+      <span class="eyebrow">FAQS</span>
+      <h2>Landscaping &amp; Hardscape FAQs<br>for Halton Homeowners</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What does a typical paver patio cost in Oakville or Burlington?</h3>
+        <p>Every patio is scoped to the lot, layout, and features — there's no flat "per square foot" number that tells the real story. A straightforward rear patio is one investment range; a full outdoor living space with walls, fire, and pergola is another. We quote every project in writing after an on-site visit so you see the real number, not a guess.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does a full backyard hardscape project take?</h3>
+        <p>Most full-backyard builds run three to six weeks of on-site work once we start, depending on scope, access, and weather. Bigger outdoor living scopes with kitchens, walls, and drainage changes can stretch longer. We lock timelines at the estimate stage so you know what to expect before the first truck shows up.</p>
+      </div>
+      <div class="faq-item">
+        <h3>When is the best time of year to start a hardscape project in Halton?</h3>
+        <p>Spring and early summer slots book first — we recommend reaching out 6 to 12 weeks before you want work to begin. Late summer and early fall are excellent build windows too; cooler ground temperatures and stable weather make for clean installs. Winter is for planning and design, so your project is ready the day the ground opens up.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do you build paver patios and walls that survive Ontario winters?</h3>
+        <p>Proper base, proper drainage, and proper edge restraint — the stuff you never see once the patio's done. We excavate to the right depth for freeze-thaw zones, compact the base in lifts, install geotextile fabric where conditions demand it, and set edge restraint so pavers don't migrate. It's the hidden work that decides whether a patio still sits level 15 years from now.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you handle drainage before installing pavers or sod?</h3>
+        <p>Always. Drainage gets scoped during the on-site consultation — before we quote the visible hardscape. Pooling water, grade issues, and downspout management get solved first because a patio built over bad drainage is a patio you'll replace in five years. "Fix the water first" isn't a sales pitch for us; it's how every project gets sequenced.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What does the 3-year warranty actually cover?</h3>
+        <p>Our 3-year hardscape warranty covers sink and level — if pavers settle or shift outside normal tolerances due to base or installation issues, we fix it. It also covers cracking replacement: we order extra stock on every build so if a paver cracks, we swap it with matching material from the same lot. Warranty details get spelled out in writing when you sign the estimate.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which suppliers do you prefer and why?</h3>
+        <p>Our primary suppliers are Techo-Bloc, Unilock, and Permacon — three of the most respected paver manufacturers in Ontario, each with distinct product lines. We'll recommend the right option based on the look you want, the drainage profile of your lot, and your budget. We're working toward Techo-Bloc certification, which recognizes the install standards we already use.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How far across Halton do you travel for hardscape projects?</h3>
+        <p>Oakville, Burlington, Mississauga, Milton, Waterdown, and Flamborough are our core service area. Our heaviest focus is within about 20 kilometres of our base, especially the lake-area neighbourhoods in South Oakville, Burlington, and south Mississauga. If you're nearby but not listed, call and we'll tell you straight whether we're the right fit for your project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== FINAL CTA =========== -->
+<section class="final-cta" id="contact">
+  <div class="final-cta-bg"></div>
+  <div class="container">
+    <div class="final-cta-inner">
+      <span class="eyebrow on-dark">READY TO START?</span>
+      <h2>Let's Plan Your Outdoor Project</h2>
+      <p class="final-cta-sub">Share a little about what you want built and we'll set up a no-pressure consultation. Every hardscape is backed by our 3-year warranty.</p>
+      <div class="final-cta-buttons">
+        <a href="#contact" class="btn-primary">Book Free Consultation →</a>
+        <a href="tel:+14169859771" class="btn-secondary">Call (416) 985-9771</a>
+      </div>
+      <div class="final-cta-form">
+        <div class="form-grid">
+          <div class="field"><label>Full Name</label><input type="text"></div>
+          <div class="field"><label>Phone</label><input type="tel"></div>
+          <div class="field"><label>City</label><select><option>Oakville</option><option>Burlington</option><option>Mississauga</option><option>Milton</option></select></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Service Interest</label><select><option>Paver Patio / Walkway</option><option>Paver Driveway</option><option>Retaining Wall</option><option>Outdoor Living</option><option>Full Yard</option></select></div>
+          <div class="field"><label>Budget</label><select><option>Under $30K</option><option>$30K+</option><option>Not sure</option></select></div>
+        </div>
+        <div class="form-grid wide">
+          <div class="field" style="grid-column: span 2;"><label>Message (optional)</label><input type="text" placeholder="A few details about your project"></div>
+        </div>
+        <div class="form-submit-row">
+          <p class="form-microcopy">We reply within 24–48 hours. Mon–Sat, 8am–5pm. Halton and the lake-area west GTA.</p>
+          <button class="btn-primary">Send Project Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <img src="/brand/logo-white.png" alt="McCoy Landscape Group" class="footer-logo">
+        <p>Owner-operated hardscape design-build team serving Halton's lake-area since 2001. Every install backed by our 3-year warranty.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Paver Patios</a></li>
+          <li><a href="#">Paver Driveways</a></li>
+          <li><a href="#">Retaining Walls</a></li>
+          <li><a href="#">Outdoor Living</a></li>
+          <li><a href="#">Landscape Lighting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#">Oakville</a></li>
+          <li><a href="#">Burlington</a></li>
+          <li><a href="#">Mississauga</a></li>
+          <li><a href="#">Milton</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+14169859771">(416) 985-9771</a></li>
+          <li><a href="mailto:alex@mccoylandscapegroup.com">alex@mccoylandscapegroup.com</a></li>
+          <li>Mon–Sat · 8am–5pm</li>
+          <li>Halton Region, ON</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 McCoy Landscape Group. All rights reserved.</span>
+      <span>Hardscape design-build · Oakville · Burlington · Mississauga · Milton</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>
