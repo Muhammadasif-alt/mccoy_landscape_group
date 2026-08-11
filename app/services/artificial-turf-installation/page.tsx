@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Layers,
- Droplets,
- Sun,
- Ruler,
- Anchor,
+ Sprout,
  ShieldCheck,
+ Sparkles,
+ Trees,
+ Ruler,
+ LayoutGrid,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,186 +20,233 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Artificial Turf Installation Oakville | Shade, Dogs & Putting Greens | McCoy Landscape Group",
+ title: "Artificial Turf Installation Oakville | Pet & Play Turf | McCoy Landscape Group",
  description:
- "Artificial turf installation in Oakville, Burlington, Mississauga & Milton. Engineered base, pet infill, putting greens, shaded yards. 15-20 year turf life. Call (416) 985-9771.",
+ "Custom artificial turf installation in Oakville, Burlington, Mississauga & Milton. Pet, play & full-lawn turf on a proper drainage base. Call (416) 985-9771.",
  alternates: { canonical: "/services/artificial-turf-installation" },
 };
 
 const turfTypes = [
  {
- icon: Layers,
- title: "Deep-shade lawn replacement",
- body: "North-facing yards and heavy tree canopy where sod has failed twice already — turf holds colour with zero light.",
- },
- {
- icon: Anchor,
- title: "Dog runs & pet areas",
- body: "Short pile, antimicrobial zeolite infill, and a free-draining base so urine flushes through instead of sitting.",
- },
- {
- icon: Ruler,
- title: "Backyard putting greens",
- body: "Nylon putting surface rolled to a target stimp, with cup cutting, fringe collar, and contoured base shaping.",
- },
- {
- icon: Sun,
- title: "Rooftop terraces & small urban lots",
- body: "Lightweight turf over drainage board or pedestal decking where soil depth and irrigation simply are not options.",
- },
- {
- icon: Droplets,
- title: "Pool surrounds & splash zones",
- body: "Chlorine-stable fibres and permeable backing around pool decks, so nothing tracks mud back onto the coping.",
+ icon: Sprout,
+ title: "Full lawn turf",
+ body: "Green, even lawns with no mowing or watering.",
  },
  {
  icon: ShieldCheck,
- title: "Turf inlays in hardscape",
- body: "Green ribbons between paver treads or around a fire lounge, edged in aluminum so lines stay razor straight.",
+ title: "Pet-friendly turf",
+ body: "Durable, drainable turf built for dogs and pet traffic.",
+ },
+ {
+ icon: Sparkles,
+ title: "Play area turf",
+ body: "Soft, safe turf surfaces for kids and play sets.",
+ },
+ {
+ icon: Trees,
+ title: "Shaded yard turf",
+ body: "A green solution for yards where grass will not grow.",
+ },
+ {
+ icon: Ruler,
+ title: "Putting greens",
+ body: "Custom backyard putting greens with true roll.",
+ },
+ {
+ icon: LayoutGrid,
+ title: "Turf and paver combos",
+ body: "Turf blended with paver paths and patio areas.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Base Build",
+ heading: "Site Prep & Base Work",
  items: [
- "Excavation to 4-6 inches, deeper under dog runs and putting surfaces",
- "Geotextile separation fabric over subgrade to stop base migration",
- "Compacted 3/4-inch clear or HPB granular, laser-checked for plane",
- "Screeded bedding layer compacted to 90% before a single roll lands",
+ "Removal of old grass, soil, or surface",
+ "Excavation to the right depth for a drainage base",
+ "Compacted aggregate base built in lifts",
+ "Grading so water drains away, not pools",
  ],
  },
  {
- heading: "Turf & Infill",
+ heading: "Materials & Installation",
  items: [
- "Pile height 25-40mm and face weight matched to traffic, not to a showroom sample",
- "Rolls run in one direction so blade lean reads uniform from the patio door",
- "Seams glued on tape and hand-tufted closed — no visible zipper line",
- "Silica sand infill standard; antimicrobial zeolite blend for pet installs",
+ "Quality artificial turf matched to your use and look",
+ "Turf secured with the right edging and fasteners",
+ "Seams joined tight for a natural, even surface",
+ "Infill brushed in for feel and blade support",
  ],
  },
  {
- heading: "Edges & Handover",
+ heading: "Finishing",
  items: [
- "Perimeter secured with 6-inch spikes, timber nailer, or aluminum restraint",
- "Trimmed tight to paver, coping, and wall faces with no gapping",
- "Power-broomed to stand the pile and lock infill to depth",
- "Grooming schedule, cleaning products, and manufacturer warranty paperwork",
+ "Full cleanup of the area",
+ "Care and maintenance guide at handoff",
+ "Guidance on rinsing and grooming",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "We build turf bases the way we build patio bases — same compaction standard",
- "Honest assessment first: if sod will thrive on your lot, we say so",
- "Drainage rates verified on site, not assumed from a spec sheet",
- "Owner-operated — Alex and Pieter set the base grade on every turf job",
- "Turf supplied through Ontario distributors with real warranty backing",
- "3-year workmanship warranty on base, seams, and edge restraint",
+ "200+ landscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major project",
+ "We build the drainage base right, so turf lays flat and drains fast",
+ "Quality turf and infill, not shortcut products",
+ "Clean crews, respectful job sites, daily communication",
+ "Turf that ties into your patios, paths, and beds",
 ];
 
 const processSteps = [
- { title: "Initial Call or Form", body: "Tell us the area, the use — dogs, putting, shade — and the finish you want." },
- { title: "On-Site Assessment", body: "We probe the subgrade, check drainage, and measure roll direction and seam layout." },
- { title: "Turf Spec & Quote", body: "Pile, face weight, infill, base depth, and edge restraint priced line by line." },
- { title: "Excavate & Build Base", body: "Dig out, fabric, granular in lifts, compact, and screed to a true plane." },
- { title: "Lay, Seam & Groom", body: "Rolls set, seams closed, edges fastened, infill brushed in, site swept clean." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and how the area gets used." },
+ { title: "On-Site Consultation", body: "We walk the property, check drainage and access." },
+ { title: "Design & Detailed Estimate", body: "Layout, turf selection, and investment in writing." },
+ { title: "Install & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the finish, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "Does artificial turf survive Ontario freeze-thaw?",
- a: "Yes, and better than sod does. The turf fibres stay flexible well below freezing, and the failure risk is never the turf itself — it is the base. Our clear-stone base drains rather than holding water, so there is nothing to freeze into a lens and heave the surface. A poorly built base on limestone screenings is what pumps and ripples by year three.",
+ q: "How much does artificial turf cost in Oakville or Burlington?",
+ a: "It depends on the size of the area, the base work needed, and the turf you choose. A small pet run costs far less than a full backyard lawn. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "How hot does it get in full sun?",
- a: "In direct July sun a turf surface can run noticeably hotter than sod — that is physics, not a product defect. It cools within minutes of shade or a hose rinse. If your lot is a wide-open south exposure with kids barefoot all summer, we will usually recommend turf for the shaded zones and sod or a paver terrace for the sun. Lighter thatch colours and cooling infills help, but they do not eliminate it.",
+ q: "Does artificial turf drain well in the rain?",
+ a: "Yes, when it is installed on the right base. We build a compacted drainage base under the turf and grade it so water drains straight through and away. That is what stops pooling and muddy spots.",
  },
  {
- q: "What about dog urine and odour?",
- a: "This is where the base decides everything. We run a fully open-graded clear-stone base with no fines, so liquid passes straight through instead of pooling in a screening layer. Antimicrobial zeolite infill traps ammonia between rinses. Hose the area weekly in summer and an enzyme cleaner monthly and there is no smell — the complaints you read about are almost always compacted-fines bases.",
+ q: "Is artificial turf good for dogs?",
+ a: "Yes. Pet-friendly turf is one of our most popular installs. It drains well, rinses clean, and stands up to pet traffic far better than a real lawn. There are no muddy paws and no dead patches.",
  },
  {
- q: "How does the 10-year cost compare to sod?",
- a: "Turf costs roughly three to five times a sod install up front. Sod then draws water, fertiliser, mowing, aeration, overseeding, and grub treatment every season. On a small shaded Oakville lot where the sod keeps failing and needs replacing, turf usually pulls ahead somewhere between years six and nine. On a big sunny lot with healthy grass, it rarely pays back — we will tell you that at the estimate.",
+ q: "Does turf get hot in the summer?",
+ a: "Turf can warm up in direct sun, like any surface. A quick rinse cools it down fast. We can also talk through turf options and shade during the design phase if the area gets heavy sun.",
  },
  {
- q: "Is it genuinely zero maintenance?",
- a: "No, and anyone promising that is selling. Expect a cross-direction power broom once or twice a year to stand the pile, leaf blowing in fall, a rinse after pets, and an infill top-up around year five to seven in high-traffic lanes. That is maybe two hours a season versus roughly thirty for a mowed lawn — but it is not nothing.",
+ q: "How long does artificial turf last?",
+ a: "Quality turf on a proper base lasts many years with very little upkeep. The base is the key. That is why we focus on getting the drainage and compaction right before the turf goes down.",
  },
  {
- q: "How long will it last and what is warrantied?",
- a: "Quality turf carries a 15-year manufacturer UV and fibre warranty and typically looks good for 15-20 years before the pile flattens in walked lanes. Our base and installation workmanship carries a 3-year workmanship warranty covering settlement, seam separation, and edge lift; the turf material itself follows supplier terms. Cheap big-box turf fades and mats in five to seven years, which is why we do not install it.",
+ q: "What maintenance does artificial turf need?",
+ a: "Very little. An occasional rinse and a light brush to keep the blades upright is all most yards need. We hand off a simple care guide at the end of the install.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium turf installs",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville artificial turf install by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Pet and play turf",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington pet and play artificial turf by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service turf",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service artificial turf by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom landscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom landscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function ArtificialTurfInstallationPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/artificial-turf-installation`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Artificial Turf Installation",
+ description:
+ "Custom artificial turf installation — full lawns, pet-friendly turf, play areas, shaded yards, putting greens, and turf-paver combos across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Artificial Turf Installation", "Pet Turf", "Play Area Turf", "Putting Greens", "Synthetic Lawn"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Artificial Turf Installation", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
  eyebrow="ARTIFICIAL TURF INSTALLATION"
- title="Green Where Grass"
- subtitle="Refuses to Grow"
+ title="Artificial Turf Installation"
+ subtitle="in Oakville"
  opening={
  <>
- Synthetic turf for deep-shade yards, dog runs, putting greens, and
- tight urban lots across Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> and we&apos;ll tell you honestly whether
- turf or sod is the right call for your lot — then build the base to hold it.
+ Custom artificial turf installation in Oakville, Burlington,
+ Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We
+ install turf on a proper base so it drains, lays flat, and looks great
+ year-round.
  </>
  }
  imageSrc="/images/maintenance-hero.jpg"
- imageAlt="Artificial turf lawn installed over a compacted granular base with aluminum edge restraint on an Oakville backyard"
+ imageAlt="Clean, even artificial turf lawn with a paver border on an Oakville property installed by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHEN GRASS LOSES</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD TURF</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- Synthetic Turf Is a Base Job{" "}
- <em className="italic font-light">Wearing a Green Jacket</em>
+ A Green Lawn With{" "}
+ <em className="italic font-light">None of the Upkeep</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Every synthetic lawn that ripples, puddles, or smells was built on
- the wrong stone. Fibre colour and pile height are the easy
- decisions. What holds a turf surface flat and odour-free through a
- Halton winter is open-graded aggregate, honest compaction, and a
- perimeter anchored so nothing lifts.
+ Some yards just will not grow good grass. Heavy shade, pet traffic, poor
+ soil, or a slope can make a real lawn a losing battle. Artificial turf
+ gives you a clean, green yard all year with no mowing, watering, or muddy
+ patches. But turf is only as good as the base under it. Rolled straight
+ onto soil, it ripples, holds water, and flattens out fast.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy installs artificial turf on a proper drainage base so it lays flat,
+ drains fast, and holds up for years. We shape the area, build a compacted
+ base, and secure the turf with the right infill so it feels natural
+ underfoot. Play areas, pet runs, and full lawns all get installed to
+ handle Ontario weather and daily use.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -209,14 +256,13 @@ export default function ArtificialTurfInstallationPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHERE TURF WINS</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Shade, Dogs, Putting, Rooftops — The Hard Cases
+ Custom Artificial Turf Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Turf is not a lawn substitute everywhere. It is a fix for the
- specific spots where grass keeps losing — and the whole install
- lives or dies on the base underneath it.
+ Every yard is different. Here is the turf work we do most often across
+ Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
@@ -246,7 +292,7 @@ export default function ArtificialTurfInstallationPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/03-card-paver-patios.jpg"
- alt="Artificial turf panel set flush into paver hardscape with aluminum edge restraint in Burlington by McCoy Landscape Group"
+ alt="A shaded backyard turned into a clean, green turf lawn with a paver border in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -268,11 +314,11 @@ export default function ArtificialTurfInstallationPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY BUILD · BURLINGTON
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Shaded side yard converted to turf — clear-stone base, aluminum
- restraint, seams hand-tufted closed against the paver edge.
+ A shaded backyard turned into a clean, green turf lawn with a paver
+ border, built in a single scope.
  </p>
  </div>
  </div>
@@ -284,18 +330,18 @@ export default function ArtificialTurfInstallationPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">THE HIDDEN WORK</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Keeps Synthetic Turf{" "}
- <em className="italic font-light text-[var(--color-accent)]">Flat and Odour-Free</em>
+ The Details That Make Turf{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Look and Feel Real</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Open-graded clear stone under the turf so liquid drains through instead of sitting in fines",
- "Geotextile separation over the subgrade so the base never migrates into West GTA clay",
- "Base built in lifts, compacted, and screeded to a true plane before a roll is unwrapped",
- "Perimeter locked in aluminum, timber nailer, or spike so edges never lift or curl",
+ "A compacted drainage base so water never pools",
+ "Quality infill that keeps blades upright and natural",
+ "Secured edges and seams that stay tight over time",
+ "Paver borders and pathways integrated with the turf",
  ].map((item) => (
  <div
  key={item}
@@ -319,10 +365,10 @@ export default function ArtificialTurfInstallationPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-14">
- <span className="eyebrow text-[var(--color-accent-mid)]">THE BUILD</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What Goes Under Every McCoy Turf Lawn{" "}
- <em className="italic font-light">— The Base</em>
+ Every McCoy Turf Install{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -356,8 +402,8 @@ export default function ArtificialTurfInstallationPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Why Oakville Homeowners{" "}
- <em className="italic font-light">Choose McCoy for Turf</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Turf</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -386,7 +432,7 @@ export default function ArtificialTurfInstallationPage() {
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
  Our 5-Step{" "}
- <em className="italic font-light">Turf Installation Process</em>
+ <em className="italic font-light">Turf Install Process</em>
  </h2>
  </div>
 
@@ -430,9 +476,8 @@ export default function ArtificialTurfInstallationPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Turf installs typically run two to five days on site, depending on
- area, base depth, and how much excavation and disposal the lot
- requires.
+ Most turf installs take a few days to 1 week on-site, depending on size.
+ Peak season books ahead, call early.
  </p>
  </div>
  </section>
@@ -443,17 +488,14 @@ export default function ArtificialTurfInstallationPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Drives the Cost of{" "}
- <em className="italic font-light">a Turf Installation</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Turf Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Turf is priced by area, by how deep the base has to go for the
- intended use, and by the pile, face weight, and infill spec you
- choose. Excavation and disposal on a clay lot, the edge restraint
- the perimeter needs, and whether material can be machined in or
- has to be wheeled through a gate all move the labour side as much
- as the turf itself does. Everything is quoted in writing after the
- on-site assessment.
+ Every install is scoped to the size of the area, the base work needed,
+ and the turf you choose. There is no flat guessing over the phone. We
+ build the written estimate after the on-site visit, so the number you see
+ is the number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -465,8 +507,8 @@ export default function ArtificialTurfInstallationPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Turf Installs Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -531,43 +573,6 @@ export default function ArtificialTurfInstallationPage() {
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Artificial Turf Installation",
- description:
- "Synthetic turf installation for shaded yards, dog runs, putting greens, and small urban lots across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Artificial Turf Installation", "Synthetic Lawn", "Pet Turf", "Putting Greens", "Turf Base Construction"],
- url: "https://mccoylandscapegroup.com/services/artificial-turf-installation",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Artificial Turf Installation", item: "https://mccoylandscapegroup.com/services/artificial-turf-installation" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
