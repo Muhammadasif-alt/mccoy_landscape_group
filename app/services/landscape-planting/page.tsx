@@ -4,10 +4,10 @@ import Link from "next/link";
 import {
  Trees,
  Leaf,
- Shovel,
- Sun,
- Anchor,
- Droplets,
+ Sprout,
+ Home,
+ Fence,
+ ShieldCheck,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,146 +20,145 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Landscape Planting Oakville | Trees, Shrubs & Perennials | McCoy Landscape Group",
+ title: "Landscape Planting Oakville | Trees, Shrubs & Garden Beds | McCoy Landscape Group",
  description:
- "Tree, shrub, and perennial planting in Oakville, Burlington, Mississauga & Milton. Zone 5b hardy stock set at correct depth and spacing. Call (416) 985-9771.",
+ "Custom landscape planting of trees, shrubs & garden beds in Oakville, Burlington, Mississauga & Milton. Right soil, spacing & design so your yard lasts. Call (416) 985-9771.",
  alternates: { canonical: "/services/landscape-planting" },
 };
 
 const plantingTypes = [
  {
  icon: Trees,
- title: "Shade and ornamental trees",
- body: "Caliper stock from Ontario growers — maples, serviceberry, redbud, honey locust — placed for mature canopy, not first-year looks.",
+ title: "Trees and shade planting",
+ body: "Trees placed for shade, privacy, and long-term structure.",
  },
  {
  icon: Leaf,
- title: "Shrub and hedge installation",
- body: "Foundation shrubs, screening hedges, and structural evergreens spaced by mature width so they never need shearing into boxes.",
+ title: "Shrubs and hedging",
+ body: "Shrubs and hedges that frame beds and add privacy.",
  },
  {
- icon: Sun,
- title: "Perennial and grass layers",
- body: "Repeating drifts of perennials and ornamental grasses that carry bloom and texture from May through hard frost.",
+ icon: Sprout,
+ title: "Garden bed planting",
+ body: "Full beds planned for colour and season-long interest.",
  },
  {
- icon: Shovel,
- title: "Right plant, right place",
- body: "Selections matched to your sun hours, soil texture, drainage, and salt exposure along driveways and municipal sidewalks.",
+ icon: Home,
+ title: "Foundation planting",
+ body: "Planting that frames the front of your home for curb appeal.",
  },
  {
- icon: Anchor,
- title: "Large caliper tree setting",
- body: "Balled-and-burlapped trees machine-set, root flare exposed, wire basket cut back, staked only where wind genuinely demands it.",
+ icon: Fence,
+ title: "Privacy and screen planting",
+ body: "Trees and shrubs placed to block views and noise.",
  },
  {
- icon: Droplets,
- title: "Native and pollinator palettes",
- body: "Coneflower, little bluestem, serviceberry, and other regional natives that feed pollinators and shrug off West GTA summers.",
+ icon: ShieldCheck,
+ title: "Low-maintenance planting",
+ body: "Hardy plant choices that look great with little upkeep.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Selection and Sourcing",
+ heading: "Site Prep & Soil Work",
  items: [
- "Sun mapping and soil check across the property before a single plant is specified",
- "Everything specified to Zone 5b, with 6a-only material used sparingly and only in sheltered microclimates",
- "Balled-and-burlapped, container, or bare root stock chosen by species, season, and transplant tolerance",
- "Plants tagged at the grower or nursery so you get the specimens we picked, not whatever came off the truck",
+ "Assessment of light, soil, and drainage in each area",
+ "Bed shaping and edging",
+ "Quality topsoil and soil amendment for healthy roots",
+ "Removal of old or overgrown planting if needed",
  ],
  },
  {
- heading: "Planting the Right Way",
+ heading: "Plants & Installation",
  items: [
- "Holes dug two to three times the root ball width and no deeper than the ball itself",
- "Root flare located and set at or slightly above finished grade — the biggest single cause of slow tree decline",
- "Wire baskets and burlap cut away from the upper ball, girdling roots teased out on container stock",
- "Native soil backfilled and settled with water, with amendment worked into the wider bed rather than the hole",
+ "Trees, shrubs, and perennials matched to your yard",
+ "Proper spacing so plants fill in without crowding",
+ "Correct planting depth and root care",
+ "Mulch to hold moisture and finish the beds",
  ],
  },
  {
- heading: "Support and Handoff",
+ heading: "Finishing",
  items: [
- "Large caliper trees staked with flexible ties for one season only, then released so the trunk builds taper",
- "Mulch ring laid 75 mm deep and pulled back clear of the trunk — no volcano mulching",
- "Written watering schedule for the critical first season, plus a deep autumn soak before freeze-up",
- "3-year workmanship warranty on installation; plant material follows grower terms, typically 1 year on woody stock",
+ "Full cleanup of beds and surrounding areas",
+ "Watering and care guide at handoff",
+ "Guidance on seasonal upkeep",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Plants specified for Zone 5b West GTA conditions, not generic catalogue hardiness claims",
- "Spacing set by mature size — beds look a little open at year one and correct by year three",
- "We tag specimen trees at the nursery so you know exactly what is arriving",
- "Deer-resistant and salt-tolerant selections for the lots that genuinely need them",
- "Owner-operated — Alex and Pieter place every specimen tree before it is backfilled",
- "25+ years planting across Oakville, Burlington, Mississauga, and Milton",
+ "200+ landscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major project",
+ "Design-build under one roof, so planting fits your hardscape",
+ "Plants matched to Ontario conditions and your specific yard",
+ "Clean crews, respectful job sites, daily communication",
+ "Honest advice on what will thrive and what to avoid",
 ];
 
 const processSteps = [
- { title: "Free Site Visit", body: "We read the light, the soil, and the exposure before recommending anything." },
- { title: "Plant List and Layout", body: "Species, sizes, and quantities set out with a plan showing mature spread." },
- { title: "Sourcing and Tagging", body: "Stock reserved at Ontario growers, specimen trees tagged and held." },
- { title: "Install Day", body: "Beds prepped, plants set, flare exposed, backfilled, watered in, mulched." },
- { title: "Care Walkthrough", body: "Watering schedule, first-winter notes, and warranty terms handed over." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, check light, soil, and drainage." },
+ { title: "Design & Detailed Estimate", body: "Plant plan and investment in writing." },
+ { title: "Plant & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the layout, hand off watering and care tips." },
 ];
 
 const faqs = [
  {
- q: "What hardiness zone is Oakville, and does it matter?",
- a: "The Oakville and Burlington lakeshore sits in Zone 6a thanks to the moderating effect of Lake Ontario, while areas inland toward Milton read closer to 5b. We specify to 5b as the safe baseline for the whole service area and only push 6a material in genuinely sheltered spots. It matters because a plant rated one zone too tender looks fine for two mild winters and then dies in a cold one.",
+ q: "How much does landscape planting cost in Oakville or Burlington?",
+ a: "It depends on the size of the beds, the number and size of plants, and the soil work needed. A few new shrubs cost far less than a full front-yard makeover with trees. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "When is the best time of year to plant?",
- a: "Spring and early fall are both excellent. Spring gives a full growing season to establish before winter. Fall, roughly late August through October, has cool air and warm soil, which is ideal for root growth and means far less watering. We avoid planting into midsummer heat where we can. Fall-planted material does need a deep soak before the ground freezes.",
+ q: "When is the best time to plant in Ontario?",
+ a: "Spring and fall are the best planting seasons because the weather is mild and roots settle in well. We can plant through the summer too with the right care and watering. We help you plan the timing during the consultation.",
  },
  {
- q: "What is the difference between B&B, container, and bare root?",
- a: "Balled-and-burlapped trees are field-grown and dug with a soil ball, which suits large caliper stock but means losing some roots. Container plants carry their whole root system and transplant with the least shock, though they can circle their roots if held too long. Bare root is cheapest and available only in early spring dormancy. We match the format to the species and the season.",
+ q: "How do you choose the right plants for my yard?",
+ a: "We look at your light, soil, drainage, and space, then pick plants that will thrive in those conditions. We also match the look you want, whether that is low-maintenance, colourful, or privacy-focused.",
  },
  {
- q: "Why do my new beds look so sparse?",
- a: "Because we space by mature width, not by what fills the bed today. A shrub sold at 24 inches may reach six feet across. Planting on tight centres looks lush the first summer and turns into an overcrowded, disease-prone thicket that needs constant shearing by year four. We fill the gaps with perennials and annuals for the first two seasons instead.",
+ q: "Will you plant around my new patio or walls?",
+ a: "Yes. As a design-build company we plan planting alongside your hardscape. Planting beds around patios, walls, and walkways soften the hard edges and tie the whole yard together.",
  },
  {
- q: "Do you have options for deer or road salt?",
- a: "Yes, and both are real problems in parts of this area. For deer pressure we lean on boxwood, spirea, ornamental grasses, Russian sage, and aromatic perennials they tend to skip. For driveway and sidewalk edges that take winter salt spray we use tolerant material like juniper, potentilla, and daylily, and keep sensitive evergreens out of the splash zone entirely.",
+ q: "How much upkeep will my new planting need?",
+ a: "That depends on the plants you choose. We can plan a low-maintenance yard with hardy plants, or a more detailed garden if you enjoy the upkeep. We hand off a care guide so you know what each area needs.",
  },
  {
- q: "How much watering do new plants actually need?",
- a: "More than most people expect, and less often than most people do it. The rule is deep and infrequent: a slow soak two or three times a week for the first eight weeks, tapering to weekly for the rest of the first season. Shallow daily sprinkling trains roots to stay near the surface. We hand over a written schedule because watering is where most first-year losses come from.",
+ q: "Do you offer ongoing maintenance for the planting?",
+ a: "Yes. We offer landscape maintenance including pruning, trimming, and seasonal cleanups to keep your beds and plants healthy and tidy year-round.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium planting and garden beds",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville landscape planting and garden beds by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Trees, shrubs, and beds",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington trees, shrubs, and garden beds by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service planting",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service landscape planting by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom landscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom landscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
@@ -174,10 +173,10 @@ export default function LandscapePlantingPage() {
  "@id": `${URL}#service`,
  name: "Landscape Planting",
  description:
- "Tree, shrub, and perennial installation matched to Zone 5b conditions across Oakville, Burlington, Mississauga, and Milton.",
+ "Custom landscape planting of trees, shrubs, hedges, and garden beds — foundation planting, privacy screens, and low-maintenance plantings across Oakville, Burlington, Mississauga, and Milton.",
  provider: { "@id": `${SITE}/#localbusiness` },
  areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Tree Planting", "Shrub Installation", "Perennial Planting", "Hedge Installation", "Native Plant Landscaping"],
+ serviceType: ["Landscape Planting", "Tree Planting", "Shrubs and Hedging", "Garden Bed Planting", "Privacy Planting"],
  url: URL,
  };
 
@@ -203,40 +202,51 @@ export default function LandscapePlantingPage() {
 
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
  eyebrow="LANDSCAPE PLANTING"
- title="Trees and Shrubs Chosen"
- subtitle="for the Life Ahead"
+ title="Landscape Planting"
+ subtitle="in Oakville"
  opening={
  <>
- Tree, shrub, and perennial installation across Oakville, Burlington,
- Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> for a free on-site visit — we read
- the sun, soil, and salt exposure first, then specify Zone 5b hardy
- stock and plant it at the depth and spacing it needs to last.
+ Custom landscape planting of trees, shrubs, and garden beds in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We
+ plant with the right soil, spacing, and design so your yard fills in and
+ lasts.
  </>
  }
  imageSrc="/images/softscape-hero.jpg"
- imageAlt="Newly planted trees, shrubs, and ornamental grasses in a mulched bed on a McCoy Landscape Group planting install"
+ imageAlt="Freshly planted garden beds with trees and shrubs framing a patio on an Oakville property by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">THE LONG VIEW</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD PLANTING</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- A Planting Plan Is a Bet on{" "}
- <em className="italic font-light">Year Ten</em>
+ Planting That Softens the Hardscape and{" "}
+ <em className="italic font-light">Fills In</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Nursery stock looks its best the day it comes off the truck. What
- decides the next decade is whether the species suits your light,
- your soil, and your winter — and whether it went into the ground at
- the depth and spacing it needed. Most planting failures were settled
- the day the hole was dug.
+ Patios and walls give a yard its structure. Planting gives it life. The
+ right trees, shrubs, and beds soften hard edges, add colour through the
+ seasons, and frame your outdoor living space. But planting fails when it
+ is rushed. Wrong plant for the spot, poor soil, or bad spacing means half
+ of it dies or outgrows the bed in a year.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy plans and plants yards that fill in the way they should. We pick
+ plants that suit your light, soil, and space, then plant them with proper
+ soil prep and spacing so they thrive. As a design-build company, we plan
+ your planting alongside your patios and walls, so the soft and hard
+ elements work together.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -246,14 +256,13 @@ export default function LandscapePlantingPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE PLANT</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Trees, Shrubs, Perennials — Placed for Year Ten
+ Custom Landscape Planting Services
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Anyone can dig a hole. The craft is in choosing species that suit
- your light and soil, setting the root flare at the right height, and
- spacing for the size that plant is actually going to become.
+ Every yard is different. Here is the planting work we do most often
+ across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
@@ -283,7 +292,7 @@ export default function LandscapePlantingPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/maintenance-detail.jpg"
- alt="Established shrub and perennial planting in a clean mulched bed on a McCoy Landscape Group property"
+ alt="New garden beds, trees, and shrubs planted to frame a patio and seating wall in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -305,12 +314,11 @@ export default function LandscapePlantingPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY PLANTING · OAKVILLE
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Serviceberry, little bluestem, and coneflower drifted through a
- front bed — spaced for the width they reach, not the width they
- arrive at.
+ New garden beds, trees, and shrubs planted to frame a patio and
+ seating wall, built in a single scope.
  </p>
  </div>
  </div>
@@ -322,18 +330,18 @@ export default function LandscapePlantingPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">THE UNGLAMOROUS PART</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Happens in the Hole Decides Whether It{" "}
- <em className="italic font-light text-[var(--color-accent)]">Thrives</em>
+ The Details That Make Planting{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Thrive</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Root flare found and set at finished grade, even when the grower buried it in the pot",
- "Wire basket and burlap cut away from the upper ball once the tree is down in its hole",
- "Girdling roots on container stock scored or teased straight instead of dropped in coiled",
- "Mulch kept shallow and held off the bark — no cone of it piled against the trunk",
+ "Quality topsoil and soil prep for strong root growth",
+ "Mulch to hold moisture and keep beds tidy",
+ "Plant choices matched to your light, soil, and space",
+ "Planting planned alongside patios, walls, and lighting",
  ].map((item) => (
  <div
  key={item}
@@ -359,8 +367,8 @@ export default function LandscapePlantingPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Planting Install</em>
+ Every McCoy Planting Project{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -394,8 +402,8 @@ export default function LandscapePlantingPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Plants Chosen for{" "}
- <em className="italic font-light">West GTA Conditions</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Planting</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -423,8 +431,8 @@ export default function LandscapePlantingPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Site Reading to{" "}
- <em className="italic font-light">Rooted In</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Planting Process</em>
  </h2>
  </div>
 
@@ -445,7 +453,7 @@ export default function LandscapePlantingPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group landscape planting process`}
+ alt={`${s.title} — McCoy Landscape Group planting process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -468,8 +476,8 @@ export default function LandscapePlantingPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Install days are short; sourcing is what sets the calendar. Specimen
- trees may need to be tagged and held weeks before planting.
+ Most planting projects take a few days to 1 week on-site, depending on
+ size. Spring and fall are the best planting seasons, so book ahead.
  </p>
  </div>
  </section>
@@ -480,16 +488,14 @@ export default function LandscapePlantingPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Shapes the Cost of{" "}
- <em className="italic font-light">a Planting Install</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Planting Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Planting is priced by the calibre and count of the material and by
- the ground it has to go into. A specimen caliper tree carries a very
- different value than a flat of perennials. Heavy clay beds need
- amendment and spoil hauled off before anything is set, and large
- stock needs machine access. We put the plant list and the number in
- writing after the free site visit.
+ Every project is scoped to the size of the beds, the number and size of
+ plants, and the soil work needed. There is no flat guessing over the
+ phone. We build the written estimate after the on-site visit, so the
+ number you see is the number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -501,8 +507,8 @@ export default function LandscapePlantingPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Planting Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -560,17 +566,13 @@ export default function LandscapePlantingPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Planting FAQs"
+ headingMain="Landscape Planting FAQs"
  headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd data={serviceLd} />
- <JsonLd data={breadcrumbLd} />
- <JsonLd data={faqLd} />
-
  </>
  );
 }
