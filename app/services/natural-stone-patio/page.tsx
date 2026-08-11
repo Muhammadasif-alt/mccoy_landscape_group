@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Mountain,
- Gem,
+ LayoutGrid,
+ Armchair,
+ Waves,
  Layers,
- Ruler,
- Hammer,
- Compass,
+ Flame,
+ Blocks,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,146 +20,145 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Natural Stone Patio Oakville | Flagstone & Bluestone | McCoy Landscape Group",
+ title: "Natural Stone Patio Oakville | Flagstone Patio Installation | McCoy Landscape Group",
  description:
- "Natural stone patios in Oakville, Burlington, Mississauga & Milton. Flagstone, sawn bluestone, limestone and granite laid dry or mortared. 3-year warranty. Call (416) 985-9771.",
+ "Custom natural stone & flagstone patio installation in Oakville, Burlington, Mississauga & Milton. 3-year warranty on shifting, settling & cracking. Call (416) 985-9771.",
  alternates: { canonical: "/services/natural-stone-patio" },
 };
 
 const stonePatioTypes = [
  {
- icon: Mountain,
- title: "Irregular flagstone",
- body: "Hand-fitted broken-edge slabs puzzled together on site, joints tightened by eye — the most organic patio surface we build.",
+ icon: LayoutGrid,
+ title: "Flagstone patios",
+ body: "Natural split flagstone laid for a timeless, high-end look.",
  },
  {
- icon: Gem,
- title: "Sawn-cut bluestone",
- body: "Thermal-finish bluestone cut to true rectangles, laid in ashlar or running pattern for a tailored, architectural terrace.",
+ icon: Armchair,
+ title: "Full-stone entertaining patios",
+ body: "Large stone patios with dining and lounge zones built in.",
+ },
+ {
+ icon: Waves,
+ title: "Stone pool decks",
+ body: "Slip-resistant, heat-resistant stone surrounds for pools.",
  },
  {
  icon: Layers,
- title: "Ontario limestone",
- body: "Quarried buff and grey limestone slabs — soft warm tone, excellent slip resistance, and a natural fit beside stucco or brick homes.",
+ title: "Multi-level stone patios",
+ body: "Tiered builds that handle grade with stone steps and walls.",
  },
  {
- icon: Compass,
- title: "Granite paving",
- body: "The densest option we lay — near-zero absorption, brutal freeze-thaw resistance, and colour that barely shifts over decades.",
+ icon: Flame,
+ title: "Stone patios with fire features",
+ body: "Patios built around fire pits and outdoor fireplaces.",
  },
  {
- icon: Hammer,
- title: "Mortared on concrete",
- body: "Stone bonded to a reinforced concrete slab with polymer-modified mortar — rigid, dead-flat, ideal over existing structural decks.",
- },
- {
- icon: Ruler,
- title: "Dry-laid on aggregate",
- body: "Slabs set on screeded bedding over compacted base — flexes with the ground, drains freely, and lifts cleanly for future service.",
+ icon: Blocks,
+ title: "Mixed stone and paver patios",
+ body: "Natural stone accents blended with paver fields for value.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Selection & Layout",
+ heading: "Site Prep & Base Work",
  items: [
- "Quarry samples brought to site so you see veining in your own daylight",
- "Thickness spec'd to use — 1 inch sawn for mortar beds, 1.5-2 inch for dry-laid traffic",
- "Slabs dry-fit and chalked before a single joint is filled",
- "Colour blended across pallets so no one corner reads darker than the rest",
+ "Demolition and removal of existing concrete or old patio",
+ "Excavation to the right depth for Ontario freeze and thaw",
+ "Base prep with compacted aggregate in lifts",
+ "Geotextile fabric for unstable soils or problem drainage",
  ],
  },
  {
- heading: "Base & Setting",
+ heading: "Materials & Installation",
  items: [
- "Excavation to 8-12 inches depending on soil and whether the patio abuts the foundation",
- "Geotextile separation over Halton clay subgrade, then compacted 3/4-inch clear or Granular A",
- "Bedding screeded to grade with 1.5-2% fall carried away from the house",
- "Mortared work set on a reinforced slab with a bonding slurry, never straight onto sand",
+ "Natural stone and flagstone matched to your design and lot",
+ "Techo-Bloc, Unilock, and Permacon products where they fit the scope",
+ "Setting bed built for the stone type, dry-set or mortared",
+ "Steps, borders, and transitions built as one scope",
  ],
  },
  {
- heading: "Jointing & Finish",
+ heading: "Finishing",
  items: [
- "Polymeric sand, stone dust, or freeze-thaw-rated mortar joints matched to the build method",
- "Perimeter slabs cut on-site with a wet saw so edges follow the actual house line",
- "Optional penetrating sealer to hold colour depth without a plastic sheen",
- "3-year hardscape warranty covering sink, level, and cracking",
+ "Joint filling, cleanup, and wash-down",
+ "Care and maintenance guide at handoff",
+ "3-year warranty activation",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "25+ years hand-fitting natural stone across Oakville and Burlington properties",
- "Alex and Pieter personally lay the feature slabs on every stone terrace",
- "We buy full pallets from Ontario quarries so the colour run stays consistent",
- "In-house wet saw and splitting work — no cuts subcontracted or rushed",
- "We will tell you when manufactured pavers are the smarter spend for your budget",
- "3-year hardscape warranty on sink, level, and cracking",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Techo-Bloc, Unilock, and Permacon premium supplier options",
+ "Base prep depths built for Ontario freeze and thaw, not shortcut",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty covering shifting, settling, and cracking",
 ];
 
 const processSteps = [
- { title: "Free On-Site Consult", body: "We read the grade, soil, and how the patio has to meet the house." },
- { title: "Stone Selection", body: "Samples on site — flagstone, bluestone, limestone, or granite compared in real light." },
- { title: "Detailed Estimate", body: "Square footage, thickness, base depth, jointing method, and edge treatment priced in writing." },
- { title: "Excavate & Build Base", body: "Dig, separate, compact in lifts, screed bedding, then dry-fit the slab layout." },
- { title: "Set, Joint & Walk", body: "Stone set, joints filled and cured, site cleaned, warranty handed over in person." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, measure, and assess drainage and access." },
+ { title: "Design & Detailed Estimate", body: "Layout, stone selection, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "Natural stone or manufactured pavers — which should I actually pick?",
- a: "Natural stone typically runs 30-60% more installed, mostly because slabs vary in thickness and every piece needs hand-fitting. What you buy is depth of colour and a surface that ages rather than fades. Manufactured pavers from Techo-Bloc or Unilock give tighter tolerances, faster installs, and a lower price. We quote both when a client is genuinely torn.",
+ q: "How much does a natural stone patio cost in Oakville or Burlington?",
+ a: "Every patio is priced to the lot, layout, and features. Flagstone and full-stone patios sit at different price points than pavers. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Will flagstone survive Ontario freeze-thaw cycles?",
- a: "Dense stone will. Granite and quality bluestone absorb very little water, so there is almost nothing inside the slab to expand when it freezes. Softer sandstones can spall after enough cycles. The bigger risk is not the stone at all — it is a shallow or poorly drained base heaving under it, which is why we excavate deep and use clear stone on clay lots.",
+ q: "Is a natural stone patio better than a paver patio?",
+ a: "Both are great when built right. Natural stone gives a unique, high-end look since every piece is different. Pavers offer a uniform look at a lower cost. We walk you through both during the design phase so you pick what fits your yard and budget.",
  },
  {
- q: "Dry-laid or mortared on a concrete slab?",
- a: "Dry-laid is our default for ground-level patios in Halton and Peel. It drains, it moves with the soil instead of fighting it, and individual slabs can be lifted years later. Mortared makes sense over an existing structural slab, on rooftop or podium decks, or where you want dead-flat rectangles with pencil-thin joints. Mortared work needs a properly drained slab underneath or the joints eventually let go.",
+ q: "Will a stone patio crack or shift in Ontario winters?",
+ a: "Not when it is built on the right base. We excavate deep, compact the aggregate in lifts, and add drainage so water does not sit under the stone. That is what stops heaving through freeze and thaw, and it is why our 3-year warranty covers shifting and settling.",
  },
  {
- q: "What fills the joints between the stones?",
- a: "Three options. Polymeric sand for tight sawn joints under about half an inch — it locks up, resists weeds, and stays flexible. Stone dust or screening for wide irregular flagstone joints where a rustic look is wanted. Freeze-thaw-rated mortar only on mortared-on-concrete builds. Putting rigid mortar joints on a flexible sand-set patio is the single most common failure we get called to fix.",
+ q: "Can you replace my old concrete patio with natural stone?",
+ a: "Yes. We remove the old concrete, re-prep the base properly, and set the new stone patio. It is a full upgrade, and a stone patio is repairable stone by stone if anything ever shifts.",
  },
  {
- q: "The samples all look different from each other. Is that a defect?",
- a: "No — that variation is the product. Natural stone is cut from a seam in the ground, so veining, iron staining, and tone shift from slab to slab and pallet to pallet. We order the full quantity from one quarry run and blend across pallets during layout so the variation is spread evenly rather than pooling in one corner. If you want uniformity, manufactured pavers are the honest answer.",
+ q: "How long does a stone patio take to install?",
+ a: "Most builds run 1 to 3 weeks on-site, depending on size, access, and features like fire pits or seating walls. Peak season books 6 to 12 weeks ahead, so reach out early.",
  },
  {
- q: "How long does a natural stone patio take to build?",
- a: "A 400-500 square foot flagstone terrace usually runs 7-12 working days. Hand-fitting irregular stone is slower than laying pavers — a good mason places maybe 60-80 square feet a day. Sawn bluestone moves faster. Add time for steps, seating walls, or lighting conduit. Spring and summer slots book 6-12 weeks out, and larger scopes 12-16 weeks.",
+ q: "What maintenance does a natural stone patio need?",
+ a: "Very little. An occasional wash and a joint top-up every few years keeps it looking sharp. We hand off a simple care guide at the end of every build.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium stone patio installs",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville natural stone patio by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom flagstone patios",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington flagstone patio by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service stone patios",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga natural stone patio by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom stone design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom stone patio design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
@@ -174,10 +173,10 @@ export default function NaturalStonePatioPage() {
  "@id": `${URL}#service`,
  name: "Natural Stone Patio",
  description:
- "Flagstone, bluestone, limestone, and granite patio construction — dry-laid or mortared — across Oakville, Burlington, Mississauga, and Milton.",
+ "Custom natural stone and flagstone patio installation — entertaining patios, pool decks, multi-level and fire-feature patios across Oakville, Burlington, Mississauga, and Milton.",
  provider: { "@id": `${SITE}/#localbusiness` },
  areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Natural Stone Patio", "Flagstone Installation", "Bluestone Patio", "Limestone Paving", "Stone Terrace Construction"],
+ serviceType: ["Natural Stone Patio", "Flagstone Patio", "Stone Pool Deck", "Multi-Level Patio", "Fire Feature Patio"],
  url: URL,
  };
 
@@ -203,39 +202,51 @@ export default function NaturalStonePatioPage() {
 
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="NATURAL STONE PATIO"
- title="Stone Cut From"
- subtitle="the Ground, Not a Mould"
+ eyebrow="NATURAL STONE PATIOS"
+ title="Natural Stone Patios Built to Last"
+ subtitle="in Oakville"
  opening={
  <>
- Flagstone, sawn bluestone, limestone, and granite terraces built across
- Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to walk your grade with us and see quarry
- samples in your own daylight — every build backed by our 3-year hardscape warranty.
+ Custom natural stone and flagstone patio installation in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. Every
+ patio we build is backed by our 3-year warranty covering shifting,
+ settling, and cracking.
  </>
  }
  imageSrc="/images/03-card-paver-patios.jpg"
- imageAlt="Hand-fitted natural stone patio with irregular flagstone joints on an Oakville property built by McCoy Landscape Group"
+ imageAlt="Custom natural stone flagstone patio on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">QUARRIED, NOT MOULDED</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD PATIOS</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- Every Slab Arrives Different —{" "}
- <em className="italic font-light">That Is the Point</em>
+ A Stone Patio That Lasts{" "}
+ <em className="italic font-light">Decades, Not Seasons</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- No two pallets leave a quarry the same. Thickness wanders, tone
- shifts, and edges break where the seam decided they would. A stone
- terrace is built by a mason reading each piece and bedding it to one
- true plane — which is why we price hand-fitting and layout time, not
- square footage alone.
+ A natural stone patio is one of the best upgrades you can make to a
+ West GTA backyard. But real stone is heavy, and it only stays flat when
+ the base underneath is built right. Most stone patios that heave or
+ wobble were set on thin gravel with no drainage. After a few Ontario
+ winters, the stone lifts and the joints open up.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy builds natural stone patios that hold their shape for decades. We
+ design the layout around how you use the space, then set every stone on
+ a deep, compacted base with proper drainage. Dining zones, lounge
+ areas, and fire feature spots all get planned before the first stone
+ goes down.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -245,14 +256,14 @@ export default function NaturalStonePatioPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE LAY</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Flagstone, Bluestone, Limestone, Granite — Set by Hand
+ Custom Natural Stone Patio Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Every slab arrives a slightly different thickness and shape. That&apos;s
- the whole appeal — and the reason this work belongs to a mason with a
- trowel and a wet saw, not a crew racing a pallet count.
+ No two McCoy patios are identical. Here are the stone patio styles we
+ build most often across Oakville, Burlington, Mississauga, and Milton
+ homes.
  </p>
  </div>
 
@@ -282,7 +293,7 @@ export default function NaturalStonePatioPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/09-showcase-signature-build.jpg"
- alt="Hand-fitted natural stone terrace with tight joints and cut perimeter slabs in Oakville by McCoy Landscape Group"
+ alt="Full flagstone patio with natural stone seating wall and integrated fire feature in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -307,8 +318,8 @@ export default function NaturalStonePatioPage() {
  A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Irregular flagstone terrace, dry-laid on clear stone, every
- perimeter slab cut to the house line.
+ Full flagstone patio, natural stone seating wall, and integrated
+ fire feature, built in a single scope.
  </p>
  </div>
  </div>
@@ -320,18 +331,18 @@ export default function NaturalStonePatioPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">UNDER THE STONE</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Decides Whether a Stone Terrace Stays{" "}
- <em className="italic font-light text-[var(--color-accent)]">Flat</em>
+ The Details That Turn a Patio{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Into a Room</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Bedding screeded to a true plane so each slab bears fully, not on three corners",
- "Pallets sorted by thickness before layout — 1 inch for mortar beds, 1.5-2 inch dry-laid",
- "Geotextile between Halton clay and clear stone so the base never pumps full of fines",
- "Joint material matched to the method — rigid mortar on a sand-set patio always lets go",
+ "Stone seating walls with integrated low-voltage lighting",
+ "Custom stone borders, banded accents, and pattern layouts",
+ "Fire pits (wood or gas) and pergola connections",
+ "Engineered drainage and grade transitions that hold the patio level",
  ].map((item) => (
  <div
  key={item}
@@ -357,8 +368,8 @@ export default function NaturalStonePatioPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a McCoy Stone Terrace</em>
+ Every McCoy Stone Patio Build{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -392,8 +403,8 @@ export default function NaturalStonePatioPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Fitting Stone Is a Trade{" "}
- <em className="italic font-light">Not a Product Order</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Stone Patios</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -419,10 +430,10 @@ export default function NaturalStonePatioPage() {
  <section className="relative bg-white py-20 md:py-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-12 md:mb-16">
- <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE BUILD</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Quarry Sample to{" "}
- <em className="italic font-light">Finished Terrace</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Stone Patio Process</em>
  </h2>
  </div>
 
@@ -443,7 +454,7 @@ export default function NaturalStonePatioPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group natural stone patio process`}
+ alt={`${s.title} — McCoy Landscape Group stone patio process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -466,9 +477,8 @@ export default function NaturalStonePatioPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Stone terrace timelines depend on square footage, stone format, and
- how much of the perimeter needs cutting. Most residential patios run
- 7–12 working days on site.
+ Most stone patio builds take 1 to 3 weeks on-site once we start. Peak
+ season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -479,17 +489,15 @@ export default function NaturalStonePatioPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Moves the Price of a{" "}
- <em className="italic font-light">Stone Terrace</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Stone Patio Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Stone patios are priced by the material you choose, the slab
- thickness the build method demands, how much of the perimeter needs
- wet-saw cutting, and how deep the base has to go on your soil.
- Irregular flagstone takes a mason far longer per square foot than
- sawn bluestone. Machine access, jointing method, and lighting
- conduit all move the number. Everything is quoted in writing after
- the on-site assessment.
+ Every patio is scoped to lot size, layout, feature integration, and
+ stone selection. There is no flat per square foot quoting that misses
+ the real story. We build the written estimate after the on-site visit,
+ so the number you see is the number you pay. No surprises, no
+ escalations.
  </p>
  </div>
  </div>
@@ -501,7 +509,7 @@ export default function NaturalStonePatioPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Serving West GTA&apos;s{" "}
+ Serving{" "}
  <em className="italic font-light">West GTA</em>
  </h2>
  </div>
@@ -567,10 +575,6 @@ export default function NaturalStonePatioPage() {
 
  <FinalCTA />
  <Footer />
- <JsonLd data={serviceLd} />
- <JsonLd data={breadcrumbLd} />
- <JsonLd data={faqLd} />
-
  </>
  );
 }
