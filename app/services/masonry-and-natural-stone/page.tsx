@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+ LayoutGrid,
+ Footprints,
+ Armchair,
  Blocks,
- Brush,
- Warehouse,
- Anchor,
- Boxes,
- Award,
+ Mountain,
+ Layers,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,146 +20,146 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Masonry & Natural Stone Oakville | Veneer, Pillars & Caps | McCoy Landscape Group",
+ title: "Natural Stone & Masonry Oakville | Patios, Steps & Seating Walls | McCoy Landscape Group",
  description:
- "Stone masonry in Oakville, Burlington, Mississauga & Milton. Stone veneer, mortared stonework, pillars, caps and coping, chimney and column work. Call (416) 985-9771.",
+ "Custom natural stone patios, steps, seating walls, and stone pillars in Oakville, Burlington, Mississauga & Milton. 3-year warranty on shifting, settling & cracking. Call (416) 985-9771.",
  alternates: { canonical: "/services/masonry-and-natural-stone" },
 };
 
 const masonryTypes = [
  {
- icon: Brush,
- title: "Stone veneer",
- body: "Full-bed or thin veneer scratch-coated and mortared onto block, poured walls, and house facades with proper drainage plane behind.",
+ icon: LayoutGrid,
+ title: "Natural stone patios",
+ body: "Flagstone and full-stone patios laid for how you actually host and relax.",
+ },
+ {
+ icon: Footprints,
+ title: "Stone steps and stairs",
+ body: "Solid stone steps that handle grade changes and stay level for years.",
+ },
+ {
+ icon: Armchair,
+ title: "Seating walls",
+ body: "Built-in stone seating that frames patios and adds function without furniture.",
  },
  {
  icon: Blocks,
- title: "Mortared stonework",
- body: "Solid coursed or random-rubble walls laid stone by stone in freeze-thaw-rated mortar — real masonry, not stacked block with a face.",
+ title: "Stone pillars and columns",
+ body: "Entry pillars, lighting columns, and accent features that anchor the design.",
  },
  {
- icon: Warehouse,
- title: "Pillars & columns",
- body: "Entrance pillars, gate posts, and pergola columns built around a reinforced core and footing carried below frost.",
+ icon: Mountain,
+ title: "Armour stone features",
+ body: "Large natural stone for walls, borders, and bold landscape statements.",
  },
  {
- icon: Boxes,
- title: "Caps & coping",
- body: "Full-slab granite, limestone, and bluestone caps cut with drip edges so water sheds clear instead of tracking down the face.",
- },
- {
- icon: Anchor,
- title: "Chimney & fireplace masonry",
- body: "Outdoor chimney stacks, fireboxes, hearths, and flue surrounds built with refractory materials rated for direct heat.",
- },
- {
- icon: Award,
- title: "Stone facing on steps & walls",
- body: "Existing concrete steps, porches, and retaining structures faced in stone to tie the whole property back to the house.",
+ icon: Layers,
+ title: "Stone veneer and accents",
+ body: "Natural stone facing for walls, pillars, and outdoor kitchen surrounds.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Sourcing & Spec",
+ heading: "Site Prep & Base Work",
  items: [
- "Stone selected from Ontario quarries — Wiarton limestone, Credit Valley sandstone, Muskoka granite",
- "Full-bed versus thin veneer specified against the structure you already have",
- "Mortar mix and colour chosen for the substrate and freeze-thaw exposure",
- "Cap and coping profiles drawn before anything is ordered",
+ "Demolition and removal of old stone or concrete",
+ "Excavation to the right depth for Ontario freeze and thaw",
+ "Compacted aggregate base built in lifts",
+ "Footings for walls, steps, and pillars",
+ "Geotextile fabric for unstable soils or problem drainage",
  ],
  },
  {
- heading: "Structure & Substrate",
+ heading: "Materials & Installation",
  items: [
- "Footings poured below the 4-foot Ontario frost line for freestanding masonry",
- "Block or poured cores tied with rebar and grouted solid where load demands it",
- "Weather-resistive barrier, lath, and scratch coat behind veneer on framed walls",
- "Weeps and flashing detailed so water that gets in has a route back out",
+ "Natural stone, flagstone, and armour stone matched to your design",
+ "Techo-Bloc, Unilock, and Permacon products where they fit the scope",
+ "Mortared or dry-set builds based on the feature",
+ "Steps, walls, pillars, and borders built as one scope",
  ],
  },
  {
- heading: "Craft & Handover",
+ heading: "Finishing",
  items: [
- "Stones sorted and dry-laid on the ground before they touch mortar",
- "Joints struck, raked, or flush-pointed to the profile you approved",
- "Mortar smears cleaned off the face while green — no acid burn on the finished stone",
- "3-year hardscape warranty covering sink, level, and cracking",
+ "Post-install cleanup and wash-down",
+ "Care and maintenance guide at handoff",
+ "3-year warranty activation",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Masons on staff, not subcontracted — the same hands from footing to final joint",
- "Operating since 2001 with 25+ years of stonework behind us in the West GTA",
- "Alex and Pieter are on the tools for every major masonry build",
- "Type N and Type S mortars mixed to spec for our freeze-thaw climate",
- "Quarry relationships that let us match or extend stone on older properties",
- "Design-build under one roof — masonry, hardscape, lighting, and grading coordinated",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Techo-Bloc, Unilock, and Permacon premium supplier options",
+ "Base and footing depths built for Ontario freeze and thaw, not shortcut",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty covering shifting, settling, and cracking",
 ];
 
 const processSteps = [
- { title: "Free On-Site Consult", body: "We assess the structure, substrate, and how the stone should relate to the house." },
- { title: "Stone & Mortar Selection", body: "Quarry samples, mortar colours, joint profiles, and cap options compared on site." },
- { title: "Scope & Written Estimate", body: "Square footage of face, linear footage of cap, footing depth, and structure detailed." },
- { title: "Footings & Substrate", body: "Excavate, pour, cure, then build the core or prep the wall to take veneer." },
- { title: "Set Stone & Point", body: "Stone laid, joints pointed, faces cleaned, caps set, warranty handed over." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, measure, and assess drainage and access." },
+ { title: "Design & Detailed Estimate", body: "Layout, stone selection, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "What is the difference between full-bed and thin stone veneer?",
- a: "Full-bed veneer is 3-5 inches thick, weighs enough to need its own ledge or footing, and reads as solid masonry because the returns and corners are real stone. Thin veneer is roughly an inch, sticks to a scratch coat, and needs no structural support. Thin veneer is the right call on framed walls and existing facades; full-bed suits pillars, wall caps, and anywhere you see a corner.",
+ q: "How much does a natural stone patio cost in Oakville or Burlington?",
+ a: "Every stone build is priced to the lot, layout, and features. Flagstone, full-stone, and armour stone all sit at different price points. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Where does your stone actually come from?",
- a: "Mostly Ontario. Wiarton and Owen Sound limestone from the Bruce Peninsula, Credit Valley sandstone out of the escarpment, and Muskoka granite from the Canadian Shield. Local stone is quarried in the same climate it has to survive, it travels a few hours instead of an ocean, and we can usually get more of the same seam years later if you extend the project.",
+ q: "What is the difference between natural stone and pavers?",
+ a: "Pavers are manufactured to a set size and shape. Natural stone is cut or split from real rock, so every piece is unique. Stone costs more but gives a one-of-a-kind look that many Oakville homeowners prefer for patios and feature walls.",
  },
  {
- q: "Why does mortar crack, and how do you prevent it?",
- a: "Two causes dominate here. Movement underneath, when a footing sits above the frost line and heaves every winter. And the wrong mortar, when a hard Type S mix is used against soft stone that needs a more forgiving Type N. We pour footings past four feet, tie cores with rebar, and match the mortar to the stone rather than defaulting to whatever is on the truck.",
+ q: "Will natural stone crack or shift in Ontario winters?",
+ a: "Only if it is set on a poor base. We excavate to the right depth, build a compacted base, and add proper footings for walls and steps. That is what keeps stone level through freeze and thaw. It is also why our 3-year warranty covers shifting and settling.",
  },
  {
- q: "Can you repair or extend existing stonework on my house?",
- a: "Yes, and it is a regular request on older Oakville and Burlington homes. We repoint failed joints, rebuild leaning pillars, replace spalled stones, and match new stone to weathered original as closely as the quarry allows. Perfect matching is rarely possible on stone that has aged 40 years, so we usually blend new material into a full elevation rather than patching one obvious square.",
+ q: "Can you match stone to my existing patio or home?",
+ a: "Yes. We help you pick stone that works with your home, existing hardscape, and the look you want. We walk you through colour, texture, and finish during the design phase.",
  },
  {
- q: "Do stone caps really need a drip edge?",
- a: "They do. A cap without a drip kerf lets water wick back underneath and run down the face of the wall, which stains the stone and eventually works into the joints. We cut caps with an overhang and a groove on the underside so water breaks and falls clear. It is a small detail on the invoice and the single biggest reason some walls look clean at year ten and others do not.",
+ q: "Do you build seating walls and pillars with the patio?",
+ a: "Yes. We build patios, seating walls, steps, and pillars as one scope. Building them together means better base work, cleaner transitions, and one warranty on the whole project.",
  },
  {
- q: "How long does a masonry project take?",
- a: "A pair of entrance pillars with caps runs about a week including the footing pour and cure. A full veneer elevation or an outdoor fireplace is typically two to four weeks. Masonry is weather-dependent — we do not lay mortar below about 5 degrees without heat and hoarding, so late-fall work sometimes shifts to spring. Book 6-12 weeks ahead, or 12-16 for large scopes.",
+ q: "How long does a natural stone project take?",
+ a: "Most builds run 1 to 3 weeks on-site, depending on size, access, and features. Peak season books 6 to 12 weeks ahead, so reach out early for the best timeline.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium natural stone installs",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville natural stone work by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom masonry and seating walls",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington masonry and seating walls by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service stone work",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga natural stone work by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom stone design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom stone design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
@@ -172,12 +172,12 @@ export default function MasonryAndNaturalStonePage() {
  "@context": "https://schema.org",
  "@type": "Service",
  "@id": `${URL}#service`,
- name: "Masonry and Natural Stone",
+ name: "Natural Stone and Masonry",
  description:
- "Stone veneer, mortared stonework, pillars, caps and coping, chimney and column masonry across Oakville, Burlington, Mississauga, and Milton.",
+ "Custom natural stone patios, steps, seating walls, stone pillars, armour stone features, and stone veneer across Oakville, Burlington, Mississauga, and Milton.",
  provider: { "@id": `${SITE}/#localbusiness` },
  areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Stone Masonry", "Stone Veneer", "Stone Pillars", "Caps and Coping", "Chimney Masonry"],
+ serviceType: ["Natural Stone Patios", "Stone Steps", "Seating Walls", "Stone Pillars", "Armour Stone", "Stone Veneer"],
  url: URL,
  };
 
@@ -203,39 +203,51 @@ export default function MasonryAndNaturalStonePage() {
 
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="MASONRY AND NATURAL STONE"
- title="Real Masonry, Laid"
- subtitle="One Stone at a Time"
+ eyebrow="MASONRY & NATURAL STONE"
+ title="Natural Stone and Masonry Built to Last"
+ subtitle="in Oakville"
  opening={
  <>
- Stone veneer, mortared walls, pillars, caps, coping, and chimney work
- across Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to book a free on-site consult — masons on
- staff, Ontario quarry stone, and a 3-year hardscape warranty on every build.
+ Custom natural stone patios, steps, seating walls, and stone pillars
+ in Oakville, Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. Every
+ masonry build is backed by our 3-year warranty covering shifting,
+ settling, and cracking.
  </>
  }
  imageSrc="/images/09-showcase-signature-build.jpg"
- imageAlt="Signature McCoy Landscape Group masonry build with mortared natural stone pillars and cut stone caps in Oakville"
+ imageAlt="Natural stone patio with seating wall and stone pillars in Oakville by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">THE OLDEST TRADE ON SITE</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD MASONRY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- Mortar Is a Material —{" "}
- <em className="italic font-light">Not a Glue</em>
+ Real Stone That Holds Up.{" "}
+ <em className="italic font-light">Scoped for How You Live</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- A stone face can be bonded on in a week by anyone with a trowel. What
- separates masonry from cladding is what happens behind it: the
- footing depth, the reinforced core, the drainage plane, and a mortar
- chosen for the hardness of the stone it has to live against for the
- next several decades.
+ Natural stone is the one hardscape material that never goes out of
+ style. But it only lasts when it is set on the right base. Most stone
+ patios and walls that fail were not built wrong on top. They were
+ built wrong underneath. Poor base prep, no drainage, and thin footings
+ are why stone shifts, settles, and cracks after a few Ontario winters.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy builds natural stone work around how you use your yard. Stone
+ patios for dining and lounging, seating walls that frame the space,
+ steps that flow with the grade, and pillars that anchor the whole
+ design. Every masonry build starts with site assessment, proper base
+ prep, and drainage before the first stone is set.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -245,15 +257,14 @@ export default function MasonryAndNaturalStonePage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE BUILD IN STONE</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Veneer, Pillars, Caps, Chimneys — Full Stone Craft
+ Custom Natural Stone and Masonry Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Masonry is the trade that ties a property together. It&apos;s what
- turns a retaining wall into architecture and a driveway entrance into
- an address. We keep masons on staff so the craft never leaves the
- building.
+ No two McCoy stone builds are identical. Here are the configurations
+ we build most often across Oakville, Burlington, Mississauga, and
+ Milton homes.
  </p>
  </div>
 
@@ -283,7 +294,7 @@ export default function MasonryAndNaturalStonePage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/04-card-retaining-walls.jpg"
- alt="Mortared natural stone wall with cut stone coping built in Oakville by McCoy Landscape Group"
+ alt="Natural stone seating wall, fire feature, and flagstone patio built in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -305,11 +316,11 @@ export default function MasonryAndNaturalStonePage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY BUILD · BURLINGTON
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Full-bed limestone over a reinforced core, coping cut with a drip
- edge, joints struck by hand.
+ Natural stone seating wall, fire feature, and full flagstone patio,
+ built in a single scope.
  </p>
  </div>
  </div>
@@ -321,18 +332,18 @@ export default function MasonryAndNaturalStonePage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">WHERE MASONRY FAILS</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- The Details That Decide Whether Stonework{" "}
- <em className="italic font-light text-[var(--color-accent)]">Holds</em>
+ The Details That Turn Stone{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Into a Space</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Footings carried past four feet so no column rides a heaving winter subgrade",
- "Type N against soft stone, Type S against dense — mortar matched, never defaulted",
- "Lath, scratch coat, weeps, and flashing so water behind veneer has a route out",
- "Faces washed while the mortar is still green — no acid burn to fake a clean joint",
+ "Seating walls with integrated low-voltage lighting",
+ "Custom stone caps, banded borders, and signature patterns",
+ "Fire features and pergola connections built into the stone",
+ "Engineered footings and drainage that keep stone level",
  ].map((item) => (
  <div
  key={item}
@@ -358,8 +369,8 @@ export default function MasonryAndNaturalStonePage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in Every Masonry Build</em>
+ Every McCoy Masonry Build{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -393,8 +404,8 @@ export default function MasonryAndNaturalStonePage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Masons on Staff Since 2001{" "}
- <em className="italic font-light">Never Subcontracted</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Masonry</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -422,8 +433,8 @@ export default function MasonryAndNaturalStonePage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Footing Pour to{" "}
- <em className="italic font-light">Final Pointed Joint</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Masonry Process</em>
  </h2>
  </div>
 
@@ -467,9 +478,8 @@ export default function MasonryAndNaturalStonePage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Masonry timelines depend on footing cure time, face area, and the
- weather — mortar does not go down below roughly 5 degrees without heat
- and hoarding.
+ Most masonry builds take 1 to 3 weeks on-site once we start. Peak
+ season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -480,16 +490,15 @@ export default function MasonryAndNaturalStonePage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Drives the Cost of{" "}
- <em className="italic font-light">Real Stonework</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Natural Stone Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Masonry is priced by face area, the amount of structure hidden behind
- that face, and the labour the stone itself demands. Full-bed stone
- with real returned corners costs more to buy and far more to lay than
- thin veneer. Footing depth, core reinforcing, cap fabrication, joint
- profile, and site access all shift the figure. Every scope is quoted
- in writing after the on-site assessment.
+ Every stone build is scoped to lot size, layout, feature integration,
+ and stone selection. There is no flat per square foot quoting that
+ misses the real story. We build the written estimate after the on-site
+ visit, so the number you see is the number you pay. No surprises, no
+ escalations.
  </p>
  </div>
  </div>
@@ -501,7 +510,7 @@ export default function MasonryAndNaturalStonePage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Serving West GTA&apos;s{" "}
+ Serving{" "}
  <em className="italic font-light">West GTA</em>
  </h2>
  </div>
@@ -560,17 +569,13 @@ export default function MasonryAndNaturalStonePage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Masonry FAQs"
+ headingMain="Natural Stone and Masonry FAQs"
  headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd data={serviceLd} />
- <JsonLd data={breadcrumbLd} />
- <JsonLd data={faqLd} />
-
  </>
  );
 }
