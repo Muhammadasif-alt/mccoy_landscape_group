@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {
  Flame,
- Wrench,
- Package,
- Mountain,
- ShieldCheck,
- Users,
+ Sparkles,
+ Home,
+ Armchair,
+ Square,
+ Warehouse,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,9 +20,9 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Fire Pit & Outdoor Fireplace Oakville | Wood, Gas & Masonry | McCoy Landscape Group",
+ title: "Fire Pit & Outdoor Fireplace Oakville | Wood & Gas Fire Features | McCoy Landscape Group",
  description:
- "Fire pit and outdoor fireplace builds in Oakville, Burlington, Mississauga & Milton. Wood-burning, natural gas, and masonry fireboxes. Call (416) 985-9771.",
+ "Custom fire pit & outdoor fireplace installation in Oakville, Burlington, Mississauga & Milton. 3-year warranty on shifting, settling & cracking. Call (416) 985-9771.",
  alternates: { canonical: "/services/fire-pit-and-outdoor-fireplace" },
 };
 
@@ -30,176 +30,224 @@ const fireFeatureTypes = [
  {
  icon: Flame,
  title: "Wood-burning fire pits",
- body: "Firebrick-lined bowls in Techo-Bloc or Permacon units, sized so the heat reads at seating distance without scorching the coping.",
+ body: "Classic stone fire pits for real flames and open-air evenings.",
  },
  {
- icon: Wrench,
- title: "Natural gas fire features",
- body: "Permanent gas runs trenched from the meter and tied in by a licensed gas fitter, with a keyed shut-off at the feature.",
+ icon: Sparkles,
+ title: "Gas fire pits",
+ body: "Clean, instant fire with no smoke, wood, or cleanup.",
  },
  {
- icon: Package,
- title: "Propane fire tables",
- body: "Self-contained units with a concealed tank cabinet — no trenching, no line permit, and they move if the layout changes.",
+ icon: Home,
+ title: "Outdoor fireplaces",
+ body: "Full stone fireplaces that anchor a patio and add height.",
  },
  {
- icon: Mountain,
- title: "Built-in masonry fireplaces",
- body: "Full firebox, throat, smoke chamber, and flue built in block, then clad in natural stone or manufactured veneer.",
+ icon: Armchair,
+ title: "Fire pit seating walls",
+ body: "Curved seating walls wrapped around the fire feature.",
  },
  {
- icon: ShieldCheck,
- title: "Fire-rated firebox work",
- body: "Refractory panels and firebrick set in high-heat mortar so the box takes repeated thermal cycling without spalling apart.",
+ icon: Square,
+ title: "Built-in fire tables",
+ body: "Low fire features set into stone tables and patio surfaces.",
  },
  {
- icon: Users,
- title: "Seating around the fire",
- body: "Curved seat walls and slab benches placed at a radius where conversation works and nobody ends up roasting.",
+ icon: Warehouse,
+ title: "Fireplace and pergola combos",
+ body: "Fire features tied into pergolas and outdoor living structures.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Build & Materials",
+ heading: "Site Prep & Base Work",
  items: [
- "Firebrick or refractory panel liner set in high-temperature mortar",
- "Techo-Bloc, Unilock, or Permacon units for the surround, coping, and hearth",
- "Compacted granular base and a footing sized for the mass of a masonry chimney",
- "Flue liner with rain cap and spark arrestor on full fireplace builds",
+ "Demolition and removal of old features if needed",
+ "Excavation to the right depth for Ontario freeze and thaw",
+ "Compacted aggregate base built in lifts",
+ "Footings sized for the weight of the fire feature",
  ],
  },
  {
- heading: "Gas & Controls",
+ heading: "Materials & Installation",
  items: [
- "Trenched gas line from the meter, sleeved wherever it passes under hardscape",
- "Tie-in and pressure test by a licensed gas fitter, with the paperwork handed to you",
- "Burner ring, media (lava rock or fire glass), and a keyed valve or electronic ignition",
- "Air mixture set on-site so the flame reads full and yellow, not thin and blue",
+ "Fire-rated materials and natural stone matched to your design",
+ "Techo-Bloc, Unilock, and Permacon products where they fit the scope",
+ "Gas lines run and connected by qualified trades for gas builds",
+ "Fire feature, seating, and surround built as one scope",
  ],
  },
  {
- heading: "Siting & Safety",
+ heading: "Finishing",
  items: [
- "Clearance measured from the house, fences, decks, and overhanging branches",
- "Open-air burning rules confirmed with your Oakville, Burlington, Mississauga, or Milton fire service",
- "Prevailing wind and smoke path considered before the location is fixed",
- "3-year hardscape warranty on the masonry — covers sink, level, and cracking",
+ "Post-install cleanup and wash-down",
+ "Care and safe-use guide at handoff",
+ "3-year warranty activation",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Masonry fireplaces built in-house — Alex and Pieter lay the firebox themselves",
- "Firebrick and refractory mortar inside the box, never standard block and standard mortar",
- "Licensed gas fitter on every tie-in, with the inspection paperwork left with you",
- "Footings dug below frost line so a heavy chimney doesn't heave by its third winter",
- "Seating radius planned with the fire feature, not bolted on after the patio is laid",
- "Owner-operated since 2001, no subcontracted crews on major builds",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Techo-Bloc, Unilock, and Permacon premium supplier options",
+ "Fire features built with fire-rated materials and proper footings",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty covering shifting, settling, and cracking",
 ];
 
 const processSteps = [
- { title: "Free On-Site Visit", body: "We read the yard, the wind, the house wall, and where a gas line could realistically run." },
- { title: "Feature Selection", body: "Wood or gas, pit or fireplace, kit or custom masonry — with real costs beside each." },
- { title: "Layout & Clearances", body: "Location staked, clearances measured, bylaw confirmed, seating radius marked on the ground." },
- { title: "Footing & Build", body: "Excavation, compacted base, footing below frost, firebox laid, veneer and coping set." },
- { title: "Tie-In & First Burn", body: "Gas fitter connects and tests, then we light it with you and set the flame." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, measure, and assess drainage, access, and gas options." },
+ { title: "Design & Detailed Estimate", body: "Layout, materials, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care and safe-use tips." },
 ];
 
 const faqs = [
  {
- q: "Wood-burning or natural gas — which should I pick?",
- a: "Wood gives you the crackle, the smell, and real radiant heat, but it also means storing fuel, cleaning ash, and smoke that drifts wherever it wants. Gas lights instantly, throws no sparks, and shuts off when you head inside, at maybe two-thirds the heat. Families with young kids and tight lot lines usually land on gas.",
+ q: "How much does a fire pit or outdoor fireplace cost in Oakville or Burlington?",
+ a: "It depends on the size, the fuel type, and whether you add seating walls. A simple wood fire pit is far less than a full stone fireplace with a gas line and seating. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Am I allowed to have an open fire in Oakville?",
- a: "Rules differ by municipality and tighten with conditions. Oakville and Burlington both restrict open-air burning and treat approved appliances differently from open pits, and bans go up during dry spells. We confirm the current bylaw for your address during design, and we will tell you straight if a gas feature is the only clean option on your lot.",
+ q: "Should I choose a wood-burning or gas fire feature?",
+ a: "Wood gives you real flames and a classic feel, but it needs wood and cleanup. Gas gives you instant fire with no smoke and no mess, but it needs a gas line. We walk you through both during the design phase based on how you want to use it.",
  },
  {
- q: "How far does a fire feature have to sit from the house?",
- a: "As a working rule we keep open fire well clear of any combustible wall, eave, fence, or deck, and further still from anything overhead. Manufactured units carry their own listed clearances and we follow those to the letter. On narrower Mississauga and Milton lots, clearance is often the thing that decides the location, so we stake it first.",
+ q: "Do you handle the gas line for a gas fire pit?",
+ a: "Yes. For gas builds we have the gas lines run and connected by qualified trades as part of the scope, so it is done safely and to code.",
  },
  {
- q: "Can you run gas to a feature on an existing patio?",
- a: "Usually yes. We lift and set aside the pavers along the route, trench, sleeve the line, backfill in compacted lifts, then relay the units on fresh bedding with new joint sand. Done properly the reinstated strip is hard to pick out afterward. The tie-in at the meter is always handled by a licensed gas fitter.",
+ q: "Can you build a fire pit with seating around it?",
+ a: "Yes. Curved seating walls around a fire pit are one of our most popular builds. We plan the fire feature, seating, and patio together so it all works as one space with one warranty.",
  },
  {
- q: "Why does our old fireplace smoke back at us?",
- a: "Usually the flue is undersized relative to the firebox opening, or there is no smoke shelf and throat to get the draw started. Sometimes the house itself creates a downdraft. We size the flue to the opening and build a proper throat and smoke chamber, which is the difference between a fireplace and a decorative box that smokes.",
+ q: "Are fire features safe on a patio?",
+ a: "Yes, when they are built right. We use fire-rated materials, proper footings, and safe clearances so the feature is solid and safe. We also hand off a safe-use guide at the end of the build.",
  },
  {
- q: "Will a masonry fireplace shift over an Ontario winter?",
- a: "Not if the footing is right. A full fireplace is serious mass, so it gets its own footing below frost line on compacted granular — not the same base as the surrounding patio. Halton clay holds water and heaves hard, which is exactly why we dig separately for it. The masonry carries our 3-year warranty on sink, level, and cracking.",
+ q: "How long does it take to build a fire feature?",
+ a: "Most builds take a few days to 2 weeks on-site, depending on size and whether gas or seating walls are involved. Peak season books 6 to 12 weeks ahead, so reach out early.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium fire feature installs",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville fire feature build by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom fire pits and fireplaces",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington custom fire pit and fireplace by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service fire features",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga fire feature build by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
  note: "Custom hardscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom hardscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function FirePitAndOutdoorFireplacePage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/fire-pit-and-outdoor-fireplace`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Fire Pit and Outdoor Fireplace",
+ description:
+ "Custom fire pit and outdoor fireplace installation — wood-burning and gas fire pits, outdoor fireplaces, fire seating walls, and fire tables across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Fire Pits", "Outdoor Fireplaces", "Gas Fire Pits", "Fire Seating Walls", "Fire Tables"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Fire Pit and Outdoor Fireplace", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="FIRE PIT & OUTDOOR FIREPLACE"
- title="A Fire Feature That"
- subtitle="Holds the Evening"
+ eyebrow="FIRE PITS & OUTDOOR FIREPLACES"
+ title="Fire Pits and Outdoor Fireplaces Built to Last"
+ subtitle="in Oakville"
  opening={
  <>
- Wood-burning pits, natural gas features, and full masonry fireplaces
- built for backyards in Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to walk your yard with Alex or Pieter —
- firebox to flue, laid by our own hands and backed by a 3-year hardscape warranty.
+ Custom fire pit and outdoor fireplace installation in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. Every
+ fire feature we build is backed by our 3-year warranty covering
+ shifting, settling, and cracking.
  </>
  }
  imageSrc="/images/01-hero-outdoor-living-golden-hour.jpg"
- imageAlt="Natural stone outdoor fireplace lit at golden hour on a McCoy Landscape Group outdoor living build in Oakville"
+ imageAlt="Custom stone fire feature with seating wall at dusk on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">MASONRY FIRST</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD FIRE FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- A Fire Feature Is Masonry —{" "}
- <em className="italic font-light">Atmosphere Comes Second</em>
+ The Feature That Makes a Yard{" "}
+ <em className="italic font-light">Get Used</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- The fire pits we get called out to repair almost always failed for
- the same three reasons: ordinary mortar inside the box, no footing
- under the mass, or a flue that never had a chance of drawing. Get
- the heat path and the ground right and the glow takes care of
- itself.
+ A fire feature is what turns a backyard into a place people gather. It
+ stretches your outdoor season into spring and fall and gives every
+ patio a natural focal point. But a fire pit or fireplace is a build that
+ involves heat, gas lines, and real weight, so it has to be done right. A
+ feature dropped on a weak base or wired without care is a safety risk,
+ not a centrepiece.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy builds fire pits and outdoor fireplaces that are safe, solid, and
+ built into the whole design. We plan the fire feature with the patio,
+ seating, and grade around it, then build it on proper footings with the
+ right materials. Wood-burning or gas, we handle the full scope from base
+ to finish.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -209,14 +257,13 @@ export default function FirePitAndOutdoorFireplacePage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE BUILD</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Pits, Fireplaces, Gas or Wood — Built to Burn
+ Custom Fire Pit and Fireplace Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- From a firebrick-lined pit to a full stone-clad fireplace with its
- own flue, here are the fire features McCoy builds across Oakville,
- Burlington, Mississauga, and Milton.
+ No two McCoy fire features are identical. Here are the builds we do most
+ often across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
@@ -246,7 +293,7 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/15-cta-dusk-invitation.jpg"
- alt="Outdoor fireplace and seating area lit at dusk on a McCoy Landscape Group build in Burlington"
+ alt="Gas fire feature with curved stone seating wall and paver surround at dusk in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -268,11 +315,11 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY BUILD · BURLINGTON
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Stone-clad firebox on its own frost-depth footing, gas trenched
- from the meter, seat wall set at conversation radius.
+ Gas fire feature, curved stone seating wall, and Techo-Bloc paver
+ surround, built in a single scope.
  </p>
  </div>
  </div>
@@ -284,18 +331,18 @@ export default function FirePitAndOutdoorFireplacePage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">INSIDE THE FIREBOX</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Decides Whether a Fire Feature{" "}
- <em className="italic font-light text-[var(--color-accent)]">Survives</em>
+ The Details That Turn a Fire Pit{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Into a Gathering Spot</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Firebrick or refractory panel set in high-temperature mortar, never ordinary block in ordinary mix",
- "Flue area sized against the firebox opening, with a real throat and smoke shelf to start the draw",
- "A separate footing below frost line under the chimney mass, poured on undisturbed compacted granular",
- "Air-to-gas mixture adjusted on-site after the first burn so the flame runs full instead of thin and blue",
+ "Curved seating walls with integrated low-voltage lighting",
+ "Gas lines run and connected by qualified trades",
+ "Custom stone caps, borders, and matching pillars",
+ "Engineered base and drainage that keep the feature level",
  ].map((item) => (
  <div
  key={item}
@@ -321,8 +368,8 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Fire Feature Build</em>
+ Every McCoy Fire Feature Build{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -356,8 +403,8 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Firebox, Flue, and Footing{" "}
- <em className="italic font-light">Done by Hand</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Fire Features</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -385,8 +432,8 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Site Walk to{" "}
- <em className="italic font-light">First Burn</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Fire Feature Process</em>
  </h2>
  </div>
 
@@ -430,9 +477,8 @@ export default function FirePitAndOutdoorFireplacePage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- A pit surround is usually a few days on site. Full masonry
- fireplaces run longer, and gas tie-ins are scheduled around the
- licensed fitter.
+ Most fire feature builds take a few days to 2 weeks on-site once we
+ start. Peak season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -443,16 +489,15 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Drives the Cost of{" "}
- <em className="italic font-light">a Fire Feature</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Fire Feature Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Price follows mass. A kit-based pit surround is one conversation; a
- full firebox with throat, smoke chamber, flue, and stone veneer is
- another entirely. On top of that sit the length of the gas run,
- whether hardscape has to be lifted for the trench, the veneer you
- choose, and any seating built around the fire. Everything is quoted
- in writing after the on-site assessment.
+ Every fire feature is scoped to size, fuel type, seating, and stone
+ selection. A simple wood fire pit and a full gas fireplace with seating
+ walls sit at very different price points. We build the written estimate
+ after the on-site visit, so the number you see is the number you pay. No
+ surprises, no escalations.
  </p>
  </div>
  </div>
@@ -464,8 +509,8 @@ export default function FirePitAndOutdoorFireplacePage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Fire Features Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -523,50 +568,13 @@ export default function FirePitAndOutdoorFireplacePage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Fire Feature FAQs"
- headingItalic="Answered Before You Build"
+ headingMain="Fire Pit and Fireplace FAQs"
+ headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Fire Pit and Outdoor Fireplace",
- description:
- "Wood-burning fire pits, natural gas fire features, and built-in masonry outdoor fireplaces across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Outdoor Fireplace Construction", "Fire Pit Installation", "Gas Fire Feature Installation", "Outdoor Masonry", "Outdoor Living Design"],
- url: "https://mccoylandscapegroup.com/services/fire-pit-and-outdoor-fireplace",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Fire Pit and Outdoor Fireplace", item: "https://mccoylandscapegroup.com/services/fire-pit-and-outdoor-fireplace" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
