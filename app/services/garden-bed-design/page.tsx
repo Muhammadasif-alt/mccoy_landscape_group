@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- PencilRuler,
- Compass,
- ArrowUpDown,
- Square,
- Brush,
- Leaf,
+ Home,
+ Sprout,
+ LayoutGrid,
+ Calendar,
+ ShieldCheck,
+ Ruler,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,187 +20,233 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Garden Bed Design Oakville | Bed Shape, Layering & Edging | McCoy Landscape Group",
+ title: "Garden Bed Design Oakville | Four-Season Planting Beds | McCoy Landscape Group",
  description:
- "Garden bed design in Oakville, Burlington, Mississauga & Milton. Bed lines, scale, layering, four-season structure, and edging planned before a single plant. Call (416) 985-9771.",
+ "Custom garden bed design & installation in Oakville, Burlington, Mississauga & Milton. Layered, four-season beds that frame your home. Call (416) 985-9771.",
  alternates: { canonical: "/services/garden-bed-design" },
 };
 
-const bedDesignTypes = [
+const bedTypes = [
  {
- icon: Compass,
- title: "Bed line & shape",
- body: "Sweeping curves for traditional lots, or crisp architectural lines that echo a modern facade — drawn before we dig.",
+ icon: Home,
+ title: "Front yard curb-appeal beds",
+ body: "Beds that frame your entry and lift your curb appeal.",
  },
  {
- icon: ArrowUpDown,
- title: "Height layering",
- body: "Three tiers minimum — groundcover, mid-mass, and anchor — so the bed reads as depth rather than a flat row.",
+ icon: Sprout,
+ title: "Foundation beds",
+ body: "Layered beds that soften the front of your home.",
  },
  {
- icon: Leaf,
- title: "Four-season structure",
- body: "Evergreen bones and winter form built in first, then bloom sequence layered on top of that skeleton.",
+ icon: LayoutGrid,
+ title: "Backyard border beds",
+ body: "Beds that frame patios, lawns, and outdoor living zones.",
  },
  {
- icon: PencilRuler,
- title: "Foundation plantings",
- body: "Beds proportioned to house height so the facade sits in a landscape instead of on a mowed slab.",
+ icon: Calendar,
+ title: "Four-season beds",
+ body: "Plant mixes designed for colour and interest all year.",
  },
  {
- icon: Square,
- title: "Island & feature beds",
- body: "Free-standing beds shaped to be read from every side, with a clear centre of gravity and no back row.",
+ icon: ShieldCheck,
+ title: "Low-maintenance beds",
+ body: "Hardy, easy-care beds that still look full and designed.",
  },
  {
- icon: Brush,
- title: "Colour palette planning",
- body: "Two or three colour families repeated through the bed — restraint is what makes a garden look designed.",
+ icon: Ruler,
+ title: "Raised and edged beds",
+ body: "Defined beds with clean edges or low retaining walls.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Design Phase",
+ heading: "Design & Prep",
  items: [
- "Bed lines laid out in paint or hose on site and viewed from the street and the kitchen window",
- "Bed depth scaled to house height — a two-storey facade needs 6-8 feet, not 3",
- "Sun, shade, wind, and downspout mapping before a single species is chosen",
- "Plan drawn with mature sizes shown, not nursery-pot sizes",
+ "Assessment of light, soil, and drainage in each area",
+ "Bed shape and layout designed for your yard",
+ "Removal of old or overgrown beds if needed",
+ "Fresh bed shaping and edging",
  ],
  },
  {
- heading: "Structure & Layering",
+ heading: "Plants & Installation",
  items: [
- "Evergreen anchors placed first to hold the bed through a Halton winter",
- "Repetition rhythm set — odd-numbered groupings, repeated three or more times",
- "Bloom calendar sequenced so something is carrying the bed every month from April to October",
- "Seedheads and grasses left standing for winter form and snow contrast",
+ "A layered plant plan for colour through the seasons",
+ "Trees, shrubs, and perennials matched to your conditions",
+ "Quality topsoil and proper spacing for healthy growth",
+ "Mulch to finish the beds and hold moisture",
  ],
  },
  {
- heading: "Build Detail",
+ heading: "Finishing",
  items: [
- "Bed excavated and backfilled to 12-18 inches of workable soil, deeper for shrub masses",
- "Edging specified: spade-cut, steel, aluminum, or a paver soldier course",
- "Grade shaped with a slight crown so beds shed water instead of holding it",
- "Bed plan handed over with a planting key and a maintenance rhythm",
+ "Full cleanup of beds and surrounding areas",
+ "Care and watering guide at handoff",
+ "Guidance on seasonal upkeep",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Beds designed on site at full scale — not sketched from a satellite photo",
- "Bed lines drawn to relate to the house, driveway, and hardscape already there",
- "Winter structure planned first, because that is half the Ontario year",
- "We size beds for mature plants, so year five looks better than year one",
- "Design and build under one roof — nothing is lost in a contractor handoff",
- "3-year workmanship warranty on the build; plant material follows supplier terms",
+ "200+ landscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major project",
+ "Design-build under one roof, so beds fit your whole yard",
+ "Plants and layouts matched to Ontario conditions",
+ "Clean crews, respectful job sites, daily communication",
+ "Honest advice on what will thrive and what to avoid",
 ];
 
 const processSteps = [
- { title: "Initial Call or Form", body: "Tell us which beds feel wrong and how much upkeep you actually want." },
- { title: "On-Site Design Walk", body: "We paint bed lines, sight them from the street, and adjust until they read." },
- { title: "Bed Plan & Estimate", body: "Shape, depth, layering, edging, and soil volumes drawn and priced." },
- { title: "Shape, Amend & Edge", body: "Beds cut, soil built up, edging set, and the whole outline locked in." },
- { title: "Plant & Hand Over", body: "Material placed to plan, mulched, and a planting key left with you." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, check light, soil, and drainage." },
+ { title: "Design & Detailed Estimate", body: "Bed design, plant plan, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the design, hand off watering and care tips." },
 ];
 
 const faqs = [
  {
- q: "My beds look thin and stringy against the house. Why?",
- a: "Almost always scale. Builder beds get cut at three feet deep regardless of house height, and a two-storey Oakville facade needs six to eight feet to look balanced. The fix is rarely more plants — it is a deeper bed line with proper layering. Widening a bed by three feet costs a fraction of what people spend replanting the same narrow strip over and over.",
+ q: "How much does garden bed design cost in Oakville or Burlington?",
+ a: "It depends on the size and shape of the beds, the plant plan, and the soil and edging work. A single front bed costs far less than a full yard of designed beds. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Curved beds or straight lines?",
- a: "It follows the architecture. A traditional centre-hall or Georgian home carries long sweeping curves well, and the curves need to be genuinely long — one or two big arcs, not a wobbly scallop every four feet. Modern flat-roof and stone-clad builds want straight runs and hard corners that pick up the geometry of the house. Mixing both on one property is the usual reason a garden looks busy without anyone knowing why.",
+ q: "What makes a designed bed better than just planting?",
+ a: "A designed bed has shape, layering, and a plan for colour through the seasons. That is the difference between a bed that looks full and intentional and one that looks bare or random. We plan the structure so it looks great all year.",
  },
  {
- q: "How do I get a bed that still looks like something in February?",
- a: "Structure before flowers. We place evergreen anchors — boxwood, yew, spruce, dwarf conifers — first, so the bed has a shape when everything else is dormant. Then ornamental grasses and perennials with strong seedheads get left standing rather than cut down in fall, and a red-twig dogwood or a birch clump gives colour against snow. Design that way and the bloom season becomes a bonus, not the whole point.",
+ q: "Can you make my beds look good in every season?",
+ a: "Yes. We plan a plant mix that gives colour and interest across spring, summer, and fall, plus structure that holds up in winter. That is the goal of a four-season bed design.",
  },
  {
- q: "What edging do you recommend?",
- a: "Spade-cut edge is the cleanest look and costs the least, but needs re-cutting each spring. Steel and aluminum edging holds a crisp line for a decade and disappears visually, which is why we spec it most often on modern designs. A paver soldier course is the most permanent, lets you run a mower wheel right along it, and ties the bed to existing Techo-Bloc or Unilock hardscape. We match the choice to the maintenance you want to do.",
+ q: "Will you design beds around my patio or walls?",
+ a: "Yes. As a design-build company we shape beds to flow with your hardscape. Beds around patios, walls, and walkways soften the hard edges and tie the whole yard together.",
  },
  {
- q: "How deep does the soil actually need to be?",
- a: "Twelve inches of workable soil for perennials and eighteen or more for shrub masses. Most West GTA subdivisions were stripped and then backfilled with compacted clay subsoil under four inches of thin topsoil — plants stall in that permanently. We excavate the bed, break the pan, and blend compost into a real soil profile. This is the single largest cost line people do not expect and the one that decides whether the bed thrives.",
+ q: "Can you design low-maintenance beds?",
+ a: "Yes. We can design beds with hardy, easy-care plants that still look full and intentional. We match the upkeep level to how much time you want to spend in the garden.",
  },
  {
- q: "Can you redesign existing beds instead of starting over?",
- a: "Often, yes. Plenty of properties have good mature material sitting in a badly shaped bed. We can re-cut the bed line, transplant what is worth keeping — early spring or fall is the window for that — build up the soil, and fill the gaps. Redesigning around existing anchors usually costs less than a clear-out and gets you a mature-looking bed immediately.",
+ q: "Do you maintain the beds after they are planted?",
+ a: "Yes. We offer landscape maintenance including pruning, trimming, mulching, and seasonal cleanups to keep your beds looking their best year-round.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium garden bed design",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville garden bed design by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom planting beds",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington custom planting beds by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service bed design",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service garden bed design by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom landscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom landscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function GardenBedDesignPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/garden-bed-design`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Garden Bed Design",
+ description:
+ "Custom garden bed design and installation — front yard curb-appeal beds, foundation beds, backyard borders, four-season beds, and low-maintenance beds across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Garden Bed Design", "Foundation Planting Beds", "Four-Season Beds", "Border Beds", "Low-Maintenance Beds"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Garden Bed Design", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
  eyebrow="GARDEN BED DESIGN"
- title="The Bed Is the Design"
- subtitle="Before the Plants Are"
+ title="Garden Bed Design"
+ subtitle="in Oakville"
  opening={
  <>
- Bed shape, scale, layering, and edging designed on site across Oakville,
- Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> and we&apos;ll paint the lines at full
- size in your yard before anything gets planted — because a good bed line
- makes ordinary plants look intentional.
+ Custom garden bed design and installation in Oakville, Burlington,
+ Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We
+ design and build beds that frame your home and stay beautiful through
+ every season.
  </>
  }
  imageSrc="/images/maintenance-detail.jpg"
- imageAlt="Layered garden bed with a crisp curved edge, evergreen anchors, and ornamental grasses on a McCoy Landscape Group design"
+ imageAlt="Designed garden beds with layered planting and clean edging framing a home on an Oakville property by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">GEOMETRY FIRST</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD GARDEN BEDS</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- A Bed Line Does More{" "}
- <em className="italic font-light">Than Any Plant List</em>
+ Beds Designed for Colour, Shape, and{" "}
+ <em className="italic font-light">Every Season</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Widen the bed, sweep the line so it answers the roofline, and give
- the planting three real tiers of height — the same shrubs
- suddenly look deliberate. Species selection matters, but it is the
- shape of the ground that decides whether a garden reads as
- designed or merely decorated.
+ A garden bed is more than a strip of soil with a few plants in it. A
+ well-designed bed has shape, layers, and a plan for colour that carries
+ through spring, summer, and fall. Most beds fall flat because they are
+ planted with no design. Random plants, no structure, and beds that look
+ bare half the year.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy designs and builds garden beds that look intentional and stay full
+ through the seasons. We plan the shape, the layering, and the plant mix
+ so there is always something in bloom or in leaf. As a design-build
+ company, we shape your beds around your patios, walls, and lawn so the
+ whole yard flows together.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -210,19 +256,18 @@ export default function GardenBedDesignPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE DESIGN</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Line, Scale, Layer, Edge — In That Order
+ Custom Garden Bed Design Services
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Most disappointing gardens are not a plant problem. The bed was
- too narrow, the line fought the house, and everything got planted
- in a single row. We fix the geometry first.
+ Every yard is different. Here are the garden beds we design most often
+ across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
- {bedDesignTypes.map(({ icon: Icon, title, body }) => (
+ {bedTypes.map(({ icon: Icon, title, body }) => (
  <div
  key={title}
  className="group relative bg-[var(--color-bg-warm)] rounded-2xl p-6 md:p-7 border-t-[3px] border-t-[var(--color-accent-mid)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
@@ -247,7 +292,7 @@ export default function GardenBedDesignPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/softscape-hero.jpg"
- alt="Re-cut foundation garden bed with evergreen anchors and a steel edge holding the curve, designed by McCoy Landscape Group"
+ alt="Newly designed garden beds with layered planting, clean edging, and mulch framing a paver patio in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -269,11 +314,11 @@ export default function GardenBedDesignPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY DESIGN · MISSISSAUGA
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Foundation bed re-cut to full depth, evergreen anchors set
- first, steel edge holding one long unbroken curve.
+ Newly designed garden beds with layered planting, clean edging, and
+ mulch, framing a paver patio.
  </p>
  </div>
  </div>
@@ -285,18 +330,18 @@ export default function GardenBedDesignPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">THE HIDDEN WORK</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Sits Under a Bed{" "}
- <em className="italic font-light text-[var(--color-accent)]">That Keeps Getting Better</em>
+ The Details That Make a Bed{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Look Designed</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Twelve to eighteen inches of workable soil, with the builder clay pan broken before backfill",
- "Compost turned through the full root zone rather than dressed across the surface",
- "Beds crowned and drained away from the foundation so crowns never sit wet",
- "Steel, aluminum, or spade-cut edge set deep enough to stop lawn roots crossing the line",
+ "Layered planting for height, colour, and season-long interest",
+ "Clean edging or low stone walls that define the beds",
+ "Quality topsoil and mulch for healthy, tidy beds",
+ "Beds shaped to flow with your patios, walls, and lawn",
  ].map((item) => (
  <div
  key={item}
@@ -322,8 +367,8 @@ export default function GardenBedDesignPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What Goes Into Every McCoy Bed{" "}
- <em className="italic font-light">— The Layout</em>
+ Every McCoy Garden Bed Project{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -357,8 +402,8 @@ export default function GardenBedDesignPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Why Oakville Homeowners{" "}
- <em className="italic font-light">Choose McCoy for Bed Design</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Garden Beds</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -387,7 +432,7 @@ export default function GardenBedDesignPage() {
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
  Our 5-Step{" "}
- <em className="italic font-light">Garden Bed Design Process</em>
+ <em className="italic font-light">Garden Bed Process</em>
  </h2>
  </div>
 
@@ -408,7 +453,7 @@ export default function GardenBedDesignPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group garden bed design process`}
+ alt={`${s.title} — McCoy Landscape Group garden bed process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -431,9 +476,8 @@ export default function GardenBedDesignPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Bed shaping and soil work usually runs a few days on site. Planting
- is scheduled into the spring or fall window that suits the material
- being installed.
+ Most garden bed projects take a few days to 1 week on-site, depending on
+ size. Spring and fall are the best planting seasons, so book ahead.
  </p>
  </div>
  </section>
@@ -448,12 +492,10 @@ export default function GardenBedDesignPage() {
  <em className="italic font-light">Garden Bed Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Bed design is priced by the length of line being re-cut, how much
- soil has to be excavated and replaced to reach a real root depth,
- the edging you select, and whether mature material is being kept
- and transplanted rather than cleared. A refresh of an established
- bed and a full re-shape down to clay are different jobs. All of it
- is quoted in writing after the on-site design walk.
+ Every project is scoped to the size and shape of the beds, the plant
+ plan, and the soil and edging work needed. There is no flat guessing over
+ the phone. We build the written estimate after the on-site visit, so the
+ number you see is the number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -465,8 +507,8 @@ export default function GardenBedDesignPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Bed Design Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -531,43 +573,6 @@ export default function GardenBedDesignPage() {
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Garden Bed Design",
- description:
- "Garden bed shape, scale, layering, four-season structure, and edging design for properties across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Garden Bed Design", "Planting Design", "Foundation Planting", "Bed Edging", "Landscape Layout"],
- url: "https://mccoylandscapegroup.com/services/garden-bed-design",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Garden Bed Design", item: "https://mccoylandscapegroup.com/services/garden-bed-design" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
