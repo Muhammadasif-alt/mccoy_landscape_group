@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {
  ArrowUpDown,
- Ruler,
  Wrench,
- Droplets,
- Anchor,
- Compass,
+ LayoutGrid,
+ ShieldCheck,
+ Ruler,
+ Waves,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,146 +20,145 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Interlock Repair and Re-Levelling Oakville | Sunken Pavers Fixed | McCoy Landscape Group",
+ title: "Interlock Repair & Re-Levelling Oakville | Lift & Relay | McCoy Landscape Group",
  description:
- "Interlock repair and re-levelling in Oakville, Burlington, Mississauga & Milton. Sunken pavers lifted, base rebuilt, trip hazards gone. 3-year warranty. Call (416) 985-9771.",
+ "Expert interlock repair, re-levelling & lift-and-relay in Oakville, Burlington, Mississauga & Milton. We fix sunken & shifted pavers for good. Call (416) 985-9771.",
  alternates: { canonical: "/services/interlock-repair-and-re-levelling" },
 };
 
 const repairTypes = [
  {
  icon: ArrowUpDown,
- title: "Settled and sunken sections",
- body: "Dips near driveway aprons, downspouts, and vehicle wheel paths lifted, re-based, and set flush with the surrounding field.",
- },
- {
- icon: Compass,
- title: "Frost heave correction",
- body: "Sections pushed upward by trapped water freezing under the base — rebuilt with free-draining aggregate so they stop moving.",
- },
- {
- icon: Anchor,
- title: "Missing or blown edge restraint",
- body: "Spreading perimeters pulled back tight, then locked with spiked polymer or concrete haunch restraint the original crew skipped.",
+ title: "Sunken paver re-levelling",
+ body: "Lift and relay of dipped or settled sections back to level.",
  },
  {
  icon: Wrench,
- title: "Trip hazard removal",
- body: "Lipped walkway joints and raised corners taken down to a continuous plane — safe underfoot and code-sensible at entries.",
+ title: "Driveway repairs",
+ body: "Fixes for rutted, sunken, or shifted interlock driveways.",
+ },
+ {
+ icon: LayoutGrid,
+ title: "Patio and walkway repairs",
+ body: "Re-levelling of wavy patios and uneven walkways.",
+ },
+ {
+ icon: ShieldCheck,
+ title: "Trip hazard fixes",
+ body: "Correction of raised or lifted pavers that are a safety risk.",
  },
  {
  icon: Ruler,
- title: "Partial lift versus full relay",
- body: "We re-level only the failed area when the base is sound, and quote a full lift-and-relay only when it is genuinely warranted.",
+ title: "Edge and border repairs",
+ body: "Re-set of loose edges and failed edge restraint.",
  },
  {
- icon: Droplets,
- title: "Root and drainage repairs",
- body: "Tree roots pruned or routed around, and water redirected with drainage stone so the same section doesn't sink twice.",
+ icon: Waves,
+ title: "Drainage corrections",
+ body: "Base and grade fixes that stop water from washing out again.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Diagnosis First",
+ heading: "Assess & Lift",
  items: [
- "Stringline and laser shot across the whole surface to map the real low and high points",
- "Test lift of a few pavers to see base depth, aggregate type, and whether bedding sand has washed out",
- "Downspout, swale, and grade check — most settlement is a water problem before it is a paver problem",
- "Written cause note so you know whether this is a base failure, a root, or a restraint failure",
+ "On-site check to find why the pavers shifted",
+ "Careful lift of the affected pavers to save them",
+ "Removal of failed sand and washed-out base",
+ "A look at drainage and grade around the area",
  ],
  },
  {
- heading: "Lift and Rebuild",
+ heading: "Rebuild & Relay",
  items: [
- "Existing pavers lifted by hand, cleaned, and stacked for re-use wherever the units are sound",
- "Failed base excavated and replaced with compacted 3/4 clear or Granular A to proper depth",
- "Fresh bedding layer screeded to grade, with drainage stone or geotextile added where the soil holds water",
- "Edge restraint installed or replaced along every open perimeter before a single paver goes back down",
+ "Fresh compacted aggregate base built in lifts",
+ "Drainage and grade corrected before relaying",
+ "The same pavers set back to level",
+ "Edge restraint re-secured around the section",
  ],
  },
  {
- heading: "Relay and Finish",
+ heading: "Finishing",
  items: [
- "Salvaged pavers relaid in the original pattern, with new units blended in from the field rather than one obvious patch",
- "Discontinued colours matched from supplier stock, reclaimed lots, or by borrowing units from a hidden area",
- "Plate compacted over protective mat, then swept and set with polymeric jointing sand",
- "Final pass with a level across the repair line so the transition to old work reads flat, not patched",
+ "Fresh polymeric sand set into the joints",
+ "Post-job cleanup and wash-down",
+ "Care and maintenance guide at handoff",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "We fix the cause, not the symptom — a repair over a bad base sinks again in two winters",
- "25+ years relaying interlock across Oakville, Burlington, Mississauga, and Milton",
- "Your existing pavers get salvaged and re-used, which keeps the colour consistent and the cost down",
- "Owner-operated — Alex and Pieter assess every repair before it gets quoted",
- "Straight answers on partial repair versus full relay, even when full relay is the bigger invoice",
- "Repaired areas carry our 3-year hardscape warranty against sink, level, and cracking",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major job",
+ "We build interlock too, so we fix the base, not just the surface",
+ "Base and drainage rebuilt for Ontario freeze and thaw, not shortcut",
+ "We save your existing pavers wherever possible",
+ "Clean crews, respectful job sites, daily communication",
 ];
 
 const processSteps = [
- { title: "Send Photos or Call", body: "A few photos of the sunken area tell us a lot before we ever drive out." },
- { title: "On-Site Diagnosis", body: "We shoot grades, lift a test section, and find why it moved." },
- { title: "Scope and Fixed Quote", body: "Repair area, base depth, restraint, and paver matching in writing." },
- { title: "Lift, Re-Base, Relay", body: "Crew on site, base corrected, pavers back down the same week on most jobs." },
- { title: "Level Check and Handoff", body: "We walk the repair with you and confirm the surface reads as one piece." },
+ { title: "Initial Call or Form", body: "Share the problem area, size, and photos if you have them." },
+ { title: "On-Site Consultation", body: "We find why the pavers shifted and check drainage." },
+ { title: "Detailed Estimate", body: "Scope and investment in writing." },
+ { title: "Repair & Relay", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the surface is level, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "Why did my interlock sink in the first place?",
- a: "Almost always the base, not the pavers. The common causes we find in Halton and Peel are an undersized or uncompacted granular base, bedding sand washing out through a missing edge restraint, water from a downspout tracking under the surface, and clay subgrade holding moisture that freezes and heaves. Tree roots are a distant fifth. We diagnose which one you have before quoting.",
+ q: "How much does interlock repair cost in Oakville or Burlington?",
+ a: "It depends on the size of the area and why it failed. A small sunken section costs far less than a full driveway with a drainage problem. We give you a written estimate after the on-site visit, not a guess over the phone.",
+ },
+ {
+ q: "Why did my pavers sink in the first place?",
+ a: "Almost always because of the base. Water washed out the sand, the ground settled, or the original base was too thin. We fix the cause by rebuilding the base and correcting drainage, not just sweeping sand back on top.",
  },
  {
  q: "Can you re-use my existing pavers?",
- a: "Usually yes. Concrete pavers are far tougher than the base under them, so on most re-levelling jobs 90 percent or more of the units come back up clean and go straight back down. We lose some to chipping at the edges of the lift and to old saw cuts. Those get replaced from field stock so the patched area blends instead of announcing itself.",
+ a: "Yes, in most cases. We lift the pavers carefully so we can relay the same ones back to level. If a few are cracked or stained, we can source matching replacements where possible.",
  },
  {
- q: "My paver is discontinued. Can you still match it?",
- a: "Often, yes. We check current Techo-Bloc, Unilock, and Permacon lines for a close profile, chase down remaining supplier stock, and keep an eye on reclaimed lots. When nothing matches, the better move is to borrow units from a low-visibility area — behind a shed, under a deck, a side walkway — and put the new blended product there instead of in the middle of your front entry.",
+ q: "Will the repaired area sink again?",
+ a: "Not when it is fixed properly. We rebuild the compacted base and correct the drainage so water does not wash it out again. A proper repair holds up just like a new install.",
  },
  {
- q: "Do I need the whole driveway lifted, or just the bad section?",
- a: "It depends on what the test lift shows. If the base is sound and only one area failed because of a downspout or a settled service trench, a partial re-level is the right call and costs a fraction of a full relay. If the base is thin or contaminated across the whole surface, spot repairs just move the problem, and we will tell you that plainly.",
+ q: "Do you fix trip hazards from raised pavers?",
+ a: "Yes. Raised or lifted pavers are a safety risk, especially on walkways and entries. We re-level them and fix whatever pushed them up, whether it is a root, frost, or a base issue.",
  },
  {
- q: "How long does a re-levelling job take?",
- a: "A single sunken area on a walkway or an apron is typically one day. A larger driveway section runs two to three days. A full lift-and-relay on an average Oakville driveway is usually three to five days depending on square footage, disposal, and how deep the base has to go. We give you the schedule up front and stick to it.",
- },
- {
- q: "Will the repair sink again next winter?",
- a: "Not if the cause is corrected. Our repairs go back on a properly compacted base with an open-graded drainage layer where the soil is heavy, plus restraint on every free edge. That combination gives freeze-thaw water somewhere to go instead of lifting your surface. Re-levelled areas carry the same 3-year warranty on sink, level, and cracking as a new McCoy build.",
+ q: "Can you seal the repaired area to match the rest?",
+ a: "Yes. We can add a full clean and seal so the repaired section blends in with the rest of your surface and gets the same protection.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium interlock repair",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville interlock repair by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Re-levelling and lift-and-relay",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington interlock re-levelling and lift-and-relay by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service paver repair",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service paver repair by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Interlock restoration",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton interlock restoration by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
@@ -174,10 +173,10 @@ export default function InterlockRepairAndRelevellingPage() {
  "@id": `${URL}#service`,
  name: "Interlock Repair and Re-Levelling",
  description:
- "Lifting, re-basing, and relaying settled or heaved interlock pavers across Oakville, Burlington, Mississauga, and Milton.",
+ "Expert interlock repair, re-levelling, and lift-and-relay — sunken paver correction, driveway and patio repairs, trip hazard fixes, and drainage corrections across Oakville, Burlington, Mississauga, and Milton.",
  provider: { "@id": `${SITE}/#localbusiness` },
  areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Interlock Repair", "Paver Re-Levelling", "Driveway Repair", "Edge Restraint Installation", "Base Reconstruction"],
+ serviceType: ["Interlock Repair", "Paver Re-Levelling", "Lift and Relay", "Trip Hazard Repair", "Drainage Correction"],
  url: URL,
  };
 
@@ -203,40 +202,50 @@ export default function InterlockRepairAndRelevellingPage() {
 
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="INTERLOCK REPAIR AND RE-LEVELLING"
- title="Sunken Interlock,"
- subtitle="Lifted and Made Right"
+ eyebrow="INTERLOCK REPAIR & RE-LEVELLING"
+ title="Interlock Repair and Re-Levelling"
+ subtitle="in Oakville"
  opening={
  <>
- Settled patios, heaved walkways, and dipped driveway aprons across
- Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> and we&apos;ll find out why it moved
- before we put a single paver back down — because a relay over a bad
- base just buys you two more winters.
+ Expert interlock repair, re-levelling, and lift-and-relay in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We fix
+ sunken and shifted pavers and make them last.
  </>
  }
  imageSrc="/images/12-process-installation.jpg"
- imageAlt="McCoy Landscape Group crew re-levelling lifted interlock pavers over a freshly compacted granular base"
+ imageAlt="McCoy Landscape Group crew lifting and re-levelling sunken interlock pavers on an Oakville driveway"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">SETTLED INTERLOCK</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">REPAIR & RESTORATION</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- A Relay Is Only as Good as{" "}
- <em className="italic font-light">the Base You Put It On</em>
+ Fix the Base,{" "}
+ <em className="italic font-light">Not Just the Surface</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- A dip beside the garage apron. A lip at the front walk that catches
- a shoe. A patio corner spreading wider every spring. The concrete
- units are almost never what failed — beneath them the granular
- thinned, the bedding sand escaped through an open edge, or water
- found a route it was never given. That is what we come to find.
+ Sunken pavers, wavy patios, and trip hazards do not fix themselves. When
+ interlock shifts, it is almost never the pavers that failed. It is the
+ base underneath. Water washed out the sand, the ground settled, or the
+ original base was too thin for Ontario freeze and thaw. Sweeping sand
+ back into the joints does nothing if the base is the problem.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy repairs interlock the right way. We lift the affected pavers,
+ rebuild the base underneath, fix the drainage, and relay the same pavers
+ back to level. Done properly, a repaired section holds up just as well as
+ a new install. We save the pavers you already have and make the surface
+ safe and flat again.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -246,14 +255,13 @@ export default function InterlockRepairAndRelevellingPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE REPAIR</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Dips, Heaves, Lips, Spread — All of It
+ Interlock Repair and Re-Levelling Services
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Pavers rarely fail. What fails is the base beneath them, the
- restraint around them, or the water moving under both. Here is what
- we correct across Oakville, Burlington, Mississauga, and Milton.
+ Every repair is different. Here is the work we do most often across
+ Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
@@ -283,7 +291,7 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/11-process-excavation.jpg"
- alt="Failed granular base excavated beneath lifted interlock pavers on a McCoy Landscape Group re-levelling job"
+ alt="A sunken driveway section lifted, re-based, and relaid to level using the same pavers in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -305,11 +313,11 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY REPAIR · BURLINGTON
+ A RECENT MCCOY REPAIR · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Driveway apron dug out past the failed layer, re-based, and the
- original pavers relaid flat over the repair line.
+ A sunken driveway section lifted, re-based, and relaid to level
+ using the same pavers, in a single scope.
  </p>
  </div>
  </div>
@@ -321,18 +329,18 @@ export default function InterlockRepairAndRelevellingPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">UNDER THE PAVERS</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- The Details That Decide Whether a Repair{" "}
- <em className="italic font-light text-[var(--color-accent)]">Holds</em>
+ The Details That Make a Repair{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Hold</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Excavation carried past the failed layer, never a sand top-up under lifted units",
- "Open-graded clear stone wherever the subgrade is Halton clay that traps winter water",
- "Restraint spiked into compacted base along every free edge before the relay begins",
- "Screed rails pulled and bedding struck true so the repair line disappears underfoot",
+ "Rebuilt compacted base under the lifted area",
+ "Drainage corrections that stop the problem coming back",
+ "Fresh polymeric sand and edge restraint on the repaired area",
+ "Full clean and seal add-on to match the rest of the surface",
  ].map((item) => (
  <div
  key={item}
@@ -358,8 +366,8 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Re-Levelling Job</em>
+ Every McCoy Interlock Repair{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -393,8 +401,8 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- We Fix the Base{" "}
- <em className="italic font-light">Not Just the Surface</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Interlock Repair</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -422,8 +430,8 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From First Photo to{" "}
- <em className="italic font-light">Flat Again</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Interlock Repair Process</em>
  </h2>
  </div>
 
@@ -467,9 +475,8 @@ export default function InterlockRepairAndRelevellingPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Repair timelines depend on area, base depth, and disposal. A single
- sunken section is often one day; a full lift-and-relay runs three to
- five.
+ Most repairs take 1 to 3 days on-site, depending on the size of the
+ area. Peak season books ahead, call early.
  </p>
  </div>
  </section>
@@ -480,16 +487,14 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Moves the Number on{" "}
- <em className="italic font-light">a Repair</em>
+ What Goes Into an{" "}
+ <em className="italic font-light">Interlock Repair Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Repair pricing follows the area being lifted, how deep the failed
- base has to come out, whether spoil leaves the property, and how
- much replacement stone is needed to blend a discontinued colour.
- Access shifts it too — a wheelbarrow-only backyard is slower work
- than a driveway a machine can reach. Every repair is quoted in
- writing after the on-site diagnosis.
+ Every repair is scoped to the size of the area, the cause of the
+ problem, and any drainage work needed. There is no flat guessing over
+ the phone. We build the written estimate after the on-site visit, so the
+ number you see is the number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -501,8 +506,8 @@ export default function InterlockRepairAndRelevellingPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Repairing Interlock Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -567,10 +572,6 @@ export default function InterlockRepairAndRelevellingPage() {
 
  <FinalCTA />
  <Footer />
- <JsonLd data={serviceLd} />
- <JsonLd data={breadcrumbLd} />
- <JsonLd data={faqLd} />
-
  </>
  );
 }
