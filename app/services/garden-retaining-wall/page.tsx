@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Blocks,
- Waves,
- Square,
  Sprout,
- Droplets,
- Fence,
+ Layers,
+ ArrowUpDown,
+ Blocks,
+ Mountain,
+ Armchair,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,146 +20,145 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Garden Retaining Wall Oakville | Low Block & Planter Walls | McCoy Landscape Group",
+ title: "Garden Retaining Wall Oakville | Raised Beds & Terraces | McCoy Landscape Group",
  description:
- "Garden retaining walls in Oakville, Burlington, Mississauga & Milton. Low block walls, raised planters, curved beds. Techo-Bloc, Unilock, Permacon. Call (416) 985-9771.",
+ "Custom garden retaining wall installation in Oakville, Burlington, Mississauga & Milton. Raised beds, terraces & block walls. 3-year warranty. Call (416) 985-9771.",
  alternates: { canonical: "/services/garden-retaining-wall" },
 };
 
-const gardenWallTypes = [
- {
- icon: Blocks,
- title: "Segmental block systems",
- body: "Techo-Bloc, Unilock, and Permacon units with built-in lips or pin alignment — engineered products, not landscape-store leftovers.",
- },
- {
- icon: Waves,
- title: "Curved and serpentine runs",
- body: "Split-face units taper so a bed edge can sweep in a true arc rather than a series of short straight facets.",
- },
+const wallTypes = [
  {
  icon: Sprout,
- title: "Raised planter beds",
- body: "Two or three courses of block that lift soil to a comfortable height for planting, herbs, or kitchen-garden use.",
+ title: "Raised garden bed walls",
+ body: "Low walls that lift and frame planting beds.",
  },
  {
- icon: Square,
- title: "Cap courses and seat walls",
- body: "Adhered cap units finish the top clean, shed water off the wall, and give a low run a usable sitting edge.",
+ icon: Layers,
+ title: "Terraced garden walls",
+ body: "Stepped walls that turn a slope into planting levels.",
  },
  {
- icon: Droplets,
- title: "Drainage on low walls too",
- body: "Clear stone and filter fabric behind every wall we build, including the 18-inch ones most crews backfill with dirt.",
+ icon: ArrowUpDown,
+ title: "Lawn and grade walls",
+ body: "Walls that create flat, usable lawn out of a slope.",
  },
  {
- icon: Fence,
- title: "Tie-ins to steps and edging",
- body: "Walls terminated into stair treads, walkways, or steel edging so the run ends deliberately instead of trailing off.",
+ icon: Blocks,
+ title: "Block retaining walls",
+ body: "Clean, uniform segmental block walls in many colours.",
+ },
+ {
+ icon: Mountain,
+ title: "Natural stone garden walls",
+ body: "Low natural stone walls for a softer, organic look.",
+ },
+ {
+ icon: Armchair,
+ title: "Walls with seating and steps",
+ body: "Garden walls that double as seating and tie into steps.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Layout and Selection",
+ heading: "Site Prep & Base Work",
  items: [
- "Wall lines marked with paint and hose on site so you see the curve before we dig",
- "Block system, colour, texture, and cap profile chosen from full-size samples in your own light",
- "Retained height confirmed at each end — anything approaching 1 m gets flagged for engineering",
- "Bed shapes, planting depth, and soil volume worked out with the wall, not after it",
+ "Site and grade assessment for the right wall design",
+ "Excavation to the right depth for Ontario freeze and thaw",
+ "Compacted aggregate base built to carry the wall",
+ "Level base course set as the foundation",
  ],
  },
  {
- heading: "Base and Build",
+ heading: "Materials & Installation",
  items: [
- "Trench excavated and a compacted granular base set at least 150 mm deep beneath the first course",
- "Bottom course buried to roughly one block height below finished grade so the wall cannot kick out",
- "Units levelled individually, left to right and front to back, before the next course goes on",
- "Curves cut on site with a masonry saw so radius joints stay tight instead of wedging open",
+ "Segmental block or natural stone matched to your design",
+ "Techo-Bloc, Unilock, and Permacon products where they fit the scope",
+ "Drainage stone and pipe behind the wall to relieve water",
+ "Caps, steps, and beds built as one scope",
  ],
  },
  {
- heading: "Drainage and Finish",
+ heading: "Finishing",
  items: [
- "Clear stone chimney placed directly behind the block and wrapped in non-woven filter fabric",
- "Native backfill compacted in lifts above the drainage zone, never dumped loose against the wall",
- "Caps adhered with flexible concrete adhesive rated for Ontario freeze-thaw cycling",
- "Beds filled with quality triple-mix, planted, mulched, and graded to drain away from the face",
+ "Backfill, grading, and cleanup",
+ "Care and maintenance guide at handoff",
+ "3-year warranty activation",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Drainage stone and filter fabric behind every wall — even the low ones nobody would check",
- "Full-size block samples on site so you choose colour in daylight against your own house",
- "Curves cut and fitted on the job, not approximated with wedge-shaped gaps",
- "25+ years of design-build across Oakville, Burlington, Mississauga, and Milton",
- "Owner-operated — Alex and Pieter set the layout lines on every garden wall",
- "3-year warranty on sink, level, and cracking, same as our largest hardscape builds",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Techo-Bloc, Unilock, and Permacon premium supplier options",
+ "Drainage and base built for Ontario freeze, thaw, and soil pressure",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty covering shifting, settling, and leaning",
 ];
 
 const processSteps = [
- { title: "Free Consultation", body: "We walk the yard, look at the slope, and talk about what the beds need to do." },
- { title: "Layout on the Ground", body: "Lines painted, heights marked, and curves adjusted until you like the shape." },
- { title: "Samples and Quote", body: "Block, cap, and colour confirmed, with lineal footage priced in writing." },
- { title: "Excavate and Build", body: "Base compacted, courses set and levelled, drainage packed in behind." },
- { title: "Plant and Walk Through", body: "Beds filled, planted, mulched, and the finished run reviewed with you." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, assess the grade, drainage, and access." },
+ { title: "Design & Detailed Estimate", body: "Wall design, material selection, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "How tall can a garden wall be before it needs engineering?",
- a: "Most decorative garden walls we build sit between 12 and 36 inches of exposed face, which is comfortably below the point where Ontario municipalities require a permit. The usual trigger in Oakville, Burlington, and Milton is 1 m of exposed height, and anything with a driveway, pool, or slope loading above it can trigger review sooner. If your grade needs more, an armour stone or engineered block wall is the right answer.",
+ q: "How much does a garden retaining wall cost in Oakville or Burlington?",
+ a: "It depends on the length, the height, and the material. A short raised bed wall is far less than a tall terraced wall with steps. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Do low walls really need drainage behind them?",
- a: "Yes, and skipping it is the single most common reason garden walls lean. Much of Halton sits on heavy clay that holds water instead of shedding it. When that water freezes behind a wall it expands and pushes the block outward, a little more each winter. A narrow clear stone chimney with filter fabric costs very little at build time and is the difference between five years and thirty.",
+ q: "Do low garden walls really need drainage?",
+ a: "Yes. Even a low wall holds back soil and water. Without drainage behind it, water builds up and pushes the wall out of line over a few seasons. We add drainage on every wall so it holds up for the long term.",
  },
  {
- q: "Which block brand do you use?",
- a: "We build with Techo-Bloc, Unilock, and Permacon, all three of which make garden wall lines with proper alignment lips or pins and consistent colour batching. Which one we recommend depends on the texture and palette you want and what coordinates with existing paving on the property. We bring physical samples rather than asking you to choose from a brochure.",
+ q: "What is the difference between block and natural stone walls?",
+ a: "Block walls give a clean, uniform look and come in many colours. Natural stone gives a softer, organic look where every piece is different. We walk you through both during the design phase based on your yard and budget.",
  },
  {
- q: "Can you build a curved wall, or only straight runs?",
- a: "Curves are one of the nicest things you can do with segmental block. The units are tapered front to back, so they naturally close up on a radius. We lay the arc out with a hose on the ground first, adjust it until it reads right from your kitchen window and your driveway, then build to that line. Tight inside radii get saw-cut units to keep the joints closed.",
+ q: "Can a garden wall double as seating?",
+ a: "Yes. A low wall with a smooth cap makes great built-in seating around a patio or fire feature. We plan the height and cap for comfortable seating when that is the goal.",
  },
  {
- q: "How long does a garden wall take to build?",
- a: "A straightforward 20 to 30 lineal foot planter wall is typically two to three days including excavation, base, drainage, block, caps, and soil. Longer runs, multiple terraces, or walls tying into steps add time. Spring and summer install slots generally book six to twelve weeks out, so it is worth calling well ahead of when you want the beds planted.",
+ q: "Will a garden wall lean or bow over time?",
+ a: "Not when it is built right. A compacted base, locked courses, and drainage behind the wall keep it straight through freeze and thaw. That is why our 3-year warranty covers shifting, settling, and leaning.",
  },
  {
- q: "Will the wall shift over an Ontario winter?",
- a: "Not if it is built on a compacted granular base with the bottom course buried and drainage behind it. Those three things handle freeze-thaw movement on a low wall. What does shift are walls set on bare soil, backfilled with clay, and started at grade — which describes most of the leaning garden walls we get called out to replace. Ours carry a 3-year warranty on sink, level, and cracking.",
+ q: "Can you build terraced walls on a steep slope?",
+ a: "Yes. Terracing a slope into levels is one of the best ways to make a hilly yard usable. We plan the tiers, drainage, and steps so the whole slope becomes planting beds or flat space you can actually use.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium garden wall installs",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville garden retaining wall by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom raised beds and terraces",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington raised beds and terraced garden walls by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service retaining walls",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga garden retaining wall by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
  note: "Custom hardscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom hardscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
@@ -174,10 +173,10 @@ export default function GardenRetainingWallPage() {
  "@id": `${URL}#service`,
  name: "Garden Retaining Wall",
  description:
- "Low segmental block garden walls, raised planters, and terraced beds across Oakville, Burlington, Mississauga, and Milton.",
+ "Custom garden retaining wall installation — raised garden bed walls, terraced garden walls, lawn and grade walls, block and natural stone walls across Oakville, Burlington, Mississauga, and Milton.",
  provider: { "@id": `${SITE}/#localbusiness` },
  areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Garden Wall Construction", "Segmental Block Wall", "Raised Planter Bed", "Bed Terracing", "Seat Wall"],
+ serviceType: ["Garden Retaining Wall", "Raised Bed Wall", "Terraced Garden Wall", "Block Retaining Wall", "Natural Stone Garden Wall"],
  url: URL,
  };
 
@@ -203,62 +202,72 @@ export default function GardenRetainingWallPage() {
 
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="GARDEN RETAINING WALL"
- title="Low Walls That Shape"
- subtitle="the Whole Garden"
+ eyebrow="GARDEN RETAINING WALLS"
+ title="Garden Retaining Walls Built to Last"
+ subtitle="in Oakville"
  opening={
  <>
- Raised planters, terraced beds, and curved block walls across
- Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> for a free on-site consultation —
- Techo-Bloc, Unilock, and Permacon systems, drained properly behind
- the face even at 18 inches tall.
+ Custom garden retaining wall installation in Oakville, Burlington,
+ Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. Every
+ wall we build is backed by our 3-year warranty covering shifting,
+ settling, and leaning.
  </>
  }
  imageSrc="/images/04-card-retaining-walls.jpg"
- imageAlt="Low segmental block garden retaining wall terracing a planted bed on a McCoy Landscape Group property"
+ imageAlt="Terraced garden retaining wall with raised beds on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">DECORATIVE, BUT STRUCTURAL</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD RETAINING WALLS</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- Knee-High Is Still{" "}
- <em className="italic font-light">a Real Piece of Construction</em>
+ Walls That Shape Your Yard and{" "}
+ <em className="italic font-light">Hold Their Line</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- The wall that edges a front bed or lifts a herb garden to working
- height is the one most crews treat as trim — laid on bare soil,
- packed behind with clay, started right at grade. It leans by the
- fifth winter. We build the small runs to the same standard as the
- big ones, because the ground does not know the difference.
+ A garden retaining wall does more than hold back soil. It carves flat,
+ usable space out of a slope, frames your beds and lawn, and gives the
+ whole yard clean lines. But even a low wall has a real job to do. When
+ soil and water push against a wall with no base and no drainage, it
+ bows, leans, and topples in a few short years.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy builds garden retaining walls that stay straight and hold their
+ grade for decades. We set every wall on a compacted base, add drainage
+ behind it, and lock the courses together so they carry the load. Raised
+ beds, terraced gardens, and tidy grade changes all get built to handle
+ Ontario freeze and thaw.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
  </section>
 
- {/* Garden Wall Types Grid */}
+ {/* Wall Types Grid */}
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE BUILD</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Planters, Terraces, Seat Walls — Under Three Feet
+ Custom Garden Retaining Wall Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- A garden wall is doing two jobs at once — holding a modest amount of
- soil, and drawing the line that tells the eye where the garden
- begins. Both jobs deserve a real base and real drainage.
+ No two McCoy walls are identical. Here are the garden walls we build
+ most often across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
- {gardenWallTypes.map(({ icon: Icon, title, body }) => (
+ {wallTypes.map(({ icon: Icon, title, body }) => (
  <div
  key={title}
  className="group relative bg-[var(--color-bg-warm)] rounded-2xl p-6 md:p-7 border-t-[3px] border-t-[var(--color-accent-mid)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
@@ -283,7 +292,7 @@ export default function GardenRetainingWallPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/softscape-hero.jpg"
- alt="Curved low block garden wall edging a freshly planted and mulched bed on a McCoy Landscape Group property"
+ alt="A terraced garden wall with raised beds and integrated steps turning a sloped yard into usable space in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -305,11 +314,11 @@ export default function GardenRetainingWallPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY BUILD · MISSISSAUGA
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- A serpentine planter run, saw-cut on the radius and capped, then
- filled and planted the same week.
+ A terraced garden wall with raised beds and integrated steps,
+ turning a sloped yard into usable space.
  </p>
  </div>
  </div>
@@ -321,18 +330,18 @@ export default function GardenRetainingWallPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">THE PART NOBODY CHECKS</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- Four Small Decisions That Keep a Low Wall{" "}
- <em className="italic font-light text-[var(--color-accent)]">Plumb</em>
+ The Details That Turn a Wall{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Into a Feature</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "A full block height buried below grade so the bottom course cannot kick forward",
- "A narrow clear-stone chimney and filter fabric even on an eighteen-inch run",
- "Radius units saw-cut on site so curve joints close instead of wedging open",
- "Caps bedded in flexible freeze-thaw adhesive, never rigid construction glue",
+ "Wall caps that double as seating edges",
+ "Integrated low-voltage lighting along the wall line",
+ "Raised beds and terraces built into the grade change",
+ "Engineered drainage behind the wall that relieves water pressure",
  ].map((item) => (
  <div
  key={item}
@@ -358,8 +367,8 @@ export default function GardenRetainingWallPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in Every Garden Wall</em>
+ Every McCoy Garden Wall Build{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -393,8 +402,8 @@ export default function GardenRetainingWallPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Small Walls Built to{" "}
- <em className="italic font-light">Big Wall Standards</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Garden Walls</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -422,8 +431,8 @@ export default function GardenRetainingWallPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Painted Line to{" "}
- <em className="italic font-light">Planted Bed</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Garden Wall Process</em>
  </h2>
  </div>
 
@@ -467,8 +476,8 @@ export default function GardenRetainingWallPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- A single planter run is often two to three days. Multiple terraces or
- tie-ins to steps add time, and spring slots book well ahead.
+ Most garden walls take a few days to 2 weeks on-site once we start,
+ depending on size. Peak season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -479,16 +488,15 @@ export default function GardenRetainingWallPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Sets the Price of{" "}
- <em className="italic font-light">a Garden Wall</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Garden Wall Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Garden walls are quoted by lineal foot, and the course count, the
- amount of curve, and the number of corners and terminations do most
- of the work on that figure. Block line and cap profile move the
- material side. Soil volume, planting, and any tie-in to steps or
- edging round it out. You get the whole thing in writing after the
- free on-site consultation.
+ Every wall is scoped to the length, the height, the material, and
+ features like steps or seating. There is no flat per foot quoting that
+ misses the real story. We build the written estimate after the on-site
+ visit, so the number you see is the number you pay. No surprises, no
+ escalations.
  </p>
  </div>
  </div>
@@ -500,8 +508,8 @@ export default function GardenRetainingWallPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Shaping Gardens Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -559,17 +567,13 @@ export default function GardenRetainingWallPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Garden Wall FAQs"
+ headingMain="Garden Retaining Wall FAQs"
  headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd data={serviceLd} />
- <JsonLd data={breadcrumbLd} />
- <JsonLd data={faqLd} />
-
  </>
  );
 }
