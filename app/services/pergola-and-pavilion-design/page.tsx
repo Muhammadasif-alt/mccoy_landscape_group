@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Sun,
- Warehouse,
- LayoutGrid,
- Trees,
- Anchor,
- Lightbulb,
+ Fence,
+ Layers,
+ Home,
+ Square,
+ Waves,
+ Flame,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,185 +20,233 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Pergola & Pavilion Design Oakville | Cedar, Aluminum & Louvered Roofs | McCoy Landscape Group",
+ title: "Pergola & Pavilion Design Oakville | Cedar & Louvered Structures | McCoy Landscape Group",
  description:
- "Pergola and pavilion design-build in Oakville, Burlington, Mississauga & Milton. Cedar, aluminum, louvered roofs, frost-depth footings. Call (416) 985-9771.",
+ "Custom pergola & pavilion design and build in Oakville, Burlington, Mississauga & Milton. Built for Ontario wind & snow load, backed by our 3-year warranty. Call (416) 985-9771.",
  alternates: { canonical: "/services/pergola-and-pavilion-design" },
 };
 
 const structureTypes = [
  {
- icon: Sun,
- title: "Open-rafter pergolas",
- body: "Rafter depth and spacing worked out so midday sun drops to a comfortable dapple while the sky stays visible overhead.",
+ icon: Fence,
+ title: "Open pergolas",
+ body: "Classic slatted pergolas for filtered shade over a patio.",
  },
  {
- icon: Warehouse,
- title: "Solid-roof pavilions & cabanas",
- body: "A full roof deck with shingles or standing seam, so furniture stays out and the space works in the rain.",
+ icon: Layers,
+ title: "Louvered roof pergolas",
+ body: "Adjustable roofs that open for sun or close for rain.",
  },
  {
- icon: LayoutGrid,
- title: "Louvered & motorized roofs",
- body: "Aluminum blades that pivot from open sky to sealed and pitched, with rain sensors and gutters built into the frame.",
+ icon: Home,
+ title: "Full-roof pavilions",
+ body: "Solid-roof structures that give full shade and rain cover.",
  },
  {
- icon: Trees,
- title: "Western red cedar frames",
- body: "Kiln-dried cedar with concealed hardware and stainless fasteners — warm grain that takes stain instead of fighting it.",
+ icon: Square,
+ title: "Pergolas with privacy screens",
+ body: "Structures with side panels for shade and privacy.",
  },
  {
- icon: Anchor,
- title: "Footings & post anchoring",
- body: "Piers poured below frost depth, or through-patio anchors set into concrete rather than bolted onto pavers.",
+ icon: Waves,
+ title: "Poolside shade structures",
+ body: "Pergolas and pavilions built to frame pool areas.",
  },
  {
- icon: Lightbulb,
- title: "Lighting, fans & heaters",
- body: "Wiring chased inside posts and beams during framing, so no conduit is ever visible on the finished structure.",
+ icon: Flame,
+ title: "Pergolas with fire and kitchen",
+ body: "Structures tied into fire features and outdoor kitchens.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Structure & Materials",
+ heading: "Site Prep & Base Work",
  items: [
- "Western red cedar, powder-coated aluminum, or composite framing specified to the look you want",
- "Beam and rafter spans sized for Ontario snow load, not catalogue minimums",
- "Concealed hardware with stainless or hot-dip galvanized fasteners throughout",
- "Roof options from open rafters to shingled deck, standing seam, or motorized louvres",
+ "Site assessment for grade, access, and structure placement",
+ "Excavation and footings rated for Ontario wind and snow load",
+ "Footings tied into the patio base where the structure sits",
+ "Coordination with the patio and hardscape scope",
  ],
  },
  {
- heading: "Foundations",
+ heading: "Materials & Installation",
  items: [
- "Concrete piers poured below frost depth on undisturbed soil",
- "Post bases raised on standoffs so end grain never sits in standing water",
- "Anchoring through an existing patio into a poured pad below, never onto the pavers",
- "Knee bracing or lateral bracing added where span and wind exposure call for it",
+ "Cedar, aluminum, and composite structures matched to your design",
+ "Posts, beams, and roofing built to handle Ontario weather",
+ "Louvered roofs, screens, and lighting where they fit the scope",
+ "Structure and hardscape built as one scope",
  ],
  },
  {
- heading: "Systems & Approvals",
+ heading: "Finishing",
  items: [
- "Permit drawings and the municipal application where footprint or attachment triggers one",
- "Setback and lot-coverage checks with Oakville, Burlington, Mississauga, or Milton",
- "Rough-in for pot lights, ceiling fans, infrared heaters, and speakers during framing",
- "Privacy screens, retractable shades, and drop curtains detailed into the frame",
+ "Post-install cleanup and wash-down",
+ "Care and maintenance guide at handoff",
+ "3-year warranty activation",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "Spans sized for Ontario snow and wind, not shipped in as a flat-pack guess",
- "Footings below frost line on undisturbed soil — the reason our posts stay plumb",
- "Permit drawings and municipal applications handled by us, not left on your desk",
- "Lighting, fan, and heater wiring roughed in at framing so nothing ends up surface-mounted",
- "In-house carpentry crew — no subcontracted framers on major builds",
- "25+ years building in Halton and Peel, operating since 2001",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Design-build under one roof, so the structure ties into the whole yard",
+ "Footings and anchoring built for Ontario wind and snow load",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty on the finished build",
 ];
 
 const processSteps = [
- { title: "Free On-Site Visit", body: "We read the sun path, the roofline, the view from inside, and where footings can go." },
- { title: "Structure & Material", body: "Pergola or pavilion, cedar or aluminum, fixed or louvered — with spans and costs beside each." },
- { title: "Drawings & Permit", body: "Elevations, footing details, and the municipal application when the build requires one." },
- { title: "Footings & Framing", body: "Piers poured below frost, posts set plumb, beams and rafters raised by our own crew." },
- { title: "Roof & Finishing", body: "Roofing or louvres installed, wiring terminated, stain or finish applied, site cleared." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, measure, and assess grade, access, and placement." },
+ { title: "Design & Detailed Estimate", body: "Layout, materials, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "Pergola or pavilion — what is the real difference?",
- a: "A pergola has open rafters. It breaks up harsh afternoon sun and frames the space, but you will still get wet. A pavilion or cabana carries a solid pitched roof, so furniture stays dry, the barbecue works in the rain, and you can hang heaters and use it into November. Pavilions cost more and almost always need a permit.",
+ q: "How much does a pergola or pavilion cost in Oakville or Burlington?",
+ a: "It depends on the size, the material, and the roof type. An open cedar pergola is far less than a full pavilion with a solid roof and a louvered system. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Do I need a building permit for one?",
- a: "Often yes. Most Ontario municipalities exempt small detached roofed structures under a set floor area, but that threshold is low, and anything attached to the house or above the limit needs a permit. Setbacks and lot coverage matter too. We check the rules for your address, prepare the drawings, and file the application as part of the build.",
+ q: "What is the difference between a pergola and a pavilion?",
+ a: "A pergola has an open or slatted top that gives filtered shade. A pavilion has a solid roof that gives full shade and rain cover. We walk you through both during the design phase based on how you want to use the space.",
  },
  {
- q: "Cedar or aluminum?",
- a: "Cedar looks warm, takes stain well, and suits traditional Oakville and Burlington homes, but it wants re-oiling every couple of seasons and will grey if you leave it. Powder-coated aluminum is dimensionally stable, carries longer spans on slimmer posts, and needs nothing beyond a wash. Louvered systems are aluminum by definition. It is really a maintenance decision.",
+ q: "Do I need a permit for a pergola or pavilion?",
+ a: "Some structures need a permit depending on size and location. We let you know during the consultation and help you understand what your project needs before we build.",
  },
  {
- q: "Can a structure sit on my existing paver patio?",
- a: "Yes, but the posts cannot land on pavers. We lift the units where each post falls, dig and pour a pier below frost line, set an anchor in the wet concrete, then relay the pavers tight around the base. Bolting posts straight onto interlock is a common shortcut, and it is exactly why those structures start leaning within a few winters.",
+ q: "Can you build a pergola over my existing patio?",
+ a: "Yes, if the base can support proper footings. We assess the patio during the on-site visit. In many cases we anchor the footings into the existing hardscape so the structure stays solid.",
  },
  {
- q: "Will it handle our snow load?",
- a: "It is designed to. Southern Ontario ground snow plus a rain-on-snow allowance drives the beam and rafter sizing on any solid roof, so we spec spans to that rather than to a supplier minimum. Louvered systems carry a rated capacity with the blades closed, and we walk you through that number, because most want opening after a heavy fall.",
+ q: "Will a pergola hold up to Ontario winters and snow?",
+ a: "Yes, when it is built right. We use materials and footings rated for Ontario wind and snow load, so the structure stays solid through every season. That is backed by our 3-year warranty.",
  },
  {
- q: "Can lighting, fans, or heaters be added later?",
- a: "Later is possible but messier — you end up with surface conduit running down a structure you paid to look clean. We rough in wiring inside the posts and beams during framing even when the fixtures are not going in yet, so a heater added in year three plugs into something already waiting. At framing stage it costs very little.",
+ q: "Can you add lighting, screens, or a fire feature?",
+ a: "Yes. We build in low-voltage lighting, privacy screens, and connections to fire features or outdoor kitchens as part of the scope. Planning it all up front means it works together as one space.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium pergola and pavilion builds",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville pergola and pavilion build by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Custom shade structures",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington custom shade structure by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service outdoor structures",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga outdoor structure build by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
  note: "Custom hardscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom hardscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function PergolaAndPavilionDesignPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/pergola-and-pavilion-design`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Pergola and Pavilion Design",
+ description:
+ "Custom pergola and pavilion design and build — open pergolas, louvered roofs, full-roof pavilions, privacy screens, and poolside shade structures across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Pergola Design", "Pavilion Design", "Louvered Roof Pergola", "Privacy Screens", "Poolside Shade Structures"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Pergola and Pavilion Design", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="PERGOLA & PAVILION DESIGN"
- title="Shade, Shelter, and"
- subtitle="a Reason to Stay Out"
+ eyebrow="PERGOLAS & PAVILIONS"
+ title="Pergolas and Pavilions Built to Last"
+ subtitle="in Oakville"
  opening={
  <>
- Cedar pergolas, solid-roof pavilions, and motorized louvered systems
- designed and built across Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to talk spans, footings, and permits
- with Alex or Pieter — raised by our own crew, never subcontracted out.
+ Custom pergola and pavilion design and build in Oakville, Burlington,
+ Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. Every
+ structure we build is backed by our 3-year warranty.
  </>
  }
  imageSrc="/images/15-cta-dusk-invitation.jpg"
- imageAlt="Lit cedar pavilion over a paver patio at dusk on a McCoy Landscape Group outdoor living build in Oakville"
+ imageAlt="Custom cedar pergola over a paver patio at dusk on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">SHELTER, ENGINEERED</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD STRUCTURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- The One Thing You Stand Under —{" "}
- <em className="italic font-light">and Look Up At</em>
+ Shade and Shelter That Make the Yard{" "}
+ <em className="italic font-light">Usable</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- A structure has to carry a wet February snow load, shrug off wind
- off the lake, and still read plumb from the kitchen window twenty
- winters from now. Almost all of that is decided below grade and on
- the span table, long before anyone chooses a stain colour.
+ A great patio still bakes in the summer sun and shuts down in the rain.
+ A pergola or pavilion fixes that. It gives you shade, shelter, and a
+ real roof over your outdoor living space, so the yard gets used on more
+ days of the year. But an outdoor structure has to stand up to Ontario
+ wind, snow load, and freeze. A post set in a shallow footing does not
+ last.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy designs and builds pergolas and pavilions that are solid,
+ anchored, and tied into the whole yard. We plan the structure with the
+ patio, fire feature, and grade around it, then build it on proper
+ footings rated for Ontario conditions. Open pergolas or full-roof
+ pavilions, we handle the design and the build under one roof.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -208,14 +256,13 @@ export default function PergolaAndPavilionDesignPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE BUILD</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Pergolas, Pavilions, Louvres — Built for Ontario
+ Custom Pergola and Pavilion Configurations
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- From an open cedar rafter frame to a fully roofed cabana or a
- motorized louvered system, here are the structures McCoy designs and
- raises across Oakville, Burlington, Mississauga, and Milton.
+ No two McCoy structures are identical. Here are the builds we do most
+ often across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
@@ -245,7 +292,7 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/05-card-outdoor-living.jpg"
- alt="Cedar pavilion over a paver patio on a McCoy Landscape Group outdoor living build in Milton"
+ alt="Cedar pergola over a paver patio tied into a fire feature and seating wall in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -267,11 +314,11 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY BUILD · MILTON
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Cedar pavilion on frost-depth piers through an existing patio,
- wiring chased inside the posts before the roof went on.
+ Cedar pergola over a paver patio, tied into a fire feature and
+ seating wall, built in a single scope.
  </p>
  </div>
  </div>
@@ -283,18 +330,18 @@ export default function PergolaAndPavilionDesignPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">BELOW THE FIRST POST</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Keeps a Structure{" "}
- <em className="italic font-light text-[var(--color-accent)]">Plumb</em>
+ The Details That Turn a Structure{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Into a Room</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "A pier poured to undisturbed soil below frost depth under every post — never an anchor bolted to interlock",
- "Post bases lifted on standoffs so end grain never sits in the water that pools at a post",
- "Beam and rafter spans calculated for ground snow plus a rain-on-snow allowance, not a supplier minimum",
- "Stainless or hot-dip galvanized fasteners with the hardware hidden inside the joint, not face-screwed",
+ "Integrated low-voltage lighting built into posts and beams",
+ "Privacy screens, side panels, and hanging space for fans or heaters",
+ "Fire feature, kitchen, and seating connections planned up front",
+ "Footings anchored into the patio base for Ontario wind and snow load",
  ].map((item) => (
  <div
  key={item}
@@ -320,8 +367,8 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Structure Build</em>
+ Every McCoy Pergola and Pavilion Build{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -355,8 +402,8 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Footings Below Frost,{" "}
- <em className="italic font-light">Spans That Hold Snow</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Pergolas and Pavilions</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -384,8 +431,8 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Sun Path to{" "}
- <em className="italic font-light">Finished Roof</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Pergola and Pavilion Process</em>
  </h2>
  </div>
 
@@ -429,9 +476,8 @@ export default function PergolaAndPavilionDesignPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Framing moves quickly once the piers have cured. On most structure
- builds the municipal permit review, not the carpentry, sets the
- start date.
+ Most pergola and pavilion builds take 1 to 3 weeks on-site once we
+ start. Peak season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -442,16 +488,15 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Moves the Number on{" "}
- <em className="italic font-light">a Pergola or Pavilion</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Pergola or Pavilion Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Footprint, roof type, and material do most of the work. An open
- cedar rafter frame is one thing; a solid pitched pavilion or a
- motorized louvered roof carrying snow load is another. After that
- come footing conditions, whether an existing patio has to be opened
- up for piers, permit drawings, and any lighting, fan, or heater
- rough-in. It is all quoted in writing after the on-site assessment.
+ Every structure is scoped to size, material, roof type, and features
+ like lighting or screens. An open cedar pergola and a full
+ louvered-roof pavilion sit at very different price points. We build the
+ written estimate after the on-site visit, so the number you see is the
+ number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -463,8 +508,8 @@ export default function PergolaAndPavilionDesignPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Structures Raised Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -522,50 +567,13 @@ export default function PergolaAndPavilionDesignPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Pergola & Pavilion FAQs"
- headingItalic="from Halton Homeowners"
+ headingMain="Pergola and Pavilion FAQs"
+ headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Pergola and Pavilion Design",
- description:
- "Cedar pergolas, solid-roof pavilions and cabanas, and motorized louvered roof systems designed and built across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Pergola Construction", "Pavilion Construction", "Louvered Roof Installation", "Outdoor Structure Design", "Outdoor Living Design"],
- url: "https://mccoylandscapegroup.com/services/pergola-and-pavilion-design",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Pergola and Pavilion Design", item: "https://mccoylandscapegroup.com/services/pergola-and-pavilion-design" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
