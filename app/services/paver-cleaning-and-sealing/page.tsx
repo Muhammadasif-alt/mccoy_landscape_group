@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import {
  SprayCan,
- Sparkles,
- Leaf,
- Shovel,
- Droplets,
+ Sprout,
+ Layers,
  ShieldCheck,
+ Sparkles,
+ Wrench,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,187 +20,232 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Paver Cleaning & Sealing Oakville | Restore, Re-Sand & Seal | McCoy Landscape Group",
+ title: "Paver Cleaning & Sealing Oakville | Interlock Restoration | McCoy Landscape Group",
  description:
- "Paver cleaning and sealing in Oakville, Burlington, Mississauga & Milton. Pressure washing, efflorescence removal, re-sanding and sealer. Call (416) 985-9771.",
+ "Professional paver cleaning, sealing & restoration in Oakville, Burlington, Mississauga & Milton. Weed removal, re-sanding & quality sealer. Call (416) 985-9771.",
  alternates: { canonical: "/services/paver-cleaning-and-sealing" },
 };
 
-const paverCareTypes = [
+const restorationTypes = [
  {
  icon: SprayCan,
- title: "Controlled pressure washing",
- body: "A surface cleaner run at a pressure the paver face can take — enough to lift grime, not enough to scar aggregate.",
+ title: "Deep paver cleaning",
+ body: "Pressure cleaning that lifts dirt, moss, and stains.",
  },
  {
- icon: Sparkles,
- title: "Efflorescence removal",
- body: "The white salt haze pulled off with a dedicated cleaner and properly neutralised, rather than scrubbed around the surface.",
+ icon: Sprout,
+ title: "Weed and moss removal",
+ body: "Full joint clean-out to stop weeds and moss coming back.",
  },
  {
- icon: Leaf,
- title: "Weed, moss & algae kill",
- body: "Joints treated and cleared to full depth, because anything left rooted grows straight back through fresh sand.",
- },
- {
- icon: Shovel,
- title: "Polymeric joint re-sanding",
- body: "Joints refilled to spec depth with polymeric sand, swept, blown clean, then activated with a controlled fine mist.",
- },
- {
- icon: Droplets,
- title: "Penetrating matte sealer",
- body: "Silane-siloxane sealer that soaks in and repels water and road salt while leaving the stone looking untouched.",
+ icon: Layers,
+ title: "Polymeric sand re-sanding",
+ body: "Fresh polymeric sand that locks joints and blocks weeds.",
  },
  {
  icon: ShieldCheck,
- title: "Film-forming wet-look sealer",
- body: "An acrylic coat that deepens colour, binds the joint sand hard, and adds gloss on tight, well-drained installs.",
+ title: "Paver sealing",
+ body: "Quality sealer that protects colour and resists stains.",
+ },
+ {
+ icon: Sparkles,
+ title: "Stain and efflorescence treatment",
+ body: "Treatment for oil, rust, and the white haze on pavers.",
+ },
+ {
+ icon: Wrench,
+ title: "Lift and relay repairs",
+ body: "Re-levelling of sunken or shifted pavers before sealing.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Clean & Strip",
+ heading: "Clean & Prep",
  items: [
- "Full sweep, then a surface-cleaner wash at pressure matched to the paver face",
- "Old sealer stripped wherever a previous coat is peeling, blushing, or clouded",
- "Efflorescence treated with a dedicated cleaner and neutralised, not left to etch",
- "Weeds, moss, and algae killed and cleared out of the joints to full depth",
+ "Weed, moss, and debris removal from the surface and joints",
+ "Deep pressure cleaning of the full paver surface",
+ "Old or failed joint sand cleared out",
+ "Any sunken pavers lifted and re-levelled",
  ],
  },
  {
- heading: "Repair & Re-Sand",
+ heading: "Restore & Seal",
  items: [
- "Sunken or rocking units lifted, bedding corrected, and re-set flush before anything is sealed",
- "Joints vacuumed or blown out where the old sand has washed low",
- "Polymeric sand swept in to the right depth for the joint width and paver thickness",
- "Sand activated with a measured mist so it sets hard without hazing the faces",
+ "Fresh polymeric sand swept and set into the joints",
+ "Quality sealer applied in your chosen finish",
+ "Stain and efflorescence treatment where needed",
+ "Even coverage for consistent colour and protection",
  ],
  },
  {
- heading: "Seal & Cure",
+ heading: "Finishing",
  items: [
- "Surface confirmed bone dry and the forecast checked before a drop of sealer goes down",
- "Two coats at the manufacturer's flash time, with all edges cut in by hand",
- "Foot traffic held 24 hours and vehicles 72 hours, longer in cool or humid weather",
- "A written re-seal window so you know exactly when the surface is due again",
+ "Post-job cleanup and wash-down",
+ "Care and maintenance guide at handoff",
+ "Guidance on when to re-seal",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "We fix what is under the surface first — nothing gets sealed over a rocking paver",
- "Pressure matched to the paver, not cranked to whatever the machine can throw",
- "Efflorescence properly neutralised so the haze doesn't bloom back through the coating",
- "Sealer chosen for your paver, drainage, and desired finish — not one product for every job",
- "Weather windows respected — we would rather push a day than trap moisture under a coat",
- "25+ years on Halton and Peel interlock, so we know how these surfaces age here",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major job",
+ "We build interlock too, so we know how to restore it properly",
+ "Quality polymeric sand and sealers, not shortcut products",
+ "Clean crews, respectful job sites, daily communication",
+ "Honest advice on whether to restore or replace",
 ];
 
 const processSteps = [
- { title: "Photos or Site Visit", body: "Send photos or we drop by to check paver type, joint condition, and any previous sealer." },
- { title: "Test Patch", body: "A small area cleaned and sealed so you see the finished colour before the whole surface commits." },
- { title: "Clean & Repair", body: "Wash, efflorescence treatment, weed clear-out, and any lifting and re-setting needed." },
- { title: "Re-Sand the Joints", body: "Polymeric sand swept to depth, surface blown clean, misted, then left to set hard." },
- { title: "Seal & Cure", body: "Sealer laid in the right weather window, then the surface kept clear until fully cured." },
+ { title: "Initial Call or Form", body: "Share your surface, size, and goals." },
+ { title: "On-Site Consultation", body: "We check the pavers, joints, and any sunken areas." },
+ { title: "Detailed Estimate", body: "Scope and investment in writing." },
+ { title: "Clean, Restore & Seal", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the finish, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "How soon can brand-new pavers be sealed?",
- a: "Give them 60 to 90 days at minimum. New concrete pavers are still releasing free lime and moisture as they finish curing, and sealing early traps it — you get a permanent white blush under the coating that only comes off by stripping. A full season is better still, because it lets any efflorescence surface so we can wash it away first.",
+ q: "How much does paver cleaning and sealing cost in Oakville or Burlington?",
+ a: "It depends on the size of the surface and its condition. A clean-and-seal costs less than a job that also needs re-levelling or heavy stain treatment. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Do I actually need to seal my patio?",
- a: "No, sealing is optional. What it buys you is easier cleanup of grease, wine, and leaf tannin, better colour retention against UV, locked joint sand, and real protection from de-icing salt. On a driveway that sees a winter of salt it is genuinely worth doing. On a shaded side walkway that nobody uses, it is mostly cosmetic.",
+ q: "Do I really need to seal my pavers?",
+ a: "Sealing is not required, but it makes a big difference. A sealed surface holds its colour, resists stains, and keeps weeds and ants out of the joints. It also makes the pavers much easier to clean going forward.",
  },
  {
- q: "Will sealing trap moisture and wreck the pavers?",
- a: "It can, if it is done badly. A film-forming sealer laid over damp units, or over a base that does not drain, seals water underneath and you get milky blushing and eventually flaking. That is why we test moisture and read the forecast before starting, and on installs with poor drainage we recommend a breathable penetrating sealer instead of a film.",
+ q: "How often should pavers be re-sealed?",
+ a: "Most surfaces need re-sealing every 3 to 5 years, depending on traffic and weather. We let you know what to expect for your surface and hand off a simple care guide.",
  },
  {
- q: "Wet-look or natural finish?",
- a: "Wet-look acrylics deepen the colour, add gloss, and bind joint sand hard — they look excellent on flagstone-profile and darker units. They also need stripping or abrading before recoating and can get slick underfoot when wet. Penetrating silane-siloxane sealers leave the surface looking bare, repel water and salt, and never peel. We do a test patch so you can see both.",
+ q: "Can you get rid of the weeds growing between my pavers?",
+ a: "Yes. We clear the joints fully, then set fresh polymeric sand that hardens and blocks weeds and ants from coming back. Sealing on top adds even more protection.",
  },
  {
- q: "How often does it need redoing?",
- a: "Plan on three to five years for most Oakville and Burlington properties. Driveways and south-facing patios taking full sun and winter salt sit at the shorter end, while shaded low-traffic areas stretch longer. Penetrating sealers simply wear out and can be reapplied straight over themselves. Film-forming coats need the old layer stripped or abraded first.",
+ q: "My pavers are sunken in spots. Can you fix that?",
+ a: "Yes. We lift and relay sunken or shifted pavers to bring the surface back to level before we clean and seal. It is a common part of restoration work.",
  },
  {
- q: "Can you seal in the fall, or is it a summer job?",
- a: "Late spring through early fall is the working window here. Sealer needs surface temperatures inside the manufacturer's range and dry weather either side of application, and Ontario nights cool off fast once October arrives. We book sealing with a weather buffer built in, and we will happily move a day rather than lay product into dew or an incoming front.",
+ q: "Should I restore my interlock or replace it?",
+ a: "Most of the time restoration is all you need and it costs far less than replacement. We give you an honest assessment during the on-site visit. If the base has failed, we will tell you straight.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium paver restoration",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville paver restoration by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Cleaning, sealing, and repair",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington paver cleaning, sealing, and repair by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service paver care",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service paver care by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Interlock restoration",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton interlock restoration by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function PaverCleaningAndSealingPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/paver-cleaning-and-sealing`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Paver Cleaning and Sealing",
+ description:
+ "Professional paver cleaning, sealing, and interlock restoration — deep cleaning, weed and moss removal, polymeric sand re-sanding, and sealing across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Paver Cleaning", "Paver Sealing", "Interlock Restoration", "Polymeric Re-Sanding", "Efflorescence Treatment"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Paver Cleaning and Sealing", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
- eyebrow="PAVER CLEANING & SEALING"
- title="Bring Tired Interlock"
- subtitle="Back to New"
+ eyebrow="PAVER CLEANING, SEALING & RESTORATION"
+ title="Paver Cleaning and Sealing"
+ subtitle="in Oakville"
  opening={
  <>
- Pressure washing, efflorescence removal, joint re-sanding, and sealing
- for existing patios, walkways, and driveways in Oakville, Burlington,
- Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to book a restoration slot — 25+ years
- working on interlock across Halton and Peel.
+ Professional paver cleaning, sealing, and restoration in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We
+ bring tired interlock back to life and protect it for years.
  </>
  }
  imageSrc="/images/13-process-handoff.jpg"
- imageAlt="Restored paver patio with freshly cleaned faces and re-sanded joints on an Oakville property finished by McCoy Landscape Group"
+ imageAlt="Freshly cleaned and sealed interlock paver surface on an Oakville property restored by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">RESTORATION, NOT RESURFACING</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">RESTORATION & PROTECTION</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- Sealer Is the Last Five Percent —{" "}
- <em className="italic font-light">the Prep Is the Job</em>
+ Bring Your Interlock{" "}
+ <em className="italic font-light">Back to Life</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- A can of sealer will not hide a rocking unit, rooted weeds, or salt
- haze still sitting in the pores. Everything that decides how the
- surface looks three summers from now happens before the first coat
- goes down — the wash, the repairs, the joints, and the weather
- window.
+ Interlock does not stay new on its own. After a few Ontario seasons,
+ pavers fade, weeds grow up through the joints, and the surface picks up
+ dirt, moss, and stains. Many homeowners think a tired patio or driveway
+ needs replacing. Most of the time it just needs a proper clean,
+ re-sanding, and a quality sealer.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy cleans, restores, and seals interlock so it looks new again and
+ stays that way. We pull the weeds, deep clean the surface, replace the
+ joint sand, and seal it to lock everything in. A sealed paver surface
+ resists stains, holds its colour, and keeps weeds and ants out of the
+ joints.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
@@ -210,19 +255,18 @@ export default function PaverCleaningAndSealingPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT RESTORATION COVERS</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Wash, Re-Sand, Seal — In That Order
+ Paver Cleaning and Sealing Services
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- From a controlled wash through joint re-sanding to the sealer you
- actually want, here is the restoration work McCoy carries out on
- existing interlock across Oakville, Burlington, Mississauga, and Milton.
+ Every surface is different. Here is the restoration work we do most
+ often across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
- {paverCareTypes.map(({ icon: Icon, title, body }) => (
+ {restorationTypes.map(({ icon: Icon, title, body }) => (
  <div
  key={title}
  className="group relative bg-[var(--color-bg-warm)] rounded-2xl p-6 md:p-7 border-t-[3px] border-t-[var(--color-accent-mid)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
@@ -247,7 +291,7 @@ export default function PaverCleaningAndSealingPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/03-card-paver-patios.jpg"
- alt="Cleaned and sealed paver patio with re-sanded joints on a Mississauga property restored by McCoy Landscape Group"
+ alt="A faded weed-filled driveway cleaned, re-sanded, and sealed back to like-new in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -269,11 +313,11 @@ export default function PaverCleaningAndSealingPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY RESTORATION · MISSISSAUGA
+ A RECENT MCCOY RESTORATION · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Failed coat stripped, sunken units re-set, joints re-sanded to
- depth, then sealed inside a clear four-day window.
+ A faded, weed-filled driveway cleaned, re-sanded, and sealed back to
+ like-new in a single scope.
  </p>
  </div>
  </div>
@@ -285,18 +329,18 @@ export default function PaverCleaningAndSealingPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">WHERE SEAL JOBS FAIL</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- The Unseen Steps That Make a Coat{" "}
- <em className="italic font-light text-[var(--color-accent)]">Hold</em>
+ The Details That Make Interlock{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Last Longer</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Efflorescence neutralised after the cleaner, so salts can't bloom back up through the finished coat",
- "Failing sealer stripped or abraded off rather than coated over and locked under a new layer",
- "Joint sand filled to full depth and activated with a measured mist, never flooded with a hose",
- "Surface moisture read and the forecast checked on both sides of the application day",
+ "Polymeric sand that locks joints and blocks weeds and ants",
+ "Sealer options in matte, satin, or wet-look finish",
+ "Lift and relay of sunken pavers before sealing",
+ "Stain and efflorescence treatment for a clean, even look",
  ].map((item) => (
  <div
  key={item}
@@ -322,8 +366,8 @@ export default function PaverCleaningAndSealingPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Clean-and-Seal</em>
+ Every McCoy Cleaning and Sealing Job{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -357,8 +401,8 @@ export default function PaverCleaningAndSealingPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- The Prep Decides{" "}
- <em className="italic font-light">How Long the Seal Lasts</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Paver Care</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -386,8 +430,8 @@ export default function PaverCleaningAndSealingPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From Test Patch to{" "}
- <em className="italic font-light">Cured Surface</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Cleaning and Sealing Process</em>
  </h2>
  </div>
 
@@ -408,7 +452,7 @@ export default function PaverCleaningAndSealingPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group paver cleaning and sealing process`}
+ alt={`${s.title} — McCoy Landscape Group cleaning and sealing process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -431,9 +475,8 @@ export default function PaverCleaningAndSealingPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Most clean-and-seal jobs run two to three days on site, and we
- always book them against a dry stretch in the forecast rather than
- a fixed date.
+ Most cleaning and sealing jobs take 1 to 3 days on-site, plus curing
+ time for the sealer. Peak season books ahead, call early.
  </p>
  </div>
  </section>
@@ -444,16 +487,15 @@ export default function PaverCleaningAndSealingPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Sets the Price of{" "}
- <em className="italic font-light">a Clean-and-Seal</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Cleaning and Sealing Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Square footage sets the floor; condition sets everything above it.
- Stripping a failed coat, treating heavy efflorescence, clearing
- rooted weeds, or lifting and re-setting sunken units all add labour
- before a drop of sealer is opened. Joint width and sand volume
- matter, and so does the sealer you choose. Every surface is quoted
- in writing after the on-site assessment.
+ Every job is scoped to the size of the surface, the condition of the
+ pavers, and any repairs needed before sealing. There is no flat
+ guessing over the phone. We build the written estimate after the
+ on-site visit, so the number you see is the number you pay. No
+ surprises, no escalations.
  </p>
  </div>
  </div>
@@ -465,8 +507,8 @@ export default function PaverCleaningAndSealingPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Interlock Restoration Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -524,50 +566,13 @@ export default function PaverCleaningAndSealingPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Cleaning & Sealing FAQs"
- headingItalic="for Existing Interlock"
+ headingMain="Paver Cleaning and Sealing FAQs"
+ headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Paver Cleaning and Sealing",
- description:
- "Pressure washing, efflorescence removal, polymeric joint re-sanding, and sealing of existing interlock patios, walkways, and driveways across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Paver Cleaning", "Paver Sealing", "Efflorescence Removal", "Polymeric Sand Re-Sanding", "Interlock Restoration"],
- url: "https://mccoylandscapegroup.com/services/paver-cleaning-and-sealing",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Paver Cleaning and Sealing", item: "https://mccoylandscapegroup.com/services/paver-cleaning-and-sealing" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
