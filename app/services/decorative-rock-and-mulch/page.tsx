@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Mountain,
- Gem,
  Layers,
- Truck,
+ Mountain,
+ Sprout,
+ Gem,
+ Ruler,
  Waves,
- Boxes,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,209 +20,253 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Decorative Rock & Mulch Oakville | River Rock, Gravel & Bed Surfacing | McCoy Landscape Group",
+ title: "Decorative Rock & Mulch Oakville | Bed Finishing & Ground Cover | McCoy Landscape Group",
  description:
- "Decorative rock and mulch supply and install in Oakville, Burlington, Mississauga & Milton. River rock, pea gravel, granite chip, hardwood and cedar mulch. Call (416) 985-9771.",
+ "Custom decorative rock & mulch installation in Oakville, Burlington, Mississauga & Milton. Proper edging & weed control that lasts. Call (416) 985-9771.",
  alternates: { canonical: "/services/decorative-rock-and-mulch" },
 };
 
-const surfacingTypes = [
+const groundCoverTypes = [
  {
- icon: Waves,
- title: "River rock drip lines",
- body: "Rounded 2-4 inch stone along foundations and downspout splash zones where mulch would wash out every storm.",
- },
- {
- icon: Gem,
- title: "Pea gravel paths & side yards",
- body: "Compacted screening base under 3/4-inch pea gravel, held by steel edge so it stays a path, not a spill.",
+ icon: Layers,
+ title: "Mulch installation",
+ body: "Fresh mulch that holds moisture and keeps beds tidy.",
  },
  {
  icon: Mountain,
- title: "Granite chip & limestone screening",
- body: "Angular stone that locks underfoot — ideal for narrow dog runs, gate approaches, and utility strips.",
+ title: "River rock and stone beds",
+ body: "Decorative rock that finishes beds with no yearly top-up.",
  },
  {
- icon: Layers,
- title: "Hardwood, cedar & pine mulch",
- body: "Natural bark mulch installed at 2-3 inches over planted beds to hold moisture and feed the soil back.",
+ icon: Sprout,
+ title: "Garden bed refresh",
+ body: "Clean-out and re-mulch to bring tired beds back to life.",
  },
  {
- icon: Boxes,
- title: "Boulders & accent stone",
- body: "Weathered Muskoka granite or armour stone set as anchors, buried a third deep so they read as native.",
+ icon: Gem,
+ title: "Rock ground cover",
+ body: "Low-maintenance stone cover for slopes and problem areas.",
  },
  {
- icon: Truck,
- title: "Annual top-ups & material swaps",
- body: "Spring refresh cadence, plus stripping tired stone or matted mulch and replacing it with the right surfacing.",
+ icon: Ruler,
+ title: "Bed edging and borders",
+ body: "Clean edges that keep material where it belongs.",
+ },
+ {
+ icon: Waves,
+ title: "Dry riverbeds and drainage rock",
+ body: "Rock features that also help move water off the yard.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "Bed Prep",
+ heading: "Prep & Edging",
  items: [
- "Old material stripped where it has matted, silted, or gone sour",
- "Weeds pulled at the root, not buried under fresh product",
- "Bed edge re-cut or hard edging set so material stays contained",
- "Grade shaped so stone sheds water away from the foundation",
+ "Weed and debris removal from the beds",
+ "Clean-out of old, broken-down mulch if needed",
+ "Fresh bed shaping and edging",
+ "Landscape fabric where it makes sense",
  ],
  },
  {
- heading: "Material & Depth",
+ heading: "Materials & Installation",
  items: [
- "Stone size, colour, and angularity matched to the paver or wall already on site",
- "Mulch at 2-3 inches — deeper smothers roots, thinner lets weeds through",
- "Decorative stone at 2-3 inches over a properly separated subgrade",
- "Volumes calculated by area and depth so you are not paying for a guessed yardage",
+ "Quality mulch or decorative rock matched to your beds",
+ "Even spread to the right depth for coverage",
+ "Material kept off plants, trunks, and walls",
+ "Clean transitions between beds, lawn, and hardscape",
  ],
  },
  {
- heading: "Install & Cleanup",
+ heading: "Finishing",
  items: [
- "Material wheeled in on plywood runs — no rutted lawn, no stained driveway",
- "Kept 2-3 inches clear of trunks and stems so bark can breathe",
- "Hard surfaces blown and washed down at the end of each day",
- "Top-up timing and volume noted so next season is a known number",
+ "Full cleanup of surrounding areas",
+ "Care and refresh guidance at handoff",
+ "Advice on when to top up",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "We tell you where stone is wrong — planted beds and hot south walls",
- "No dyed-black mulch and no rubber mulch on any McCoy property",
- "Fabric used only where it belongs, and never under a living bed",
- "Yardage measured on site so the truck brings the right load once",
- "Stone colour selected against your existing Techo-Bloc or Unilock tones",
- "Owner-operated — Alex and Pieter pick material at the yard themselves",
+ "200+ landscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major project",
+ "Beds prepped and edged right, so the finish actually lasts",
+ "Quality material, clean edges, and even coverage",
+ "Clean crews, respectful job sites, daily communication",
+ "Rock and mulch that ties into your beds and hardscape",
 ];
 
 const processSteps = [
- { title: "Initial Call or Form", body: "Tell us which beds are tired and whether you want stone, mulch, or both." },
- { title: "On-Site Measure", body: "We tape the beds, check drainage and exposure, and calculate real yardage." },
- { title: "Material Selection", body: "Samples compared against your paver, wall, and siding colours before ordering." },
- { title: "Strip, Edge & Install", body: "Old material out, edge defined, new product spread to consistent depth." },
- { title: "Refresh Schedule", body: "We note volumes and timing so next year's top-up is a one-call job." },
+ { title: "Initial Call or Form", body: "Share your beds, size, and goals." },
+ { title: "On-Site Consultation", body: "We check the beds, edging, and material options." },
+ { title: "Detailed Estimate", body: "Scope and investment in writing." },
+ { title: "Install & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough", body: "Confirm the finish, hand off care tips." },
 ];
 
 const faqs = [
  {
- q: "Should I use stone or mulch in my beds?",
- a: "Depends entirely on what is planted. Mulch belongs anywhere there are living perennials, shrubs, or young trees — it breaks down into the soil, moderates root temperature, and holds moisture through a dry Halton August. Stone belongs where nothing needs feeding: foundation drip lines, narrow side yards, dog paths, under downspouts, and around utility pads. Putting stone over a planted bed bakes roots and slowly starves the soil.",
+ q: "How much does rock and mulch installation cost in Oakville or Burlington?",
+ a: "It depends on the size of the beds, the material you choose, and the prep needed. A simple mulch refresh costs far less than a full bed clean-out with new rock and edging. We give you a written estimate after the on-site visit, not a guess over the phone.",
  },
  {
- q: "Do I need landscape fabric underneath?",
- a: "Under decorative stone in a non-planted zone, yes — a woven geotextile keeps stone from sinking into the clay we have across most of Oakville and Burlington. Under mulch in a planted bed, no. Fabric there blocks the mulch from ever reaching the soil, roots mat along the top of it, and in three years you are cutting weeds out of a plastic sheet. Anyone stapling fabric under a garden bed is buying themselves a fast install and you a slow problem.",
+ q: "Should I choose rock or mulch?",
+ a: "Both have their place. Mulch is great for plant beds because it holds moisture and feeds the soil, but it needs a top-up every year or two. Rock lasts far longer with no yearly refresh but does not feed the soil. We help you pick the right one for each bed.",
  },
  {
- q: "Why will you not install dyed-black or rubber mulch?",
- a: "Dyed mulch is usually ground pallet and construction waste coloured with carbon black — it fades to grey by August, and the wood robs nitrogen from the soil as it breaks down. Rubber mulch never decomposes, holds heat brutally, leaches zinc, and is close to impossible to remove once it works into the soil. Neither belongs on a property we put our name on.",
+ q: "Will rock or mulch stop my weeds?",
+ a: "It cuts weeds down a lot, especially with clean edging and fabric where it helps. No cover stops every weed, but a proper install with the right depth makes weeds far easier to manage.",
  },
  {
- q: "How often does mulch need topping up?",
- a: "Once a year for most Oakville-area properties, usually late April into May. Natural bark loses roughly an inch a season as it composts into the bed, which is exactly what it is supposed to do. We top up rather than pile on — if the existing layer is already at depth we strip and fluff instead of adding, because burying a bed under six inches of mulch suffocates the crowns.",
+ q: "How often does mulch need to be replaced?",
+ a: "Most beds need a fresh top-up every 1 to 2 years as the mulch breaks down. Rock does not need replacing, just the occasional clean. We let you know what to expect for your beds.",
  },
  {
- q: "How much material will my beds need?",
- a: "A cubic yard covers about 160 square feet at two inches, or roughly 110 square feet at three inches. Stone is sold by weight as often as volume, and a yard of river rock runs about 1.3 tonnes. We measure your beds on site rather than eyeballing, because ordering short means a second delivery charge and ordering long means a pile in your driveway you have to deal with.",
+ q: "Do you clean out the old beds first?",
+ a: "Yes. We clear weeds, debris, and old broken-down mulch, then re-edge and prep the beds before the new material goes down. That prep is what makes the finish last.",
  },
  {
- q: "Does decorative stone eliminate weeding?",
- a: "It reduces it substantially, but nothing eliminates it. Organic dust and leaf litter settle into the voids over a few seasons and weed seed germinates in that layer, not in the soil below. A blow-out each fall keeps the debris from accumulating, and a spot treatment in spring handles the rest. Compare that to mulched beds, which need a real weeding pass two or three times a season.",
+ q: "Can you match the rock or mulch to my home and plants?",
+ a: "Yes. We walk you through colour and material options so the rock or mulch suits your home, your beds, and your plants. The right match makes the whole yard look pulled together.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium bed finishing",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville decorative rock and mulch bed finishing by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
- note: "Custom outdoor living",
+ note: "Rock and mulch installs",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington rock and mulch installs by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service ground cover",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service ground cover by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
- note: "Custom hardscape design-build",
+ note: "Custom landscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom landscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function DecorativeRockAndMulchPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/decorative-rock-and-mulch`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Decorative Rock and Mulch",
+ description:
+ "Custom decorative rock and mulch installation — mulch, river rock and stone beds, garden bed refresh, rock ground cover, edging, and dry riverbeds across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Mulch Installation", "Decorative Rock", "Garden Bed Refresh", "Rock Ground Cover", "Bed Edging"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Decorative Rock and Mulch", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
  eyebrow="DECORATIVE ROCK & MULCH"
- title="The Right Surface"
- subtitle="Over the Right Bed"
+ title="Decorative Rock and Mulch Installation"
+ subtitle="in Oakville"
  opening={
  <>
- River rock, pea gravel, granite chip, and natural bark mulch installed
- across Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> and we&apos;ll measure real yardage,
- match stone to your existing hardscape, and tell you where mulch beats
- rock — and where it doesn&apos;t.
+ Custom decorative rock and mulch installation in Oakville, Burlington,
+ Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. We
+ finish beds the right way with proper edging and weed control that
+ lasts.
  </>
  }
  imageSrc="/images/softscape-hero.jpg"
- imageAlt="River rock drip line and hardwood mulch beds edged against a paver walkway on a McCoy Landscape Group property"
+ imageAlt="Crisp garden beds finished with fresh mulch and river rock accents on an Oakville property by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">SURFACE STRATEGY</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">BED FINISHING & GROUND COVER</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- The Cheapest Layer on a Property{" "}
- <em className="italic font-light">Is the One Most Often Wrong</em>
+ The Finish That Makes a Yard{" "}
+ <em className="italic font-light">Look Cared For</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Stone poured over a living bed bakes roots. Bark heaped against
- trunks rots the collar. Fabric under a planted bed guarantees a
- weeding problem three summers out. Surfacing is inexpensive
- material and expensive judgement — which product belongs where,
- how deep it goes, and what keeps it contained.
+ Decorative rock and mulch are the finishing touch that pull a whole yard
+ together. They frame your beds, lock in moisture for your plants, and
+ keep weeds down. But most rock and mulch jobs are done backwards.
+ Material dumped over old weeds and no edging means the weeds come right
+ back and the stone mixes into the soil within a season.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy installs rock and mulch the right way. We clear the beds, set clean
+ edges, lay quality landscape fabric where it helps, and spread the
+ material to an even depth. The result is crisp, defined beds that hold
+ their look, keep weeds down, and stay put through Ontario weather.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
  </section>
 
- {/* Surfacing Types Grid */}
+ {/* Ground Cover Types Grid */}
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE SURFACE</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE INSTALL</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Stone, Gravel, Bark — Matched to the Bed
+ Decorative Rock and Mulch Services
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Bed surfacing is the cheapest thing on a landscape and the fastest
- thing to get wrong. Depth, containment, and picking stone over bark
- in the correct places is most of the craft.
+ Every bed is different. Here is the ground cover work we do most often
+ across Oakville, Burlington, Mississauga, and Milton homes.
  </p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
- {surfacingTypes.map(({ icon: Icon, title, body }) => (
+ {groundCoverTypes.map(({ icon: Icon, title, body }) => (
  <div
  key={title}
  className="group relative bg-[var(--color-bg-warm)] rounded-2xl p-6 md:p-7 border-t-[3px] border-t-[var(--color-accent-mid)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
@@ -247,7 +291,7 @@ export default function DecorativeRockAndMulchPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/maintenance-detail.jpg"
- alt="Hardwood mulch beds and a river rock drip line separated by steel edging on a Milton property by McCoy Landscape Group"
+ alt="Tired beds cleared, edged, and finished with fresh mulch and river rock accents in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -269,11 +313,11 @@ export default function DecorativeRockAndMulchPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- A RECENT MCCOY REFRESH · MILTON
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- River rock along the foundation, hardwood bark through the
- planted beds, a steel edge holding the line between them.
+ Tired beds cleared, edged, and finished with fresh mulch and river
+ rock accents, in a single scope.
  </p>
  </div>
  </div>
@@ -285,18 +329,18 @@ export default function DecorativeRockAndMulchPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">THE HIDDEN WORK</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">OPTIONAL FEATURES</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- What Decides Whether Bed Surfacing{" "}
- <em className="italic font-light text-[var(--color-accent)]">Still Reads Next Spring</em>
+ The Details That Keep Beds{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Looking Sharp</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Matted or silted material stripped out rather than buried under a fresh layer",
- "Depth held consistent — enough to shade weed seed, not so much it smothers crowns",
- "Woven geotextile only under stone in unplanted zones, never beneath a living root zone",
- "Hard edging or a re-cut spade line so bark and stone stay where they were placed",
+ "Clean bed edging that holds the line and the material",
+ "Quality landscape fabric where it helps control weeds",
+ "Even depth for full coverage and lasting weed control",
+ "Rock and mulch matched to your beds, plants, and home",
  ].map((item) => (
  <div
  key={item}
@@ -322,8 +366,8 @@ export default function DecorativeRockAndMulchPage() {
  <div className="max-w-[760px] mb-10 md:mb-14">
  <span className="eyebrow text-[var(--color-accent-mid)]">THE SCOPE</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What Goes Into Every McCoy Bed Refresh{" "}
- <em className="italic font-light">— The Detail</em>
+ Every McCoy Rock and Mulch Job{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -357,8 +401,8 @@ export default function DecorativeRockAndMulchPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Why Oakville Homeowners{" "}
- <em className="italic font-light">Choose McCoy for Bed Surfacing</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Rock and Mulch</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -387,7 +431,7 @@ export default function DecorativeRockAndMulchPage() {
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
  Our 5-Step{" "}
- <em className="italic font-light">Rock &amp; Mulch Process</em>
+ <em className="italic font-light">Rock and Mulch Process</em>
  </h2>
  </div>
 
@@ -408,7 +452,7 @@ export default function DecorativeRockAndMulchPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group decorative rock and mulch process`}
+ alt={`${s.title} — McCoy Landscape Group rock and mulch process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -431,8 +475,8 @@ export default function DecorativeRockAndMulchPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- Most bed surfacing jobs finish in a single day. Properties needing
- old material stripped and hauled usually run two.
+ Most rock and mulch jobs take 1 to 3 days on-site, depending on size.
+ Spring is the busiest season, so book ahead.
  </p>
  </div>
  </section>
@@ -443,17 +487,14 @@ export default function DecorativeRockAndMulchPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Drives the Cost of{" "}
- <em className="italic font-light">Bed Surfacing</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Rock and Mulch Investment</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Surfacing is priced by bed area and installed depth, by the
- material itself — bark is a fraction of river rock by volume — and
- by how much tired product has to come out and be hauled first.
- Edging, wheelbarrow distance from the driveway, and whether a load
- can be dumped near the work shift the labour side more than most
- people expect. All of it is quoted in writing after the on-site
- measure.
+ Every job is scoped to the size of the beds, the material you choose, and
+ the prep and edging needed. There is no flat guessing over the phone. We
+ build the written estimate after the on-site visit, so the number you see
+ is the number you pay. No surprises, no escalations.
  </p>
  </div>
  </div>
@@ -465,8 +506,8 @@ export default function DecorativeRockAndMulchPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Rock &amp; Mulch Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -524,50 +565,13 @@ export default function DecorativeRockAndMulchPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Rock & Mulch FAQs"
+ headingMain="Decorative Rock and Mulch FAQs"
  headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Decorative Rock and Mulch",
- description:
- "River rock, pea gravel, granite chip, and natural bark mulch supplied and installed as bed surfacing across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Decorative Stone Installation", "Mulch Installation", "River Rock", "Bed Surfacing", "Landscape Material Supply"],
- url: "https://mccoylandscapegroup.com/services/decorative-rock-and-mulch",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Decorative Rock and Mulch", item: "https://mccoylandscapegroup.com/services/decorative-rock-and-mulch" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
