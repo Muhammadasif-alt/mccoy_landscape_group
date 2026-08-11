@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
- Compass,
+ LayoutGrid,
  Ruler,
- Droplets,
- PencilRuler,
- Lightbulb,
- Calendar,
+ Armchair,
+ Waves,
+ Brush,
+ ClipboardList,
  CheckCircle2,
 } from "lucide-react";
 import Nav from "@/components/Nav";
@@ -20,208 +20,255 @@ import TopoBG from "@/components/TopoBG";
 import FAQBlock from "@/components/FAQBlock";
 
 export const metadata: Metadata = {
- title: "Landscape Design Consultation Oakville | Plans, Renders & Phasing | McCoy Landscape Group",
+ title: "Landscape Design Consultation Oakville | Design-Build Planning | McCoy Landscape Group",
  description:
- "Landscape design consultation in Oakville, Burlington, Mississauga & Milton. Site walk, measured plans, 3D renders and phased budgets. Call (416) 985-9771.",
+ "Custom landscape & hardscape design consultation in Oakville, Burlington, Mississauga & Milton. Design-build under one roof, backed by our 3-year warranty. Call (416) 985-9771.",
  alternates: { canonical: "/services/landscape-design-consultation" },
 };
 
-const designConsultationTypes = [
+const designTypes = [
  {
- icon: Compass,
- title: "On-site design walk",
- body: "We walk the lot with you, noting sightlines, sun angles, mature trees, and how you actually move through the yard.",
+ icon: LayoutGrid,
+ title: "Full backyard design",
+ body: "A complete plan for patios, walls, planting, and features.",
  },
  {
  icon: Ruler,
- title: "Measured survey & grade shots",
- body: "Laser and tape measurements of house corners, lot lines, and elevation changes so every dimension on the plan is real.",
+ title: "Hardscape layout",
+ body: "Patio, driveway, and walkway layouts that flow with your home.",
  },
  {
- icon: Droplets,
- title: "Drainage assessment",
- body: "Where water sits after a storm, where downspouts discharge, and how much fall we have to work with.",
+ icon: Armchair,
+ title: "Outdoor living zones",
+ body: "Dining, lounge, and fire feature areas planned for how you host.",
  },
  {
- icon: PencilRuler,
- title: "Scaled 2D layout",
- body: "Dimensioned plan drawings showing patio shapes, wall lines, steps, beds, and circulation — detailed enough to build from.",
+ icon: Waves,
+ title: "Grade and drainage planning",
+ body: "Solutions for sloped yards and problem drainage before we build.",
  },
  {
- icon: Lightbulb,
- title: "3D renders & material boards",
- body: "Renders from your kitchen window and back door, plus Techo-Bloc, Unilock, and Permacon samples laid out in real daylight.",
+ icon: Brush,
+ title: "Material and colour selection",
+ body: "Guidance on stone, pavers, and finishes that suit your home.",
  },
  {
- icon: Calendar,
- title: "Phasing across seasons",
- body: "A large build broken into stages, sequenced so nothing installed in phase one gets torn out in phase two.",
+ icon: ClipboardList,
+ title: "Phased project planning",
+ body: "A plan you can build in stages to match your budget and timeline.",
  },
 ];
 
 const includedScope: { heading: string; items: string[] }[] = [
  {
- heading: "The Site Visit",
+ heading: "On-Site Assessment",
  items: [
- "Walk-through of the whole property with everyone who will actually use the space",
- "Laser and tape measurements of house corners, lot lines, and existing hardscape",
- "Grade shots at every elevation change so slopes and step counts are numbers, not guesses",
- "Photos of downspouts, window wells, gas meters, and anything the design has to work around",
+ "A full walk of your property with you",
+ "Measurements of the space and grade",
+ "A review of drainage, access, and existing features",
+ "A conversation about how you want to use the yard",
  ],
  },
  {
- heading: "The Drawings",
+ heading: "Design & Planning",
  items: [
- "Dimensioned 2D plan at scale — patio shapes, wall lines, step locations, bed outlines",
- "3D renders from the viewpoints you use daily: kitchen window, back door, driveway approach",
- "Material board naming every paver, coping, and stone by brand and colour",
- "Planting layout drawn at mature spread, not nursery-pot spacing",
+ "A layout that maps patios, walls, planting, and features",
+ "Material, stone, and colour recommendations",
+ "Feature integration for fire, lighting, and pergolas",
+ "A plan you can build in one scope or in phases",
  ],
  },
  {
- heading: "Numbers & Approvals",
+ heading: "Written Estimate",
  items: [
- "Line-item estimate tied to the drawing so you can see the cost of each element",
- "Phase breakdown when the build runs across two or three seasons",
- "Setback, lot-coverage, and permit checks with your municipality flagged early",
- "Design fee credited back in full against the build when you go ahead with McCoy",
+ "A detailed estimate built after the on-site visit",
+ "Clear scope with no flat per square foot guessing",
+ "One team for design and build, backed by our 3-year warranty",
  ],
  },
 ];
 
 const whyMcCoyBullets = [
- "First on-site consultation is free — no charge to walk your property and talk options",
- "Drawn by the people who build it — Alex and Pieter are on the tools for major builds",
- "Every dimension on the plan is a number we measured, not a number we assumed",
- "Design fee credited in full toward your build when you proceed with us",
- "Drainage and grade solved on paper, before a single machine touches the yard",
- "Phased plans so a big property can be built over two or three seasons without rework",
+ "200+ hardscape projects delivered across Oakville, Burlington, Mississauga, and Milton since 2001",
+ "Owner-operated. Alex and Pieter on every major build",
+ "Design-build under one roof, so the planners are the builders",
+ "Techo-Bloc, Unilock, and Permacon premium supplier options",
+ "Clean crews, respectful job sites, daily communication",
+ "3-year warranty on the finished hardscape",
 ];
 
 const processSteps = [
- { title: "Intro Call or Form", body: "A short conversation about the property, the wish list, and the budget range." },
- { title: "Free On-Site Walk", body: "We measure, shoot grades, photograph the site, and talk through how you want to use it." },
- { title: "Concept & Layout", body: "First scaled 2D layout with options for patio shape, circulation, and elevation." },
- { title: "Renders & Materials", body: "3D views, samples on-site, and revisions until the drawing matches what you pictured." },
- { title: "Estimate & Phasing", body: "Line-item pricing, phase options, permit notes, and a construction slot." },
+ { title: "Initial Call or Form", body: "Share your goals, space, and timeline." },
+ { title: "On-Site Consultation", body: "We walk the property, measure, and assess drainage and access." },
+ { title: "Design & Detailed Estimate", body: "Layout, materials, and investment in writing." },
+ { title: "Build & Daily Cleanup", body: "Owner-led crew, clear communication, clean job site." },
+ { title: "Final Walkthrough & 3-Year Warranty", body: "Confirm every detail, hand off care tips." },
 ];
 
 const faqs = [
  {
  q: "Is the design consultation free?",
- a: "The first on-site consultation is free — we walk the property, talk through what you want, and give you a realistic range. Full design work (measured survey, scaled drawings, 3D renders, material boards) is a paid service, and that fee is credited back in full against your build if you move forward with McCoy.",
+ a: "The first on-site consultation is free. We walk your property, talk through your goals, and give you a written estimate. Detailed design work for larger projects is scoped during that visit.",
+ },
+ {
+ q: "What is a design-build company?",
+ a: "It means the same company plans your project and builds it. You are not handing a designer's drawing to a separate contractor and hoping it works. With McCoy, the team that designs your yard is the team that builds it, so nothing gets lost in between.",
+ },
+ {
+ q: "Do I need a full design if I only want a patio?",
+ a: "Not always. For a single patio we can plan it during the on-site visit. For a full backyard with patios, walls, planting, and features, a proper design plan saves money and keeps everything flowing together.",
+ },
+ {
+ q: "Can I build my project in phases?",
+ a: "Yes. We can design the full yard now and build it in stages to match your budget and timeline. Planning it all up front means each phase fits the next with no wasted work.",
+ },
+ {
+ q: "Do you help with material and colour choices?",
+ a: "Yes. We walk you through stone, paver, and finish options from Techo-Bloc, Unilock, and Permacon so the materials suit your home and hold up in Ontario weather.",
  },
  {
  q: "How long does the design process take?",
- a: "From the on-site walk to a finished drawing set is usually two to four weeks, depending on how many revisions we go through. Larger properties with grade changes, pool integration, or multiple phases run longer. We would rather spend an extra week at the drawing stage than change something mid-excavation.",
- },
- {
- q: "Do I need a permit for my project?",
- a: "It depends on the element. Patios at grade usually don't, but raised structures, anything over a set footprint, pool enclosures, and work that alters lot drainage can trigger a permit or a grading review. We check the requirements for Oakville, Burlington, Mississauga, or Milton during design and flag anything that needs an application before we quote a build date.",
- },
- {
- q: "Can I take the drawings to another contractor?",
- a: "You own the design you paid for, so yes. What you lose is the credit — the design fee only comes off the build price if we do the work. Most people who hire us to design end up hiring us to build, because the person who shot the grades is the person compacting the base.",
- },
- {
- q: "Can the build be split into phases?",
- a: "That is one of the main reasons to design first. We sequence phases so nothing gets torn out later — lighting and irrigation sleeves, base for a future structure, and drainage lines all go in with phase one even if the feature lands two seasons later. The budget spreads out; the finished result doesn't suffer.",
- },
- {
- q: "What do I actually receive at the end?",
- a: "A dimensioned 2D plan at scale, 3D renders from the viewpoints you look at every day, a material board naming each product by brand and colour, a planting layout at mature spread, and a line-item estimate. It is enough for a crew to build from and enough for a municipality to review.",
+ a: "Most plans take 1 to 3 weeks after the on-site visit, depending on the size of the project. Peak season books 6 to 12 weeks ahead, so reach out early.",
  },
 ];
 
 const serviceAreas = [
  {
  name: "Oakville",
- note: "Premium hardscape installs",
+ note: "Premium design-build",
  image: "/images/09-showcase-signature-build.jpg",
- alt: "Oakville hardscape work by McCoy Landscape Group",
+ alt: "Oakville design-build landscape project by McCoy Landscape Group",
  href: "/service-areas/oakville",
  },
  {
  name: "Burlington",
  note: "Custom outdoor living",
  image: "/images/07-showcase-retaining-hillside.jpg",
- alt: "Burlington retaining wall hardscape by McCoy Landscape Group",
+ alt: "Burlington custom outdoor living design by McCoy Landscape Group",
  href: "/service-areas/burlington",
  },
  {
  name: "Mississauga",
- note: "Full-service hardscape",
+ note: "Full-service hardscape design",
  image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- alt: "Mississauga paver driveway by McCoy Landscape Group",
+ alt: "Mississauga full-service hardscape design by McCoy Landscape Group",
  href: "/service-areas/mississauga",
  },
  {
  name: "Milton",
  note: "Custom hardscape design-build",
  image: "/images/05-card-outdoor-living.jpg",
- alt: "Milton outdoor living build by McCoy Landscape Group",
+ alt: "Milton custom hardscape design-build by McCoy Landscape Group",
  href: "/service-areas/milton",
  },
 ];
 
 export default function LandscapeDesignConsultationPage() {
+ const SITE = "https://mccoylandscapegroup.com";
+ const URL = `${SITE}/services/landscape-design-consultation`;
+
+ const serviceLd = {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": `${URL}#service`,
+ name: "Landscape Design Consultation",
+ description:
+ "Custom landscape and hardscape design consultation and design-build planning — full backyard design, hardscape layout, outdoor living zones, and phased planning across Oakville, Burlington, Mississauga, and Milton.",
+ provider: { "@id": `${SITE}/#localbusiness` },
+ areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
+ serviceType: ["Landscape Design", "Hardscape Design", "Design-Build Planning", "Outdoor Living Design", "Grade and Drainage Planning"],
+ url: URL,
+ };
+
+ const breadcrumbLd = {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ itemListElement: [
+ { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+ { "@type": "ListItem", position: 2, name: "Services", item: `${SITE}/services` },
+ { "@type": "ListItem", position: 3, name: "Landscape Design Consultation", item: URL },
+ ],
+ };
+
+ const faqLd = {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ mainEntity: faqs.map((f) => ({
+ "@type": "Question",
+ name: f.q,
+ acceptedAnswer: { "@type": "Answer", text: f.a },
+ })),
+ };
+
  return (
  <>
+ <JsonLd data={serviceLd} />
+ <JsonLd data={breadcrumbLd} />
+ <JsonLd data={faqLd} />
+
  <Nav />
 
  <PageHero
  eyebrow="LANDSCAPE DESIGN CONSULTATION"
- title="Design It Properly"
- subtitle="Before Anyone Digs"
+ title="Landscape Design Consultation"
+ subtitle="in Oakville"
  opening={
  <>
- Measured site surveys, scaled layouts, 3D renders, and material boards
- for homeowners in Oakville, Burlington, Mississauga, and Milton. Call{" "}
- <strong>(416) 985-9771</strong> to book a free on-site design walk —
- and the design fee comes off your build when you go ahead with McCoy.
+ Custom landscape and hardscape design consultation in Oakville,
+ Burlington, Mississauga, and Milton. Call{" "}
+ <strong>(416) 985-9771</strong> for a free on-site consultation. As a
+ design-build company, we plan and build your project under one roof,
+ backed by our 3-year warranty.
  </>
  }
  imageSrc="/images/10-process-consultation.jpg"
- imageAlt="McCoy Landscape Group reviewing measured plans and grade notes with a homeowner during an Oakville landscape design consultation"
+ imageAlt="McCoy Landscape Group design consultation walking a backyard in Oakville"
  />
 
  {/* Positioning Intro */}
  <section className="relative bg-[var(--color-bg-warm)] py-20 md:py-24 overflow-hidden">
  <TopoBG shape="shape_06" position="center-right" size={620} opacity={0.16} tint="primary" />
  <div className="relative mx-auto max-w-[1080px] px-5 md:px-10 lg:px-20">
- <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN FIRST</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">DESIGN-BUILD APPROACH</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-6">
- A Plan You Can Build From —{" "}
- <em className="italic font-light">Not a Pretty Picture</em>
+ A Plan Built Around How You{" "}
+ <em className="italic font-light">Actually Live</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Backyard budgets rarely break at the quote. They break mid-build,
- when a step count changes or a low spot nobody measured turns into
- a drainage problem. Design moves those decisions onto paper, where
- a revision costs an afternoon instead of a week of machine time and
- a base that has to come back out.
+ Most yard projects go wrong before a single stone is set. A design
+ drawn by someone who will never build it, or no real plan at all, leads
+ to layouts that do not flow and budgets that blow up halfway through.
+ When the designer and the builder are two different companies, the
+ homeowner is stuck in the middle.
+ </p>
+ <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)] mt-4">
+ McCoy is a design-build company, so the people who plan your yard are
+ the same people who build it. We start every project by walking your
+ property, learning how you want to use the space, and mapping out
+ patios, walls, planting, and features that work together. You get one
+ clear plan and one team from first sketch to final walkthrough.
  </p>
  </div>
  <WaveDivider toColor="#ffffff" variant="rolling" height={100} className="absolute inset-x-0 bottom-0" />
  </section>
 
- {/* Design Service Types Grid */}
+ {/* Design Types Grid */}
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-12">
- <span className="eyebrow text-[var(--color-accent-mid)]">WHAT DESIGN COVERS</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">WHAT WE PLAN</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-4">
- Survey, Drawings, Renders — Then a Build Plan
+ What a McCoy Design Consultation Covers
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.65] text-[var(--color-text)]">
- Design is where the money gets saved. An afternoon of measuring and
- a week of drawing prevents the mid-build changes that wreck budgets
- — and it gives you something real to look at before you commit.
+ Every consultation is shaped around your property and goals. Here is
+ what we plan most often for Oakville, Burlington, Mississauga, and
+ Milton homes.
  </p>
  </div>
 
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
- {designConsultationTypes.map(({ icon: Icon, title, body }) => (
+ {designTypes.map(({ icon: Icon, title, body }) => (
  <div
  key={title}
  className="group relative bg-[var(--color-bg-warm)] rounded-2xl p-6 md:p-7 border-t-[3px] border-t-[var(--color-accent-mid)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(0,0,0,0.18)]"
@@ -246,7 +293,7 @@ export default function LandscapeDesignConsultationPage() {
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
  src="/images/09-showcase-signature-build.jpg"
- alt="Finished Oakville backyard built from a measured McCoy Landscape Group design plan"
+ alt="A full backyard designed and built in one scope by McCoy Landscape Group in Oakville"
  fill
  className="object-cover"
  />
@@ -268,11 +315,11 @@ export default function LandscapeDesignConsultationPage() {
  <div className="absolute inset-0 flex items-center z-[1]">
  <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
  <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
- DRAWN AND BUILT BY MCCOY · OAKVILLE
+ A RECENT MCCOY BUILD · OAKVILLE
  </span>
  <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
- Every grade, step riser, and sightline on this build was settled
- on a scaled drawing months before excavation.
+ A full backyard designed and built in one scope, from patio and
+ seating walls to planting and lighting.
  </p>
  </div>
  </div>
@@ -284,18 +331,18 @@ export default function LandscapeDesignConsultationPage() {
  <TopoBG shape="shape_04" position="bottom-right" size={520} opacity={0.18} tint="white" />
  <div className="relative mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10">
- <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">WHAT THE DRAWING DECIDES</span>
+ <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">WHAT YOU GET</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] mt-3">
- The Measurements Behind{" "}
- <em className="italic font-light text-[var(--color-accent)]">a Buildable Plan</em>
+ The Details That Make a Plan{" "}
+ <em className="italic font-light text-[var(--color-accent)]">Worth Building</em>
  </h2>
  </div>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
  {[
- "Grade shots at every elevation change, so step risers come out equal instead of improvised on site",
- "Downspout discharge and standing-water points recorded after rain, not assumed on a dry-day walk",
- "Utility locates, gas meters, and window wells plotted before a single layout line is drawn over them",
- "Planting spaced at mature spread, so nothing has to be dug out and thinned in year four",
+ "A clear layout that matches how you use your yard",
+ "Material and colour guidance from real product options",
+ "Feature integration for fire, lighting, and pergolas planned up front",
+ "Grade and drainage solved on paper before the build starts",
  ].map((item) => (
  <div
  key={item}
@@ -319,10 +366,10 @@ export default function LandscapeDesignConsultationPage() {
  <section className="relative bg-white pt-24 md:pt-28 pb-20 md:pb-24 overflow-hidden">
  <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
  <div className="max-w-[760px] mb-10 md:mb-14">
- <span className="eyebrow text-[var(--color-accent-mid)]">THE DELIVERABLES</span>
+ <span className="eyebrow text-[var(--color-accent-mid)]">THE PROCESS</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- What&apos;s Included{" "}
- <em className="italic font-light">in a Full Design Package</em>
+ Every McCoy Design Consultation{" "}
+ <em className="italic font-light">Includes</em>
  </h2>
  </div>
 
@@ -356,8 +403,8 @@ export default function LandscapeDesignConsultationPage() {
  <div className="max-w-[760px] mb-10">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHY MCCOY</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Drawn by the People{" "}
- <em className="italic font-light">Who Build It</em>
+ Why Oakville Homeowners Choose{" "}
+ <em className="italic font-light">McCoy for Design</em>
  </h2>
  </div>
  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
@@ -385,8 +432,8 @@ export default function LandscapeDesignConsultationPage() {
  <div className="max-w-[760px] mb-12 md:mb-16">
  <span className="eyebrow text-[var(--color-accent-mid)]">HOW WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- From First Walk to{" "}
- <em className="italic font-light">Construction Drawing</em>
+ Our 5-Step{" "}
+ <em className="italic font-light">Design and Build Process</em>
  </h2>
  </div>
 
@@ -407,7 +454,7 @@ export default function LandscapeDesignConsultationPage() {
  <div className="relative aspect-square w-full overflow-hidden">
  <Image
  src={stepPhotos[i]}
- alt={`${s.title} — McCoy Landscape Group landscape design process`}
+ alt={`${s.title} — McCoy Landscape Group design and build process`}
  fill
  className="object-cover"
  sizes="(max-width: 768px) 100vw, 320px"
@@ -430,9 +477,8 @@ export default function LandscapeDesignConsultationPage() {
  </ol>
 
  <p className="mt-10 text-[14px] md:text-[15px] text-[var(--color-text-muted)] italic max-w-[720px]">
- From the on-site walk to a finished drawing set is usually two to
- four weeks. Large properties with grade changes, pool integration,
- or multiple phases run longer.
+ Design and planning usually takes 1 to 3 weeks after the on-site visit.
+ Peak season books 6 to 12 weeks ahead, call early.
  </p>
  </div>
  </section>
@@ -443,17 +489,15 @@ export default function LandscapeDesignConsultationPage() {
  <div className="max-w-[760px]">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHAT TO EXPECT</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3 mb-5">
- What Sets the Cost of{" "}
- <em className="italic font-light">a Design Package</em>
+ What Goes Into a{" "}
+ <em className="italic font-light">Design Consultation</em>
  </h2>
  <p className="text-[16px] md:text-[18px] leading-[1.7] text-[var(--color-text)]">
- Design fees track the size of the lot, how many elements are in
- play, how much grade and drainage has to be resolved, and how many
- render viewpoints and revision rounds you want. A single patio
- layout sits at one end; a whole-property master plan with phasing
- and permit drawings sits at the other. The fee is quoted in writing
- after the free on-site assessment — and credited back against your
- build.
+ The on-site consultation is free. From there, every plan is scoped to
+ your property, your goals, and the features you want. There is no flat
+ quoting that misses the real story. We build the written estimate after
+ the on-site visit, so the number you see is the number you pay. No
+ surprises, no escalations.
  </p>
  </div>
  </div>
@@ -465,8 +509,8 @@ export default function LandscapeDesignConsultationPage() {
  <div className="max-w-[760px] mb-10 md:mb-12">
  <span className="eyebrow text-[var(--color-accent-mid)]">WHERE WE WORK</span>
  <h2 className="font-[family-name:var(--font-display)] font-black leading-[1.15] text-[clamp(28px,3.4vw,42px)] text-[var(--color-primary)] mt-3">
- Design Walks Across{" "}
- <em className="italic font-light">the West GTA</em>
+ Serving{" "}
+ <em className="italic font-light">West GTA</em>
  </h2>
  </div>
 
@@ -524,50 +568,13 @@ export default function LandscapeDesignConsultationPage() {
 
  {/* FAQ — canonical FAQBlock (matches homepage). */}
  <FAQBlock
- headingMain="Design & Consultation FAQs"
- headingItalic="Before You Commit to a Build"
+ headingMain="Landscape Design Consultation FAQs"
+ headingItalic="for Oakville Homeowners"
  faqs={faqs}
  />
 
  <FinalCTA />
  <Footer />
- <JsonLd
-
- data={{
-
- "@context": "https://schema.org",
-
- "@graph": [
- {
- "@type": "Service",
- name: "Landscape Design Consultation",
- description:
- "On-site design walks, measured surveys, scaled 2D layouts, 3D renders, material boards, and phased build planning across Oakville, Burlington, Mississauga, and Milton.",
- provider: { "@id": "https://mccoylandscapegroup.com/#localbusiness" },
- areaServed: ["Oakville", "Burlington", "Mississauga", "Milton"],
- serviceType: ["Landscape Design", "3D Landscape Rendering", "Site Consultation", "Grading and Drainage Design", "Project Phasing"],
- url: "https://mccoylandscapegroup.com/services/landscape-design-consultation",
- },
- {
- "@type": "FAQPage",
- mainEntity: faqs.map((f) => ({
- "@type": "Question",
- name: f.q,
- acceptedAnswer: { "@type": "Answer", text: f.a },
- })),
- },
- {
- "@type": "BreadcrumbList",
- itemListElement: [
- { "@type": "ListItem", position: 1, name: "Home", item: "https://mccoylandscapegroup.com/" },
- { "@type": "ListItem", position: 2, name: "Services", item: "https://mccoylandscapegroup.com/services" },
- { "@type": "ListItem", position: 3, name: "Landscape Design Consultation", item: "https://mccoylandscapegroup.com/services/landscape-design-consultation" },
- ],
- },
- ],
- }}
- />
-
  </>
  );
 }
