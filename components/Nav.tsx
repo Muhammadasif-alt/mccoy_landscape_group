@@ -339,22 +339,9 @@ export default function Nav() {
 
  {/* Footer strip */}
  <div className="flex items-center justify-between gap-4 border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]/50 px-7 py-3.5">
- <div className="flex flex-col">
- <Link
- href="/services"
- className="group/all inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent-mid)]"
- >
- View All Services
- <ChevronRight
- size={15}
- strokeWidth={2.2}
- className="transition-transform group-hover/all:translate-x-0.5"
- />
- </Link>
- <span className="text-[12px] text-[var(--color-text-muted)] mt-0.5">
+ <span className="text-[13px] text-[var(--color-text-muted)]">
  3-year warranty on every install · Owner-operated since 2001
  </span>
- </div>
  <div className="flex items-center gap-3 shrink-0">
  <a
  href="tel:+14169859771"
