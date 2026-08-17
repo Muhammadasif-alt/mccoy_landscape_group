@@ -3,19 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Menu, X, ChevronDown, Award, Users, ShieldCheck, MapPin, Waves, Trees } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, ChevronRight, Award, MapPin, Waves, Trees, LayoutGrid, BrickWall, Flame, Sprout } from "lucide-react";
 import Button from "./Button";
 import { openQuoteModal } from "@/lib/openQuoteModal";
 
 // ---------- Mega menu data ----------
-
-type ServiceItem = {
- label: string;
- href: string;
- description: string;
- image: string;
- imageAlt: string;
-};
 
 type LocationItem = {
  label: string;
@@ -31,114 +23,55 @@ type TrustPillar = {
  body: string;
 };
 
-const SERVICES: ServiceItem[] = [
+// Services mega menu — grouped into category columns (text links, no image
+// preview). Covers every service the site offers.
+const SERVICE_MENU: { heading: string; Icon: typeof Award; links: LeafLink[] }[] = [
  {
- label: "Paver Patios & Walkways",
- href: "/services/paver-patios",
- description: "Backyard, walkways, pool decks, multi-level builds.",
- image: "/images/03-card-paver-patios.jpg",
- imageAlt: "Backyard paver patio with seating wall and fire pit by McCoy Landscape Group",
- },
- {
- label: "Paver Driveways",
- href: "/services/paver-driveways",
- description: "Curb-appeal driveways built for Ontario freeze–thaw.",
- image: "/images/02-paver-driveway-front-entrance-oakville.jpg",
- imageAlt: "Paver driveway front entrance in Oakville by McCoy Landscape Group",
- },
- {
- label: "Retaining Walls",
- href: "/services/retaining-walls",
- description: "Engineered structural and decorative walls.",
- image: "/images/04-card-retaining-walls.jpg",
- imageAlt: "Retaining wall hardscape build by McCoy Landscape Group",
- },
- {
- label: "Outdoor Living",
- href: "/services/outdoor-living",
- description: "Fire features, pergolas, full living spaces.",
- image: "/images/05-card-outdoor-living.jpg",
- imageAlt: "Outdoor living space with fire feature by McCoy Landscape Group",
- },
- {
- label: "Landscape Lighting",
- href: "/services/landscape-lighting",
- description: "Low-voltage lighting designed for the build.",
- image: "/images/06-card-landscape-lighting.jpg",
- imageAlt: "Landscape lighting on a paver patio by McCoy Landscape Group",
- },
- {
- label: "Softscape Services",
- href: "/services/softscape",
- description: "Sod, garden beds, planting, and mulch installs.",
- image: "/images/softscape-hero.jpg",
- imageAlt: "Softscape build with sod, mulched beds, ornamental grasses, and a Japanese maple by McCoy Landscape Group",
- },
- {
- label: "Landscape Maintenance",
- href: "/services/maintenance",
- description: "Lawn, pruning, mulching, seasonal cleanups.",
- image: "/images/maintenance-detail.jpg",
- imageAlt: "Crisply maintained beds and edged lawn at an Oakville property",
- },
-];
-
-// Specialty leaf services. Rendered as a compact grouped strip along the bottom
-// of the Services mega menu so the main list stays short and scannable.
-const SPECIALTY_GROUPS: { heading: string; links: LeafLink[] }[] = [
- {
- heading: "Stone & Masonry",
+ heading: "Patios & Driveways",
+ Icon: LayoutGrid,
  links: [
- { label: "Masonry and Natural Stone", href: "/services/masonry-and-natural-stone" },
+ { label: "Paver Patios & Walkways", href: "/services/paver-patios" },
+ { label: "Paver Driveways", href: "/services/paver-driveways" },
  { label: "Natural Stone Patio", href: "/services/natural-stone-patio" },
- { label: "Natural Stone Steps", href: "/services/natural-stone-steps" },
- { label: "Seating Walls and Stone Pillars", href: "/services/seating-walls-and-stone-pillars" },
- { label: "Armour Stone Retaining Wall", href: "/services/armour-stone-retaining-wall" },
- { label: "Garden Retaining Wall", href: "/services/garden-retaining-wall" },
- ],
- },
- {
- heading: "Design & Outdoor Living",
- links: [
- { label: "Landscape Design Consultation", href: "/services/landscape-design-consultation" },
- { label: "Fire Pit and Outdoor Fireplace", href: "/services/fire-pit-and-outdoor-fireplace" },
- { label: "Pergola and Pavilion Design", href: "/services/pergola-and-pavilion-design" },
- ],
- },
- {
- heading: "Paver Care & Repair",
- links: [
  { label: "Paver Cleaning and Sealing", href: "/services/paver-cleaning-and-sealing" },
  { label: "Interlock Repair and Re-Levelling", href: "/services/interlock-repair-and-re-levelling" },
  ],
  },
  {
- heading: "Softscape & Lawn",
+ heading: "Walls & Stonework",
+ Icon: BrickWall,
  links: [
+ { label: "Retaining Walls", href: "/services/retaining-walls" },
+ { label: "Armour Stone Retaining Wall", href: "/services/armour-stone-retaining-wall" },
+ { label: "Garden Retaining Wall", href: "/services/garden-retaining-wall" },
+ { label: "Masonry and Natural Stone", href: "/services/masonry-and-natural-stone" },
+ { label: "Natural Stone Steps", href: "/services/natural-stone-steps" },
+ { label: "Seating Walls and Stone Pillars", href: "/services/seating-walls-and-stone-pillars" },
+ ],
+ },
+ {
+ heading: "Outdoor Living",
+ Icon: Flame,
+ links: [
+ { label: "Outdoor Living", href: "/services/outdoor-living" },
+ { label: "Fire Pit and Outdoor Fireplace", href: "/services/fire-pit-and-outdoor-fireplace" },
+ { label: "Pergola and Pavilion Design", href: "/services/pergola-and-pavilion-design" },
+ { label: "Landscape Lighting", href: "/services/landscape-lighting" },
+ { label: "Landscape Design Consultation", href: "/services/landscape-design-consultation" },
+ ],
+ },
+ {
+ heading: "Softscape & Lawn",
+ Icon: Sprout,
+ links: [
+ { label: "Softscape Services", href: "/services/softscape" },
  { label: "Landscape Planting", href: "/services/landscape-planting" },
  { label: "Garden Bed Design", href: "/services/garden-bed-design" },
  { label: "Decorative Rock and Mulch", href: "/services/decorative-rock-and-mulch" },
  { label: "Sod Installation", href: "/services/sod-installation" },
  { label: "Artificial Turf Installation", href: "/services/artificial-turf-installation" },
+ { label: "Landscape Maintenance", href: "/services/maintenance" },
  ],
- },
-];
-
-const SERVICE_TRUST: TrustPillar[] = [
- {
- Icon: Award,
- title: "25+ Years",
- body: "West GTA hardscape craftsmanship since 2001.",
- },
- {
- Icon: Users,
- title: "Owner-Operated",
- body: "Alex & Pieter on every major build.",
- },
- {
- Icon: ShieldCheck,
- title: "3-Year Warranty",
- body: "Sink, level, and cracking covered.",
  },
 ];
 
@@ -214,7 +147,6 @@ export default function Nav() {
  const [scrolled, setScrolled] = useState(false);
  const [mobileOpen, setMobileOpen] = useState(false);
  const [openMega, setOpenMega] = useState<string | null>(null);
- const [hoveredService, setHoveredService] = useState(0);
  const [hoveredLocation, setHoveredLocation] = useState(0);
  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -372,111 +304,72 @@ export default function Nav() {
  onMouseLeave={scheduleClose}
  >
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20 pt-3">
- <div className="bg-white rounded-2xl shadow-[var(--shadow-floating)] border border-[var(--color-border)] overflow-hidden">
- <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.85fr)] gap-6 p-6">
- {/* Left: services list */}
- <div>
- <p className="eyebrow text-[var(--color-accent-mid)] mb-3">OUR SERVICES</p>
+ <div className="bg-white rounded-2xl shadow-[var(--shadow-floating)] border border-[var(--color-border)] overflow-hidden animate-[mega-in_180ms_cubic-bezier(0.16,1,0.3,1)]">
+ <div className="grid grid-cols-4 gap-x-6 gap-y-2 p-7">
+ {SERVICE_MENU.map((col) => (
+ <div key={col.heading}>
+ <div className="flex items-center gap-2 pb-2 mb-2 border-b border-[var(--color-border)]">
+ <span className="w-7 h-7 shrink-0 rounded-md bg-[var(--color-accent-mid)]/12 text-[var(--color-accent-mid)] flex items-center justify-center">
+ <col.Icon size={15} strokeWidth={2.1} />
+ </span>
+ <p className="eyebrow text-[var(--color-primary)]">{col.heading}</p>
+ </div>
  <ul className="flex flex-col">
- {SERVICES.map((s, i) => (
- <li key={s.href}>
- <Link
- href={s.href}
- onMouseEnter={() => setHoveredService(i)}
- onFocus={() => setHoveredService(i)}
- className={`block px-3 py-2.5 -mx-3 rounded-lg transition-colors ${
- hoveredService === i
- ? "bg-[var(--color-bg-warm)]"
- : "hover:bg-[var(--color-bg-warm)]"
- }`}
- >
- <span className="block font-[family-name:var(--font-display)] font-bold text-[15px] text-[var(--color-primary)] leading-tight">
- {s.label}
- </span>
- <span className="block text-[13px] text-[var(--color-text-muted)] mt-0.5 leading-snug">
- {s.description}
- </span>
- </Link>
- </li>
- ))}
- </ul>
- </div>
-
- {/* Center: hovered service preview */}
- <div className="relative rounded-xl overflow-hidden min-h-[260px] bg-[var(--color-bg-warm)]">
- {/* Pre-render every image; only the active one is opacity-100 */}
- {SERVICES.map((s, i) => (
- /* eslint-disable-next-line @next/next/no-img-element */
- <img
- key={s.image}
- src={s.image}
- alt={s.imageAlt}
- className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${
- i === hoveredService ? "opacity-100" : "opacity-0"
- }`}
- />
- ))}
- <div
- aria-hidden
- className="absolute inset-0"
- style={{
- background:
- "linear-gradient(180deg,rgba(15,20,17,0) 50%,rgba(15,20,17,0.75) 100%)",
- }}
- />
- <div className="absolute inset-x-0 bottom-0 p-4">
- <span className="block text-white font-[family-name:var(--font-display)] font-bold text-[15px] leading-tight [text-shadow:0_1px_8px_rgba(0,0,0,0.5)]">
- {SERVICES[hoveredService].label}
- </span>
- </div>
- </div>
-
- {/* Right: trust pillars (services) */}
- <div className="bg-[var(--color-bg-warm)] rounded-xl p-5">
- <p className="eyebrow text-[var(--color-accent-mid)] mb-4">WHY MCCOY</p>
- <ul className="flex flex-col gap-4">
- {SERVICE_TRUST.map(({ Icon, title, body }) => (
- <li key={title} className="flex items-start gap-3">
- <span className="w-9 h-9 shrink-0 rounded-full bg-white text-[var(--color-primary)] flex items-center justify-center shadow-sm">
- <Icon size={16} strokeWidth={2.1} />
- </span>
- <span className="block">
- <span className="block font-[family-name:var(--font-display)] font-bold text-[14px] text-[var(--color-primary)] leading-tight">
- {title}
- </span>
- <span className="block text-[12px] text-[var(--color-text-muted)] mt-0.5 leading-snug">
- {body}
- </span>
- </span>
- </li>
- ))}
- </ul>
- </div>
- </div>
-
- {/* Bottom strip: specialty leaf services, grouped */}
- <div className="border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]/50 px-6 py-5">
- <p className="eyebrow text-[var(--color-accent-mid)] mb-3">SPECIALTY SERVICES</p>
- <div className="grid grid-cols-4 gap-x-6 gap-y-4">
- {SPECIALTY_GROUPS.map((group) => (
- <div key={group.heading}>
- <p className="font-[family-name:var(--font-display)] font-bold text-[13px] text-[var(--color-primary)] leading-tight mb-2">
- {group.heading}
- </p>
- <ul className="flex flex-col gap-1">
- {group.links.map((l) => (
+ {col.links.map((l) => (
  <li key={l.href}>
  <Link
  href={l.href}
- className="block text-[12.5px] leading-snug text-[var(--color-text-muted)] hover:text-[var(--color-accent-mid)] transition-colors"
+ className="group/link flex items-center justify-between gap-2 px-2.5 py-1.5 -mx-2.5 rounded-lg hover:bg-[var(--color-bg-warm)] transition-colors"
  >
+ <span className="text-[13.5px] font-medium text-[var(--color-text)] leading-snug transition-colors group-hover/link:text-[var(--color-accent-mid)]">
  {l.label}
+ </span>
+ <ChevronRight
+ size={15}
+ strokeWidth={2.2}
+ className="shrink-0 text-[var(--color-border)] transition-all group-hover/link:text-[var(--color-accent-mid)] group-hover/link:translate-x-0.5"
+ />
  </Link>
  </li>
  ))}
  </ul>
  </div>
  ))}
+ </div>
+
+ {/* Footer strip */}
+ <div className="flex items-center justify-between gap-4 border-t border-[var(--color-border)] bg-[var(--color-bg-warm)]/50 px-7 py-3.5">
+ <div className="flex flex-col">
+ <Link
+ href="/services"
+ className="group/all inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent-mid)]"
+ >
+ View All Services
+ <ChevronRight
+ size={15}
+ strokeWidth={2.2}
+ className="transition-transform group-hover/all:translate-x-0.5"
+ />
+ </Link>
+ <span className="text-[12px] text-[var(--color-text-muted)] mt-0.5">
+ 3-year warranty on every install · Owner-operated since 2001
+ </span>
+ </div>
+ <div className="flex items-center gap-3 shrink-0">
+ <a
+ href="tel:+14169859771"
+ className="hidden xl:inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent-mid)]"
+ >
+ <Phone size={15} strokeWidth={2.2} />
+ (416) 985-9771
+ </a>
+ <button
+ type="button"
+ onClick={openQuoteModal}
+ className="inline-flex items-center rounded-full bg-[var(--color-primary)] text-white text-[13px] font-semibold px-4 py-2 transition-colors hover:bg-[var(--color-accent-mid)]"
+ >
+ Book Free Consultation
+ </button>
  </div>
  </div>
  </div>
@@ -492,7 +385,7 @@ export default function Nav() {
  onMouseLeave={scheduleClose}
  >
  <div className="mx-auto max-w-[1440px] px-5 md:px-10 lg:px-20 pt-3">
- <div className="bg-white rounded-2xl shadow-[var(--shadow-floating)] border border-[var(--color-border)] overflow-hidden">
+ <div className="bg-white rounded-2xl shadow-[var(--shadow-floating)] border border-[var(--color-border)] overflow-hidden animate-[mega-in_180ms_cubic-bezier(0.16,1,0.3,1)]">
  <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.85fr)] gap-6 p-6">
  <div>
  <p className="eyebrow text-[var(--color-accent-mid)] mb-3">WHERE WE WORK</p>
@@ -607,8 +500,32 @@ export default function Nav() {
  </button>
  {openMobileMenu === link.mega && (
  <ul className="pb-3 flex flex-col">
- {(link.mega === "services" ? SERVICES : LOCATIONS).map(
- (item) => (
+ {link.mega === "services"
+ ? SERVICE_MENU.map((col) => (
+ <li key={col.heading} className="pl-4 pt-3">
+ <p className="flex items-center gap-1.5 font-[family-name:var(--font-display)] font-bold text-[13px] text-[var(--color-primary)] leading-tight mb-1.5">
+ <col.Icon size={13} strokeWidth={2.2} className="text-[var(--color-accent-mid)]" />
+ {col.heading}
+ </p>
+ <ul className="flex flex-col gap-1.5 pb-1">
+ {col.links.map((l) => (
+ <li key={l.href}>
+ <Link
+ href={l.href}
+ onClick={() => {
+ setMobileOpen(false);
+ setOpenMobileMenu(null);
+ }}
+ className="block text-[13.5px] leading-snug text-[var(--color-text-muted)]"
+ >
+ {l.label}
+ </Link>
+ </li>
+ ))}
+ </ul>
+ </li>
+ ))
+ : LOCATIONS.map((item) => (
  <li key={item.href}>
  <Link
  href={item.href}
@@ -625,31 +542,6 @@ export default function Nav() {
  {item.description}
  </span>
  </Link>
- </li>
- )
- )}
- {link.mega === "services" &&
- SPECIALTY_GROUPS.map((group) => (
- <li key={group.heading} className="pl-4 pt-3">
- <p className="font-[family-name:var(--font-display)] font-bold text-[13px] text-[var(--color-primary)] leading-tight mb-1.5">
- {group.heading}
- </p>
- <ul className="flex flex-col gap-1.5 pb-1">
- {group.links.map((l) => (
- <li key={l.href}>
- <Link
- href={l.href}
- onClick={() => {
- setMobileOpen(false);
- setOpenMobileMenu(null);
- }}
- className="block text-[13.5px] leading-snug text-[var(--color-text-muted)]"
- >
- {l.label}
- </Link>
- </li>
- ))}
- </ul>
  </li>
  ))}
  </ul>
