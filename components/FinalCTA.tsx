@@ -33,7 +33,7 @@ export default function FinalCTA() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true, margin: "-100px" }}
  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
- className="max-w-[720px] mx-auto text-center"
+ className="max-w-[840px] mx-auto text-center"
  >
  <span className="eyebrow text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">
  READY TO START?
