@@ -221,7 +221,7 @@ export default function NaturalStoneStepsPage() {
  shifting, settling, and cracking.
  </>
  }
- imageSrc="/images/06-card-landscape-lighting.jpg"
+ imageSrc="/natural-stone-steps/Hero.png"
  imageAlt="Custom natural stone entry steps with integrated lighting on an Oakville property built by McCoy Landscape Group"
  />
 
@@ -291,7 +291,7 @@ export default function NaturalStoneStepsPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/08-showcase-lighting-dramatic.jpg"
+ src="/natural-stone-steps/center.png"
  alt="Natural stone entry steps with integrated lighting and matching stone pillars in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -572,7 +572,10 @@ export default function NaturalStoneStepsPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/natural-stone-steps/end.png"
+ bgAlt="Natural stone steps glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );
