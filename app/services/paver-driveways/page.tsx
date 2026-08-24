@@ -172,7 +172,7 @@ export default function PaverDrivewaysPage() {
  Permacon options, and a 3-year warranty on every driveway we build.
  </>
  }
- imageSrc="/images/02-paver-driveway-front-entrance-oakville.jpg"
+ imageSrc="/paver-driveways/Hero.png"
  imageAlt="Interlocking paver driveway with front-entry landing in Oakville by McCoy Landscape Group"
  />
 
@@ -241,7 +241,7 @@ export default function PaverDrivewaysPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/09-showcase-signature-build.jpg"
+ src="/paver-driveways/center.png"
  alt="Completed paver driveway with edge restraint and polymeric sand in West GTA"
  fill
  className="object-cover"
@@ -521,7 +521,10 @@ export default function PaverDrivewaysPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/paver-driveways/end.png"
+ bgAlt="A finished paver driveway glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  <JsonLd
 

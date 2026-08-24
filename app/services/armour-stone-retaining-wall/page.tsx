@@ -221,8 +221,8 @@ export default function ArmourStoneRetainingWallPage() {
  settling, and leaning.
  </>
  }
- imageSrc="/images/07-showcase-retaining-hillside.jpg"
- imageAlt="Terraced armour stone retaining wall holding a steep backyard grade on an Oakville property built by McCoy Landscape Group"
+ imageSrc="/armour-stone-retaining-wall/hero-tiered-limestone-wall.png"
+ imageAlt="Tiered limestone armour stone retaining wall terracing the front garden of an Oakville home built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
@@ -291,8 +291,8 @@ export default function ArmourStoneRetainingWallPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/11-process-excavation.jpg"
- alt="A terraced armour stone wall with built-in steps and planting beds holding a steep backyard grade in Oakville by McCoy Landscape Group"
+ src="/armour-stone-retaining-wall/center-tiered-stone-stairway.png"
+ alt="A tiered stone garden with a central stone stairway and planting beds holding a backyard grade in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -574,7 +574,10 @@ export default function ArmourStoneRetainingWallPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/armour-stone-retaining-wall/end-twilight-fire-pit.png"
+ bgAlt="A cozy twilight patio with a stone fire pit set above an armour stone wall in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

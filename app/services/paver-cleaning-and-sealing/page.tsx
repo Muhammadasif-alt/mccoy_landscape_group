@@ -220,7 +220,7 @@ export default function PaverCleaningAndSealingPage() {
  bring tired interlock back to life and protect it for years.
  </>
  }
- imageSrc="/images/13-process-handoff.jpg"
+ imageSrc="/paver-cleaning-and-sealing/Hero.png"
  imageAlt="Freshly cleaned and sealed interlock paver surface on an Oakville property restored by McCoy Landscape Group"
  />
 
@@ -290,7 +290,7 @@ export default function PaverCleaningAndSealingPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/03-card-paver-patios.jpg"
+ src="/paver-cleaning-and-sealing/center.png"
  alt="A faded weed-filled driveway cleaned, re-sanded, and sealed back to like-new in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -571,7 +571,10 @@ export default function PaverCleaningAndSealingPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/paver-cleaning-and-sealing/end.png"
+ bgAlt="A freshly sealed interlock patio glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

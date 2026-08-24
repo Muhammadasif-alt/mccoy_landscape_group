@@ -178,7 +178,7 @@ export default function RetainingWallsPage() {
  grade, and drainage, and backed by our 3-year warranty.
  </>
  }
- imageSrc="/images/04-card-retaining-walls.jpg"
+ imageSrc="/retaining-walls/Hero.png"
  imageAlt="Terraced retaining wall installation on a sloped backyard in Oakville by McCoy Landscape Group"
  />
 
@@ -247,7 +247,7 @@ export default function RetainingWallsPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/07-showcase-retaining-hillside.jpg"
+ src="/retaining-walls/center.png"
  alt="Multi-tier retaining wall terrace system in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -530,7 +530,10 @@ export default function RetainingWallsPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/retaining-walls/end.png"
+ bgAlt="A finished terraced retaining wall glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  <JsonLd
 

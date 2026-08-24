@@ -221,8 +221,8 @@ export default function NaturalStonePatioPage() {
  settling, and cracking.
  </>
  }
- imageSrc="/images/03-card-paver-patios.jpg"
- imageAlt="Custom natural stone flagstone patio on an Oakville property built by McCoy Landscape Group"
+ imageSrc="/natural-stone-patio/hero-golden-hour-patio-retreat.png"
+ imageAlt="Golden-hour natural stone backyard patio retreat on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
@@ -292,8 +292,8 @@ export default function NaturalStonePatioPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/09-showcase-signature-build.jpg"
- alt="Full flagstone patio with natural stone seating wall and integrated fire feature in Oakville by McCoy Landscape Group"
+ src="/natural-stone-patio/center-farmhouse-patio-firepit.png"
+ alt="Upscale farmhouse natural stone patio with an integrated fire pit and seating in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -573,7 +573,10 @@ export default function NaturalStonePatioPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/natural-stone-patio/end-twilight-patio-firepit.png"
+ bgAlt="A cozy twilight natural stone patio with a fire pit in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

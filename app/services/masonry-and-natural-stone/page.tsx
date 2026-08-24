@@ -222,7 +222,7 @@ export default function MasonryAndNaturalStonePage() {
  settling, and cracking.
  </>
  }
- imageSrc="/images/09-showcase-signature-build.jpg"
+ imageSrc="/masonry-and-natural-stone/Hero.png"
  imageAlt="Natural stone patio with seating wall and stone pillars in Oakville by McCoy Landscape Group"
  />
 
@@ -293,7 +293,7 @@ export default function MasonryAndNaturalStonePage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/04-card-retaining-walls.jpg"
+ src="/masonry-and-natural-stone/center.png"
  alt="Natural stone seating wall, fire feature, and flagstone patio built in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -574,7 +574,10 @@ export default function MasonryAndNaturalStonePage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/masonry-and-natural-stone/end.png"
+ bgAlt="A natural stone patio and masonry feature glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

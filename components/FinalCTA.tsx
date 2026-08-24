@@ -7,7 +7,15 @@ import Button from "./Button";
 import ConsentCheckbox from "./ConsentCheckbox";
 import { openQuoteModal } from "@/lib/openQuoteModal";
 
-export default function FinalCTA() {
+type FinalCTAProps = {
+ bgImage?: string;
+ bgAlt?: string;
+};
+
+export default function FinalCTA({
+ bgImage = "/images/15-cta-dusk-invitation.jpg",
+ bgAlt = "Paver patio with fire feature at dusk in Oakville by McCoy Landscape Group",
+}: FinalCTAProps = {}) {
  return (
  <section
  id="contact"
@@ -19,8 +27,8 @@ export default function FinalCTA() {
  >
  <div className="absolute inset-0 z-0">
  <Image
- src="/images/15-cta-dusk-invitation.jpg"
- alt="Paver patio with fire feature at dusk in Oakville by McCoy Landscape Group"
+ src={bgImage}
+ alt={bgAlt}
  fill
  className="object-cover"
  />

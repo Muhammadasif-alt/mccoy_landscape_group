@@ -221,8 +221,8 @@ export default function GardenRetainingWallPage() {
  settling, and leaning.
  </>
  }
- imageSrc="/images/04-card-retaining-walls.jpg"
- imageAlt="Terraced garden retaining wall with raised beds on an Oakville property built by McCoy Landscape Group"
+ imageSrc="/garden-retaining-wall/hero-golden-hour-terraced-garden.png"
+ imageAlt="Golden-hour terraced garden retaining wall with raised planting beds on an Oakville property built by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
@@ -291,8 +291,8 @@ export default function GardenRetainingWallPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/softscape-hero.jpg"
- alt="A terraced garden wall with raised beds and integrated steps turning a sloped yard into usable space in Oakville by McCoy Landscape Group"
+ src="/garden-retaining-wall/center-terraced-garden-steps.png"
+ alt="A terraced garden with central stone steps and raised beds turning a sloped yard into usable space in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -572,7 +572,10 @@ export default function GardenRetainingWallPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/garden-retaining-wall/end-twilight-patio-fire.png"
+ bgAlt="A cozy twilight patio by the fire set above a garden retaining wall in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

@@ -220,8 +220,8 @@ export default function InterlockRepairAndRelevellingPage() {
  sunken and shifted pavers and make them last.
  </>
  }
- imageSrc="/images/12-process-installation.jpg"
- imageAlt="McCoy Landscape Group crew lifting and re-levelling sunken interlock pavers on an Oakville driveway"
+ imageSrc="/interlock-repair-and-re-levelling/hero-before-after-restoration.png"
+ imageAlt="Before-and-after restoration of a driveway with interlock pavers lifted and re-levelled on an Oakville property by McCoy Landscape Group"
  />
 
  {/* Positioning Intro */}
@@ -290,8 +290,8 @@ export default function InterlockRepairAndRelevellingPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/11-process-excavation.jpg"
- alt="A sunken driveway section lifted, re-based, and relaid to level using the same pavers in Oakville by McCoy Landscape Group"
+ src="/interlock-repair-and-re-levelling/center-repair-in-progress.png"
+ alt="A paver driveway repair in progress with sunken pavers lifted, re-based, and relaid to level in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
  />
@@ -570,7 +570,10 @@ export default function InterlockRepairAndRelevellingPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/interlock-repair-and-re-levelling/end-twilight-firepit.png"
+ bgAlt="A twilight patio retreat by the firepit above re-levelled interlock in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

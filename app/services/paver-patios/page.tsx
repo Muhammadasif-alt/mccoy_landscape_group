@@ -196,7 +196,7 @@ export default function PaverPatiosPage() {
  sink, level, and cracking replacement.
  </>
  }
- imageSrc="/images/03-card-paver-patios.jpg"
+ imageSrc="/paver-patios/Hero.png"
  imageAlt="Backyard paver patio with seating wall and fire pit in Oakville by McCoy Landscape Group"
  />
 
@@ -267,7 +267,7 @@ export default function PaverPatiosPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/09-showcase-signature-build.jpg"
+ src="/paver-patios/center.png"
  alt="Premium paver patio with stone seating wall and fire feature in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -555,7 +555,10 @@ export default function PaverPatiosPage() {
  />
 
  {/* Reuse FinalCTA + Footer from homepage */}
- <FinalCTA />
+ <FinalCTA
+ bgImage="/paver-patios/end.png"
+ bgAlt="A finished backyard paver patio glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  <JsonLd
 
