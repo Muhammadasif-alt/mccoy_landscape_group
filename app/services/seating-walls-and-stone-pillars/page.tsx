@@ -221,7 +221,7 @@ export default function SeatingWallsAndStonePillarsPage() {
  settling, and cracking.
  </>
  }
- imageSrc="/images/05-card-outdoor-living.jpg"
+ imageSrc="/seating-walls-and-stone-pillars/Hero.png"
  imageAlt="Curved natural stone seating wall with fire feature and matching stone pillars on an Oakville property built by McCoy Landscape Group"
  />
 
@@ -292,7 +292,7 @@ export default function SeatingWallsAndStonePillarsPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/01-hero-outdoor-living-golden-hour.jpg"
+ src="/seating-walls-and-stone-pillars/canter.png"
  alt="Curved stone seating wall with integrated fire feature and matching pillars in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -573,7 +573,10 @@ export default function SeatingWallsAndStonePillarsPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/seating-walls-and-stone-pillars/end.png"
+ bgAlt="A curved stone seating wall glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

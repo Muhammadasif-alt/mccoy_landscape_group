@@ -182,7 +182,7 @@ export default function OutdoorLivingPage() {
  hardscape element backed by our 3-year warranty.
  </>
  }
- imageSrc="/images/05-card-outdoor-living.jpg"
+ imageSrc="/outdoor-living/hero.png"
  imageAlt="Full outdoor living space with paver patio, pergola, fire pit, and seating wall in Oakville by McCoy Landscape Group"
  />
 
@@ -251,7 +251,7 @@ export default function OutdoorLivingPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/01-hero-outdoor-living-golden-hour.jpg"
+ src="/outdoor-living/center.png"
  alt="Cedar pergola over a dining patio with integrated lighting in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -532,7 +532,10 @@ export default function OutdoorLivingPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/outdoor-living/end.png"
+ bgAlt="A full outdoor living space glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  <JsonLd
 

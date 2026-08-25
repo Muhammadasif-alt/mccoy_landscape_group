@@ -221,7 +221,7 @@ export default function FirePitAndOutdoorFireplacePage() {
  shifting, settling, and cracking.
  </>
  }
- imageSrc="/images/01-hero-outdoor-living-golden-hour.jpg"
+ imageSrc="/fire-pit-and-outdoor-fireplace/Hero.png"
  imageAlt="Custom stone fire feature with seating wall at dusk on an Oakville property built by McCoy Landscape Group"
  />
 
@@ -292,7 +292,7 @@ export default function FirePitAndOutdoorFireplacePage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/15-cta-dusk-invitation.jpg"
+ src="/fire-pit-and-outdoor-fireplace/center.png"
  alt="Gas fire feature with curved stone seating wall and paver surround at dusk in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -573,7 +573,10 @@ export default function FirePitAndOutdoorFireplacePage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/fire-pit-and-outdoor-fireplace/end.png"
+ bgAlt="A stone fire feature glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );
