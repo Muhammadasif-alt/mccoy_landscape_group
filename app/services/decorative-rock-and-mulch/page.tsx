@@ -221,7 +221,7 @@ export default function DecorativeRockAndMulchPage() {
  lasts.
  </>
  }
- imageSrc="/images/softscape-hero.jpg"
+ imageSrc="/decorative-rock-and-mulch/Hero.png"
  imageAlt="Crisp garden beds finished with fresh mulch and river rock accents on an Oakville property by McCoy Landscape Group"
  />
 
@@ -290,7 +290,7 @@ export default function DecorativeRockAndMulchPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/maintenance-detail.jpg"
+ src="/decorative-rock-and-mulch/Center.png"
  alt="Tired beds cleared, edged, and finished with fresh mulch and river rock accents in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -570,7 +570,10 @@ export default function DecorativeRockAndMulchPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/decorative-rock-and-mulch/End.png"
+ bgAlt="Decorative rock and mulched beds glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

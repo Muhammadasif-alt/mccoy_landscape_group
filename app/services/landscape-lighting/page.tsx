@@ -177,7 +177,7 @@ export default function LandscapeLightingPage() {
  same crew that builds the hardscape.
  </>
  }
- imageSrc="/images/06-card-landscape-lighting.jpg"
+ imageSrc="/landscape-lighting/Hero.png"
  imageAlt="Landscape lighting on a paver patio and pergola at night in Oakville by McCoy Landscape Group"
  />
 
@@ -246,7 +246,7 @@ export default function LandscapeLightingPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/08-showcase-lighting-dramatic.jpg"
+ src="/landscape-lighting/center.png"
  alt="Whole-yard landscape lighting system with zones and smart controls in West GTA by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -528,7 +528,10 @@ export default function LandscapeLightingPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/landscape-lighting/end.png"
+ bgAlt="A landscape lit up at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  <JsonLd
 

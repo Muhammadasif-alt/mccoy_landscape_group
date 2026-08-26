@@ -220,7 +220,7 @@ export default function PergolaAndPavilionDesignPage() {
  structure we build is backed by our 3-year warranty.
  </>
  }
- imageSrc="/images/15-cta-dusk-invitation.jpg"
+ imageSrc="/pergola-and-pavilion-design/Hero.png"
  imageAlt="Custom cedar pergola over a paver patio at dusk on an Oakville property built by McCoy Landscape Group"
  />
 
@@ -291,7 +291,7 @@ export default function PergolaAndPavilionDesignPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/05-card-outdoor-living.jpg"
+ src="/pergola-and-pavilion-design/center.png"
  alt="Cedar pergola over a paver patio tied into a fire feature and seating wall in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -572,7 +572,10 @@ export default function PergolaAndPavilionDesignPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/pergola-and-pavilion-design/end.png"
+ bgAlt="A pergola-covered patio glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

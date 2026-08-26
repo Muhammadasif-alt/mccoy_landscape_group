@@ -220,7 +220,7 @@ export default function SodInstallationPage() {
  the soil the right way so your new lawn roots fast and stays green.
  </>
  }
- imageSrc="/images/maintenance-hero.jpg"
+ imageSrc="/sod-installation/Hero.png"
  imageAlt="Fresh, even sod lawn laid over prepped soil on an Oakville property by McCoy Landscape Group"
  />
 
@@ -290,7 +290,7 @@ export default function SodInstallationPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/maintenance-detail.jpg"
+ src="/sod-installation/Center.png"
  alt="A worn-out backyard stripped, re-graded, top-dressed, and laid with fresh sod in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -571,7 +571,10 @@ export default function SodInstallationPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/sod-installation/End.png"
+ bgAlt="A freshly sodded lawn glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

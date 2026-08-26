@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
  Scissors,
@@ -189,7 +190,7 @@ export default function MaintenancePage() {
  maintenance route — 25+ years caring for premium Oakville-area landscapes.
  </>
  }
- imageSrc="/images/maintenance-hero.jpg"
+ imageSrc="/maintenance/Hero.png"
  imageAlt="Premium Oakville residential property after a McCoy seasonal landscape maintenance visit"
  />
 
@@ -264,6 +265,44 @@ export default function MaintenancePage() {
  </div>
  </section>
 
+ {/* Photo strip */}
+ <section className="relative">
+ <div className="relative h-[320px] md:h-[460px] overflow-hidden">
+ <Image
+ src="/maintenance/Center.png"
+ alt="A McCoy Landscape Group crew keeping an Oakville property's lawn, beds, and hardscape crisp through the season"
+ fill
+ className="object-cover"
+ />
+ <div
+ aria-hidden
+ className="absolute inset-0"
+ style={{
+ background:
+ "linear-gradient(180deg,rgba(15,20,17,0.25) 0%,rgba(15,20,17,0) 35%,rgba(15,20,17,0.55) 100%)",
+ }}
+ />
+ <WaveDivider
+ toColor="#ffffff"
+ variant="rolling"
+ height={90}
+ flip
+ className="absolute inset-x-0 top-0 z-[2]"
+ />
+ <div className="absolute inset-0 flex items-center z-[1]">
+ <div className="mx-auto max-w-[1440px] w-full px-5 md:px-10 lg:px-20">
+ <span className="inline-flex items-center bg-black/55 backdrop-blur-sm px-3 py-1.5 rounded-full !text-[12px] md:!text-[13px] uppercase tracking-[0.12em] font-semibold text-white">
+ A MCCOY MAINTENANCE ROUTE · OAKVILLE
+ </span>
+ <p className="font-[family-name:var(--font-display)] font-bold text-white text-[20px] md:text-[28px] leading-tight mt-2 max-w-[680px] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
+ Lawns, beds, and hardscape kept crisp and healthy through every
+ season.
+ </p>
+ </div>
+ </div>
+ </div>
+ </section>
+
  {/* Why McCoy */}
  <section className="relative bg-[var(--color-primary)] text-white py-20 md:py-28 overflow-hidden">
  <TopoBG shape="shape_04" position="bottom-right" size={620} opacity={0.18} tint="white" />
@@ -300,13 +339,29 @@ export default function MaintenancePage() {
  </div>
 
  <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-6">
- {processSteps.map((step, i) => (
- <div key={step.title} className="bg-white rounded-2xl p-5 md:p-6 border border-[var(--color-border)]">
- <div className="aspect-square rounded-xl bg-[var(--color-bg-warm)] mb-4 flex items-center justify-center">
- <span className="font-[family-name:var(--font-display)] font-black text-[42px] text-[var(--color-primary)]">
- {String(i + 1).padStart(2, "0")}
+ {processSteps.map((step, i) => {
+ const stepPhotos = [
+ "/images/14-about-trailer.jpg",
+ "/images/10-process-consultation.jpg",
+ "/images/11-process-excavation.jpg",
+ "/images/12-process-installation.jpg",
+ "/images/13-process-handoff.jpg",
+ ];
+ return (
+ <div key={step.title} className="relative bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] flex flex-col">
+ <div className="relative aspect-square w-full overflow-hidden">
+ <Image
+ src={stepPhotos[i]}
+ alt={`${step.title} — McCoy Landscape Group maintenance process`}
+ fill
+ className="object-cover"
+ sizes="(max-width: 768px) 100vw, 320px"
+ />
+ <span className="absolute top-3 left-3 w-9 h-9 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center font-[family-name:var(--font-display)] font-bold text-[14px] shadow-md">
+ {i + 1}
  </span>
  </div>
+ <div className="p-5 flex-1">
  <h3 className="font-[family-name:var(--font-display)] font-bold text-[16px] text-[var(--color-primary)] leading-tight mb-2">
  {step.title}
  </h3>
@@ -314,7 +369,9 @@ export default function MaintenancePage() {
  {step.body}
  </p>
  </div>
- ))}
+ </div>
+ );
+ })}
  </div>
  </div>
  </section>
@@ -357,7 +414,10 @@ export default function MaintenancePage() {
  </div>
  </section>
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/maintenance/End.png"
+ bgAlt="A well-maintained landscape glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

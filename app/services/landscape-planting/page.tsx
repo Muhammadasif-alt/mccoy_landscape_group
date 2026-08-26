@@ -221,7 +221,7 @@ export default function LandscapePlantingPage() {
  lasts.
  </>
  }
- imageSrc="/images/softscape-hero.jpg"
+ imageSrc="/landscape-planting/Hero.png"
  imageAlt="Freshly planted garden beds with trees and shrubs framing a patio on an Oakville property by McCoy Landscape Group"
  />
 
@@ -291,7 +291,7 @@ export default function LandscapePlantingPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/maintenance-detail.jpg"
+ src="/landscape-planting/Center.png"
  alt="New garden beds, trees, and shrubs planted to frame a patio and seating wall in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -571,7 +571,10 @@ export default function LandscapePlantingPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/landscape-planting/End.png"
+ bgAlt="Fresh landscape planting glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

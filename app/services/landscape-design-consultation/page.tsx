@@ -221,7 +221,7 @@ export default function LandscapeDesignConsultationPage() {
  backed by our 3-year warranty.
  </>
  }
- imageSrc="/images/10-process-consultation.jpg"
+ imageSrc="/landscape-design-consultation/Hero.png"
  imageAlt="McCoy Landscape Group design consultation walking a backyard in Oakville"
  />
 
@@ -292,7 +292,7 @@ export default function LandscapeDesignConsultationPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/09-showcase-signature-build.jpg"
+ src="/landscape-design-consultation/center.png"
  alt="A full backyard designed and built in one scope by McCoy Landscape Group in Oakville"
  fill
  className="object-cover"
@@ -573,7 +573,10 @@ export default function LandscapeDesignConsultationPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/landscape-design-consultation/end.png"
+ bgAlt="A designed landscape plan realized and glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

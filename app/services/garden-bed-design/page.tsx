@@ -221,7 +221,7 @@ export default function GardenBedDesignPage() {
  every season.
  </>
  }
- imageSrc="/images/maintenance-detail.jpg"
+ imageSrc="/garden-bed-design/Hero.png"
  imageAlt="Designed garden beds with layered planting and clean edging framing a home on an Oakville property by McCoy Landscape Group"
  />
 
@@ -291,7 +291,7 @@ export default function GardenBedDesignPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/softscape-hero.jpg"
+ src="/garden-bed-design/Center.png"
  alt="Newly designed garden beds with layered planting, clean edging, and mulch framing a paver patio in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -571,7 +571,10 @@ export default function GardenBedDesignPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/garden-bed-design/End.png"
+ bgAlt="Designed garden beds glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );

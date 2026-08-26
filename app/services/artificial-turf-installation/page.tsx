@@ -221,7 +221,7 @@ export default function ArtificialTurfInstallationPage() {
  year-round.
  </>
  }
- imageSrc="/images/maintenance-hero.jpg"
+ imageSrc="/artificial-turf-installation/Hero.png"
  imageAlt="Clean, even artificial turf lawn with a paver border on an Oakville property installed by McCoy Landscape Group"
  />
 
@@ -291,7 +291,7 @@ export default function ArtificialTurfInstallationPage() {
  <section className="relative">
  <div className="relative h-[320px] md:h-[460px] overflow-hidden">
  <Image
- src="/images/03-card-paver-patios.jpg"
+ src="/artificial-turf-installation/Center.png"
  alt="A shaded backyard turned into a clean, green turf lawn with a paver border in Oakville by McCoy Landscape Group"
  fill
  className="object-cover"
@@ -571,7 +571,10 @@ export default function ArtificialTurfInstallationPage() {
  faqs={faqs}
  />
 
- <FinalCTA />
+ <FinalCTA
+ bgImage="/artificial-turf-installation/End.png"
+ bgAlt="A lush artificial turf lawn glowing at twilight in Oakville by McCoy Landscape Group"
+ />
  <Footer />
  </>
  );
